@@ -620,7 +620,7 @@ export enum componentName {
 
 export enum PaymentChoice {
   CHEQUE = 'CHEQUE',
-  CASH = 'CASH',
+  CASH = 'RECEIPT',
   CREDIDCARD = 'CREDIT CARD',
   UPI = 'UPI',
   AIRTELMONEY = 'AIRTEL MONEY',
