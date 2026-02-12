@@ -1,0 +1,349 @@
+$backround_color: #688F99;
+$font_family_inter: 'Inter';
+$font_color_white: #FFFFFF;
+
+// header open
+.purchase_stock_header {
+  background: $backround_color;
+}
+
+.margin_left_right {
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-top: 1%;
+  position: relative;
+}
+
+.Purchase_stock {
+  font-family: $font_family_inter !important;
+  font-size: 16.5px !important;
+  color: $font_color_white;
+}
+
+.purchase_stock_button {
+  color: $font_color_white;
+  font-family: $font_family_inter !important;
+  font-size: 14.5px !important;
+  border: none;
+  padding: 0px 15px;
+  height: 36px;
+  background: rgba(28, 39, 44, 1);
+  border-radius: 2px;
+}
+
+// header colse
+// main open
+.bg_color_main {
+  background: #F7F7F7 !important;
+  height: 100%;
+  padding-bottom: 100%;
+
+}
+
+// main colse
+//table Containers open
+.margin_left_right_table {
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-top: 1.5%;
+
+}
+
+//table Containers close
+// table header and pagination open
+.mat-mdc-table .mdc-data-table__header-row {
+  height: 6.9vh;
+
+}
+
+.mat-mdc-table .mdc-data-table__row {
+  height: 5.7vh;
+}
+
+::ng-deep {
+  .mat-mdc-paginator-container {
+    justify-content: space-between !important;
+    background-color: #e7edee !important;
+    height: 6.7vh !important;
+    align-items: center !important;
+    flex-wrap: revert !important;
+    min-height: fit-content !important;
+  }
+}
+
+th {
+  white-space: nowrap;
+  font-size: 14.5px;
+  font-weight: 400;
+  background-color: #E7EDEE !important;
+  color: #688F99 !important;
+}
+
+td {
+  font-size: 14.5px;
+  font-weight: 400;
+  background: #FFFFFF;
+  border-bottom: 1px solid #E7EDEE;
+}
+
+//  pagination open
+:host::ng-deep.mdc-notched-outline {
+  display: flex;
+  position: absolute;
+  top: 7px;
+  right: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  height: 66%;
+  text-align: left;
+  pointer-events: none;
+}
+
+::ng-deep .mat-mdc-option .mdc-list-item__primary-text {
+  font-size: 11px !important;
+}
+
+:host::ng-deep.mat-mdc-paginator-page-size-select {
+  margin: 0 4px;
+  width: 67px;
+  height: 38px;
+}
+
+//  pagination close
+//  go to page open
+.pagenationinput {
+  height: 25px;
+  width: 55px;
+  background: #FFFFFF;
+  border: 1px solid #D2CFCF;
+  border-radius: 4px;
+}
+
+.positionfixed {
+  position: absolute;
+  bottom: 1.5vh;
+  right: 37%;
+}
+
+//  go to page close
+// table header and pagination close
+//table data open
+.Success {
+  background: #EBFBF0;
+  border-radius: 30px;
+  color: #0A672A;
+  height: 23px;
+  width: 100px;
+}
+
+.Submitted {
+  background: rgba(50, 147, 217, 0.15);
+  color: #3293D9;
+  border-radius: 30px;
+  height: 23px;
+  width: 100px;
+}
+
+.Failed {
+  height: 23px;
+  width: 73px;
+  background: #FFE5E5;
+  border-radius: 30px;
+  color: #FF0000;
+  margin-left: 10%;
+}
+.p_t0_5
+{
+  padding-top: 0.5rem;
+}
+.Rejected {
+  height: 23px;
+  width: 100px;
+  background: #FFE5E5;
+  border-radius: 30px;
+  color: #FF0000;
+}
+
+.font_size_13_5 {
+  font-size: 14.5px !important;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+.hide {
+  cursor: not-allowed !important;
+}
+
+.repeat_disabled {
+  border: none;
+  background: white;
+}
+
+//table data close
+:host::ng-deep .mat-mdc-paginator-page-size-label {
+  font-size: 13.5px !important;
+}
+.ScrollBarStyle {
+  overflow-y: auto;
+  height: 64vh;
+  position: relative;
+  z-index: 1;
+  background: white;
+
+
+  &::-webkit-scrollbar {
+    width: 5px!important;
+  height: 6px!important;
+  overflow-y: scroll;
+  background: #f7f7f7;
+  box-shadow: inset 0 0 4px #707070;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #8a8b8b;
+  border-radius:10px;
+  }
+}
+
+@media only screen and (max-width: 1229px) and (min-width: 768px) {
+  .positionfixed {
+    right: 40%;
+  }
+}
+
+@media only screen and (max-width: 840px) {
+  .positionfixed {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  :host::ng-deep .mat-mdc-paginator-container {
+    padding: 0 0px !important;
+    height: 5.5vh !important;
+  }
+
+  .ScrollBarStyle {
+    height: 56vh;
+    &::-webkit-scrollbar {
+      width: 2px!important;
+    height: 2px!important;
+    overflow-y: scroll;
+    background: #f7f7f7;
+    box-shadow: inset 0 0 4px #707070;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #8a8b8b;
+    border-radius:10px;
+    }
+  }
+
+  :host::ng-deep .mat-mdc-paginator-range-label {
+    display: none !important;
+  }
+
+  :host::ng-deep .mat-mdc-paginator-page-size-label {
+    display: none !important;
+  }
+
+  .Purchase_stock {
+    font-size: 13.5px !important;
+
+  }
+
+  .purchase_stock_button {
+    font-size: 11.5px !important;
+  }
+
+  td {
+    font-size: 11.5px !important;
+    white-space: nowrap;
+  }
+
+  th {
+    font-size: 12.5px !important;
+    white-space: nowrap;
+  }
+
+  .mobile-justify-content-start {
+    justify-content: start !important;
+  }
+
+  .margin_left_right {
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+
+  .margin_left_right_table {
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+
+  .mat-mdc-table .mdc-data-table__header-row {
+    height: 5.5vh !important;
+  }
+
+  .mat-mdc-table .mdc-data-table__row {
+    height: 5vh !important;
+  }
+
+  .mat-mdc-paginator-container {
+    height: 5.5vh !important;
+  }
+
+  .padding_bottom_2 {
+    padding-bottom: 2%;
+  }
+  .pb-3 {
+    padding-bottom: 0.2rem !important;
+}
+}
+
+@media only screen and (max-width: 1400px) and (min-width: 1200px) {
+  ::ng-deep {
+    .mat-mdc-paginator-container {
+      justify-content: space-between !important;
+      background-color: #e7edee !important;
+      height: 7vh !important;
+    }
+  }
+
+  .pb-3 {
+    padding-bottom: 0.5rem !important;
+  }
+  .positionfixed {
+    right: 37%;
+  }
+  .mat-mdc-table .mdc-data-table__header-row {
+    height: 7vh !important;
+  }
+
+  .mat-mdc-table .mdc-data-table__row {
+    height: 5.5vh !important;
+  }
+
+  .mat-mdc-paginator-container {
+    height: 7vh !important;
+  }
+
+  .ScrollBarStyle {
+    height: 63vh;
+
+  }
+
+
+}
+tr:hover {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  box-shadow: 0px 0px 5px #FBFBFB;
+
+  -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+  background: #FBFBFB !important;
+}
+

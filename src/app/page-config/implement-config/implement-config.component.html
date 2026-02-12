@@ -1,0 +1,394 @@
+<div class="bg_color">
+  <form [formGroup]="inmplementConfigure" #f="ngForm">
+    <div class="margin_left_right">
+      <div class="row padding_top_1">
+        <div class=" col-10 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6   d-flex justify-content-start ">
+        </div>
+        <div class="col-2 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end ">
+          <button class="save_chages font_style_13_5" (click)="saveImplementConfiguration()">Save Changes</button>
+        </div>
+      </div>
+    </div>
+    <div class="margin_left_right padding_top_1 ">
+      <div class=" padding_all_side bg_color_white">
+        <div class="ScrollBarStyle">
+          <div class="row ">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+              <span class="font_style font_size_15_5 heading_color">User Type </span>
+            </div>
+          </div>
+          <div class="row padding_top_1">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
+                  <span class="font_style_13_5">Allocation Based on</span>
+                  <mat-form-field class="width_select margin_top_2">
+                    <mat-select formControlName="allocationBasedOn" >
+                      <mat-option value="User Type" (click)="disableForInsurance()">User Type</mat-option>
+                      <mat-option value="None" (click)="disableForInsurance()">None</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 col-xxl-3" >
+                  <span class="font_style_13_5">Insurance User Type</span>
+                  <mat-form-field class="width_select margin_top_2">
+                    <mat-select multiple formControlName="insuranceUserType" [disabled]="isShowInsuranceUser">
+                      <mat-option [value]="data" *ngFor="let data of insuranceDropDownDataList">
+                        {{data}}</mat-option>
+                      <div class="handSymbol" value="three" (click)="openDialog()"><Span
+                          class="heading_color plus">+</Span><span class="font_style_13_5 heading_color"> User
+                          Type</span></div>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row padding_top_1">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+              <span class="font_style font_size_15_5 heading_color">Paper Details </span>
+            </div>
+          </div>
+          <div class="row padding_top_1">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
+                  <span class="font_style_13_5">Digital Paper Cost</span>
+                  <mat-form-field class="width_select margin_top_2">
+                    <input matInput formControlName="digitalPaperCost" [maxlength]="7" [minlength]="0">
+                  </mat-form-field>
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
+                  <span class="font_style_13_5">Share Percentage <span class="clorStyle">*</span></span>
+                  <mat-form-field class="width_select margin_top_2">
+                    <input matInput formControlName="sharePercentage" [maxlength]="4" [minlength]="0">
+                  </mat-form-field>
+                </div>
+                <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
+                  <span class="font_style_13_5">Prefix<span class="clorStyle">*</span></span>
+                  <mat-form-field class="width_select margin_top_2">
+                    <input matInput formControlName="prefix" [maxlength]="4" [minlength]="0" (input)="setSuffixInPaperDetails()">
+                  </mat-form-field>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
+                  <span class="font_style_13_5">Suffix <span class="clorStyle">*</span></span>
+                  <mat-form-field class="width_select margin_top_2">
+                    <input matInput formControlName="suffix" [maxlength]="5" [minlength]="0" (input)="setSuffixInPaperDetails()">
+                  </mat-form-field>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row ">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+              <div class="row">
+                  <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
+                  <span class="font_style_13_5">Paper auto generation no. format <span class="clorStyle">*</span></span>
+                  <mat-form-field class="width_select margin_top_2">
+                    <input matInput formControlName="paperAutoGeneration" [maxlength]="10" [minlength]="0" readonly [disabled]="ispaperAutoGen">
+                  </mat-form-field>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
+                  <span class="font_style_13_5">Paper expiration mail trigger days <span class="clorStyle">*</span></span>
+                  <mat-form-field class="width_select margin_top_2">
+                    <input matInput formControlName="paperExpirationMail" [maxlength]="2" [minlength]="0">
+                  </mat-form-field>
+                </div>
+
+                <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 col-xxl-3">
+                  <span class="font_style_13_5">Minimum Paper Limit<span class="clorStyle">*</span></span>
+                  <mat-form-field class="width_select margin_top_2">
+                    <input matInput formControlName="minimumPaperLimit" [maxlength]="5" [minlength]="0">
+                  </mat-form-field>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="row padding_bottom_1">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+              <span class="font_style font_size_15_5 heading_color">Certificate Configuration</span>
+            </div>
+          </div>
+          <div class="Certificate_config pading_top_1 padding_bottom_1">
+            <div class="allocate_revoke">
+              <div class="row pading_top_1">
+                <div class=" col-12 col-sm-12 col-md-6 col-lg-5 col-xl-4 col-xxl-3">
+                  <div class="row ">
+                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-5 col-xxl-5 cursor   position_relative font_style_13_5"
+                      (click)="paperFields()">
+                      Paper Fields
+                      <div class="underline_paper" *ngIf="active"></div>
+                    </div>
+                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-5 col-xxl-5 cursor position_relative font_style_13_5"
+                      (click)="waterMark()">
+                      Watermark
+                      <div class="underline_water" *ngIf="inactive"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row margin_zero ">
+              <div *ngIf="active" class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-7 col-xxl-8"
+                style="background:  rgba(255, 255, 255, 1); border-left: 1px solid rgba(0, 0, 0, 0.25);  border-right: 1px solid rgba(0, 0, 0, 0.25);  border-bottom: 1px solid rgba(0, 0, 0, 0.25);">
+                <div class="row padding_top_3 ScrollBarStyleContent">
+                  <div class="col-12 ">
+                    <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+                      <div class="example-box" *ngFor="let data of implementVar_name" cdkDrag>
+                        <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+                        <div class="border_line">
+                          <div class="row">
+                            <div class="col-6">
+                              <section class="example-section" >
+                                  {{data.name}}
+                              </section>
+                            </div>
+                            <div class="col-6 d-flex justify-content-end ">
+                              <img src="assets/page_config_icons/three_line.svg" alt=""
+                                class="img-fluid three_line">&nbsp;&nbsp;&nbsp;
+                            </div>
+                          </div>
+                        </div>
+                        <br>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div *ngIf="inactive" class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-7 col-xxl-8"
+                style="background:  rgba(255, 255, 255, 1); border-left: 1px solid rgba(0, 0, 0, 0.25);  border-right: 1px solid rgba(0, 0, 0, 0.25);  border-bottom: 1px solid rgba(0, 0, 0, 0.25);">
+                <div class="row padding_top_3 ScrollBarStyleContent">
+                  <div class="col-12 ">
+                    <div class="row padding_bottom_2">
+                      <div class="col-12 margin_left_1">
+                        <span class="font_style_13_5">Upload your logo </span>
+                      </div>
+                    </div>
+                    <div class="row padding_bottom_2">
+                      <div class="col-12">
+                        <div class="dropzone">
+                          <input [type]="filename ? 'text' : 'file'" [class.Zero]="filename" class="input-file" #fileDropRef [disabled]="" multiple
+                            (change)="onChange($event)"
+                            accept="application/pdf,application/vnd.ms-excel,application/pdf,image/*" />
+                          <img src="/assets/CloudArrowUp.svg" alt="" class="img-fluid" />
+                          <img [src]="" alt="" />
+                          <h3 class="file-text" *ngIf="filename === null">
+                            <span class="font_size_16_5">Drag and Drop your file or</span>
+                          </h3>
+                          <h3 class="file-text position_relative" *ngIf="filename" [matTooltip]="filename">
+                            <span class="toolTip">{{ filename }}</span> &nbsp;<img
+                              src="assets/bulk_upload/delete_bulk.svg" class="img-fluid position_absolute_delete"
+                              alt="" (click)="DeleteFile()">
+                          </h3>
+                          <button *ngIf="fileNameList.length === 0" [disabled]=""
+                            class="btn black-btn-bg ml btn-sz btn-font" for="fileDropRef">
+                            Browse files
+                          </button>
+                          <button *ngIf="fileNameList.length > 0" class="btn black-btn-bg ml btn-sz btn-font">
+                            {{ action }}
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row padding_bottom_5">
+                      <div class="col-12">
+                        <section>
+                          <label class="example-margin font_style_13_5">Opacity</label>
+                          <mat-slider class="example-margin">
+                            <input type="range" matSliderThumb (change)="opcaity($event)" [value]="opacityValue">
+                          </mat-slider>
+                        </section>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-5 col-xxl-4  " style="padding: 0px;margin: 0px;"
+               >
+           <div style="position: relative; background-size: contain; background-position: top center; background-repeat: no-repeat; max-width: 100%; height: 100%; padding: 0; margin: 0;"
+     [ngStyle]="{'background-image': image ? 'url(data:image/png;base64,'+image+')' : 'none'}">
+
+  <!-- Header -->
+  <div style="display: flex; align-items: center; justify-content: start; flex-wrap: wrap; margin-top: 0.625rem;">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxlvpcbDjgdhZeGmuf0fEOhofZJt8AYp8YPA&usqp=CAU"
+         alt="Logo"
+         style="height: 8.125rem; width: 8.125rem; object-fit: cover; object-position: center; margin-left: 0.625rem; border: 0.125rem solid #000;">
+
+    <div style="display: flex; flex-direction: column; justify-content: start; margin-left: 0.625rem;">
+      <p style="font-size: 1rem; font-weight: 400; font-family: Inter, sans-serif; margin: 0; padding: 0;">
+        <span style="font-size: 1.125rem;">A</span>ssociation des
+      </p>
+      <p style="font-size: 1rem; font-weight: 400; font-family: Inter, sans-serif; margin: 0; padding: 0;">
+        <span style="font-size: 1.125rem;">A</span>ssureurs du Rwanda
+      </p>
+      <p style="font-size: 1rem; font-weight: 400; font-family: Inter, sans-serif; margin: 0; padding: 0; text-transform: uppercase;">
+        MOTOR INSURANCE
+      </p>
+      <p style="font-size: 1rem; font-weight: 400; font-family: Inter, sans-serif; margin: 0; padding: 0; text-transform: uppercase;">
+        CERTIFICATE
+      </p>
+      <p style="font-size: 1rem; font-weight: 400; font-family: Inter, sans-serif; margin: 0.625rem; padding: 0;">
+        <strong>N</strong>O.
+      </p>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div style="position: relative; margin-left: 1.5625rem; background: transparent;">
+    <table style="width: 100%; border-collapse: collapse;" *ngIf="implementVar_name.length > 0">
+      <!-- Header rows -->
+      <tr *ngFor="let item of header">
+        <td style="padding: 0; font-size: 0.75rem; font-weight: 700; white-space: nowrap; font-family: Inter, sans-serif; padding: 0.625rem; margin: 1.25rem; text-transform: uppercase;">
+          {{item.name}}:
+        </td>
+      </tr>
+      <!-- Content rows -->
+      <tr *ngFor="let data of content">
+        <td style="padding: 0; font-size: 0.75rem; font-weight: 700; white-space: nowrap; font-family: Inter, sans-serif; padding: 0.625rem; margin: 0; text-transform: uppercase;">
+          {{data.name}}:
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Footer -->
+  <div style="margin-top: 0.625rem; background-color: transparent; padding: 0; text-align: center; font-size: 0.5rem; color: #000000; font-weight: 500;">
+    This is an electronic motor sticker, should be verified by a QR code through a mobile application.
+  </div>
+</div>
+
+
+                  <div >
+                  <div>
+               
+
+                  
+                  
+                  </div>
+                  
+                </div>
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet"> -->
+
+
+
+  
+  
+ 
+
+
+
+ <html #paperConfigImpl  style="padding: 0px;margin: 0px;display: none;">
+   <header>
+                    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+                  </header>
+    
+ 
+              <body style="margin: 0; padding: 0; font-family: 'Inter', sans-serif">
+  <div style="
+    position: relative;
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 120vh;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 70px;
+    margin-left: -10px;
+    "
+    [ngStyle]="{'background-image': image ? 'url(data:image/png;base64,' + image + ')' : 'none'}"
+  >
+
+    <!-- Header -->
+ <div style="
+  display: flex;
+  align-items: flex-start;
+  padding: 2rem 3rem 0 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: nowrap;
+">
+
+  <!-- Image inside span -->
+  <span style="flex-shrink: 0; display: inline-block; margin-right: 1rem;">
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxlvpcbDjgdhZeGmuf0fEOhofZJt8AYp8YPA&usqp=CAU"
+      alt="Logo"
+      style="height: 10rem; width: 10rem; object-fit: cover; object-position: center; border: 0.0945rem solid #000;"
+    >
+  </span>
+
+  <!-- Texts inside span -->
+  <span style="display: inline-block; flex-grow: 1; min-width: 0;font-family: 'Inter', sans-serif">
+    <span style="display: block; font-size: 1.3rem; font-weight: 500; margin: 0;"><span style="font-size: 1.7rem;font-weight: 700;">A</span>ssociation des</span>
+    <span style="display: block; font-size: 1.3rem; font-weight: 500; margin: 0;"><span style="font-size: 1.7rem;font-weight: 700;">A</span>ssureurs du Rwanda</span>
+    <span style="display: block; font-size: 1.3rem; font-weight: 500; margin: 0;">MOTOR INSURANCE</span>
+    <span style="display: block; font-size: 1.3rem; font-weight: 500; margin: 0;">CERTIFICATE</span>
+    <span style="display: block; font-size: 1.3rem; font-weight: 500; margin: 0;">
+      <span style="font-size: 1.7rem;font-weight: 700;">N</span>O. <span style="font-weight: 700;">@DigitalPaperNo</span>
+    </span>
+  </span>
+
+</div>
+
+
+    <!-- Table Section -->
+    <div style="padding: 0rem 0rem 2rem 2rem; flex-grow: 1;font-family: 'Inter', sans-serif">
+      <table style="width: 100%; border-collapse: collapse;" *ngIf="implementVar_name.length > 0">
+        <ng-container *ngFor="let item of header">
+          <tr>
+            <td style="font-size: 1rem; font-weight: 500; text-transform: uppercase; padding: 0.25rem 0;">
+              <span style="font-weight: 700;">{{ item.name }}:</span> {{ item.value }}
+            </td>
+          </tr>
+        </ng-container>
+        <ng-container *ngFor="let data of content">
+          <tr>
+            <td style="font-size: 1rem; font-weight: 500; text-transform: uppercase; padding: 0.25rem 0;">
+              <span style="font-weight: 700;">{{ data.name }}:</span> {{ data.value }}
+            </td>
+          </tr>
+        </ng-container>
+      </table>
+    </div>
+
+    <!-- Footer -->
+      <div style="
+      text-align: center;
+      font-size: 0.80rem;
+      color: #000;
+      font-weight: 300;
+      font-family: 'Inter', sans-serif;
+    ">
+      This is an electronic motor sticker, should be verified by a QR code through a mobile Application
+    </div>
+  </div>
+
+</body>
+
+              </html>
+<style>
+
+
+</style>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

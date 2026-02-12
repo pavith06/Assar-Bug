@@ -1,0 +1,142 @@
+/* .wrapper{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(68, 115, 167);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+  display: block;
+}
+
+
+.EmtyCol{
+  height: 10%;
+}
+.EmtyRow{
+  height: 25px;
+}
+.login-wrapper{
+
+  border: rgb(135, 167, 195) .5px solid;
+  border-radius: 2%;
+  background-color: rgb(81, 128, 168);
+  width: 40%;
+
+margin-left: 60%;
+
+}
+
+.display-center{
+    display: flex;
+    justify-content: center;
+}
+
+
+.btns{
+  border-radius: none;
+  background-color: transparent;
+  border: none;
+
+}
+
+.btns-hl{
+    background-color:rgb(102, 143, 179) ;
+    border-radius: 3%;
+    border: rgb(135, 167, 195) .5px solid ;
+    outline: 0;
+}
+
+.input-box{
+  background-color: transparent;
+  color: white;
+  border-radius: 0%;
+}
+
+
+
+
+:-ms-input-placeholder{
+  color: white;
+}
+
+::placeholder{
+  color: white;
+}
+
+.link{
+  color: white;
+  float: right;
+}
+
+.btn-color{
+  width: 100%;
+  background-color: rgb(61, 170, 250);
+  color: #fff;
+  border-radius: 2%;
+}
+
+.c-white{
+  color: white;
+}
+
+.login-name {
+  font-weight: 300;
+  display: inline-block;
+  padding-bottom: 2px;
+  position: relative;
+}
+
+.login-name:before{
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 1px;
+  bottom: 0;
+  left: 0%;
+  border-bottom: 2px solid white;
+}
+.paddingtb{
+  padding:  3% 0;
+  margin: 0 5%;
+
+}
+
+@media only screen and (max-width: 600px) {
+  .login-wrapper{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .wrapper{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(68, 115, 167);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 1100px) {
+  .login-wrapper{
+    width: 50%;
+  }
+
+}
+
+  .btns:focus{
+    background-color:rgb(102, 143, 179) ;
+    border-radius: 2%;
+    border: rgb(135, 167, 195) .5px solid ;
+    outline: 0;
+}
+
+
+.link{
+  cursor: pointer;
+}
+ */

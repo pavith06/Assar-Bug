@@ -1,0 +1,65 @@
+<!-- <div class="container-reporthead">
+  <div class="report-maintitile">
+  <ul class="container-report-title">
+    <li class="gen-title title_style">Generated Reports</li>
+  </ul>
+ </div>
+ <div class="content-head">
+   <div class="content-container">
+    <ul class="filter-content">
+      <li>
+        <span class="form-group" >
+          <input type="text" class="form-control search-bar" placeholder="Search" (keyup)="Search($event)">
+          <mat-icon class="search">search</mat-icon>
+        </span>
+      </li>
+      <li *ngIf="checkPrivillege(appConst.PAGE_NAME.REPORTS.REPORTS_CARD.BUTTON_ACCESS.GENERATE_REPORT)">
+        <div class="row ">
+          <div class="col-md-12 position_fixed_generate">
+            <button type=" button" class="btn-style" (click)="generatepage()" >Generate Report</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+</div> -->
+
+
+
+
+
+<div class="purchase_stock_header ">
+  <div class="margin_left_right">
+    <div class="padding_top_bottom">
+      <div class="row paddin_bootom_1">
+        <!-- <div *ngIf="!checkUserIsAdmin()" class="  col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6  d-flex justify-content-start">
+          <span class="Purchase_stock">{{'reportHeader.Generated_Report'|translate}}</span>
+        </div> -->
+        <div  class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6  d-flex justify-content-start">
+          <span class="Purchase_stock">{{'reportHeader.REPORT'|translate}}</span>
+        </div>
+        <div  class=" col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6   d-flex justify-content-end">
+        </div>
+      </div>
+      <div class="row ">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12"></div>
+      </div>
+      <div class="row padding-bottom">
+        <div class="padding_top_bottom_5 col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6   d-flex justify-content-start position_relative_search">
+          <input type="text" [placeholder]="'Fliter.Search' | translate" (keyup)="Search($event)" (keyup)="handleKeyup($event)"[(ngModel)] = "searchvalue" class="input_with">
+          
+          <mat-icon *ngIf = "closeIconEnable" class="position_absolute_search icon-color" (click) = "removeSearchValue()" >close</mat-icon>
+          <img *ngIf = "!closeIconEnable" src="assets/icons/Search.svg" alt="" class="img-fulid position_absolute_search">
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6  d-flex justify-content-end mobile-justify-center">
+          <div >
+          </div>
+          <button class="purchase_stock_button" (click)="generatepage()">{{'reportHeader.Generate_Report'|translate}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

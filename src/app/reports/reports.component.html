@@ -1,0 +1,294 @@
+<div class="" *ngIf="isGenerateReportEnabled">
+  <app-reports-config></app-reports-config>
+<div class="bk_color_cbt">
+  <div class="row report_mobile" [ngStyle]="{'pointer-events': generateReportPageAccessDto?.isEdit ? 'auto' : 'none'}">
+    <div class="col-12 col-md-12 col-sm-12 col-lg-3  col-xl-3 col-xxl-3  form_side">
+      <div class=" row form_header align-content-center">
+        <span class="title_style">{{'report.Config_Report' | translate }}</span>
+      </div>
+      <div class="row fromrow ScrollBar">
+        <form [formGroup]="reportdata" #f="ngForm">
+          <mat-accordion>
+            <mat-expansion-panel class="field_dropdown" (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false" hideToggle #drop>
+              <mat-expansion-panel-header class="exp_header">
+                <mat-panel-title class="exp_title content_style">
+                  {{'report.Insurance_Comp' | translate }}
+                  <span class="astrich">*</span>
+                </mat-panel-title>
+                <mat-panel-description class="exp_descrip justify-content-end">
+                  <mat-icon *ngIf="!drop.expanded">arrow_drop_down</mat-icon>
+                  <mat-icon *ngIf="drop.expanded">arrow_drop_up</mat-icon>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <div class="row" *ngIf="!checkUserIsAdmin() || isEditable">
+                <input class="static_input content_style " matInput [readonly]="true"
+                  formControlName="insuranceCompany">
+              </div>
+              <div *ngIf="checkUserIsAdmin() && !isEditable">
+                <select class="selectCompany" formControlName="insuranceCompany" (change)="changes($event)"
+                  ngDefaultControl>
+                  <option *ngFor="let opt of InsuredCompanyNameList" [value]="opt.name"
+                    [selected]="opt.name === reportdata.controls['insuranceCompany'].value">
+                    {{opt.name}}
+                  </option>
+                </select>
+              </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel class="field_dropdown" (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false" hideToggle #drop2>
+              <mat-expansion-panel-header class="exp_header">
+                <mat-panel-title class="exp_title">
+                  {{'report.Date' | translate }} <span class="astrich">*</span>
+                </mat-panel-title>
+                <mat-panel-description class="exp_descrip justify-content-end">
+                  <mat-icon *ngIf="!drop2.expanded">arrow_drop_down</mat-icon>
+                  <mat-icon *ngIf="drop2.expanded">arrow_drop_up</mat-icon>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <div class="row">
+                <mat-select class="dateperiod_reports" placeholder="{{'report.Period' | translate }} "
+                  [(value)]="period" [(ngModel)]="period" formControlName="period" [disabled]="ready1">
+                  <mat-option class="" *ngFor="let date of dateperiod" [value]="date.value"
+                    (click)="showDate(date.value)">
+                    {{date.value}}
+                  </mat-option>
+                </mat-select>
+              </div>
+              <div class="row">
+
+                <div class="col-12 col-sm-12 col-md-6 ">
+                  <div class="d-flex position-relative justify-content-around ">
+                    <input class="form-control DateStyle  date-max-chart-cbt " [matTooltip]="fromdate ? (fromdate | date: 'dd-MM-yyyy') : ('Date.Choose a date' | translate)"
+                    matInput [matDatepicker]="picker"
+                      [(ngModel)]="fromdate" (ngModelChange)="setFromDate($event)" [disabled]="isEditableDateField"
+                      placeholder="{{'Date.Choose a date' | translate}}" [readonly]="isEditableDateField" formControlName="fromdate" [max]="fromMinDate">
+                    <mat-datepicker-toggle matSuffix [for]="picker"
+                      class="calender-toggler "></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 ">
+                  <div class="d-flex position-relative justify-content-around ">
+                    <input class="form-control DateStyle date-max-chart-cbt" [matTooltip]="todate ? (todate | date: 'dd-MM-yyyy') : ('Date.Choose a date' | translate)" matInput [matDatepicker]="picker1"
+                      [(ngModel)]="todate" (ngModelChange)="setToDate($event)" [disabled]="isEditableDateField"
+                      placeholder="{{'Date.Choose a date' | translate}}"  [max]="fromMinDate" [min]="minDate" [readonly]="isEditableDateField"
+                      formControlName="todate">
+                    <mat-datepicker-toggle matSuffix [for]="picker1"
+                      class="calender-toggler "></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                  </div>
+                </div>
+
+
+                <!-- <input id="dateFormat1" [max]="getToday()" type="date" placeholder="dd-mm-yyyy"
+                      class="date_field1" name="date"  [readonly]="ready" [(ngModel)]="fromdate" formControlName="fromdate" (change)="fromDate($event)">
+
+                 <input id="dateFormat2" type="date" [max]="getToday()" class="date_field2" placeholder="dd-mm-yyyy"
+                      name="date" [(ngModel)]="todate"  [readonly]="ready" (change)="toDate($event)"  formControlName="todate"> -->
+              </div>
+            </mat-expansion-panel>
+
+
+            <mat-expansion-panel class="field_dropdown" (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false" hideToggle #drop3>
+              <mat-expansion-panel-header class="exp_header">
+                <mat-panel-title class="exp_title">
+                  {{'report.Type' | translate }}<span class="astrich">*</span>
+                </mat-panel-title>
+                <mat-panel-description class="exp_descrip justify-content-end">
+                  <mat-icon *ngIf="!drop3.expanded">arrow_drop_down</mat-icon>
+                  <mat-icon *ngIf="drop3.expanded">arrow_drop_up</mat-icon>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <div class="row">
+                <ul class="type_select">
+                  <!-- <li *ngFor="let data of type">
+                    <mat-checkbox (change)="claim($event,data.name)" [checked]="data.check" [(ngModel)]="data.check"> {{data.name}}</mat-checkbox> -->
+                  <!-- </li> -->
+
+                  <mat-radio-group *ngFor="let ele of type">
+                    <mat-radio-button style="color:Red" value="{{ele.name}}" [checked]=ele.check
+                      (change)="reportType(ele.name)" ngDefaultControl
+                      formControlName="reportType">{{'USER_ROLE_MANAGE_PVL.'+ele.name | translate}}</mat-radio-button>
+                  </mat-radio-group>
+
+                </ul>
+              </div>
+            </mat-expansion-panel>
+
+
+            <mat-expansion-panel class="field_dropdown" (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false" hideToggle #drop4>
+              <mat-expansion-panel-header class="exp_header">
+                <mat-panel-title class="exp_title">
+                  {{'report.Select_Column' | translate }}
+                </mat-panel-title>
+                <mat-panel-description class="exp_descrip justify-content-end">
+                  <mat-icon *ngIf="!drop4.expanded">arrow_drop_down</mat-icon>
+                  <mat-icon *ngIf="drop4.expanded">arrow_drop_up</mat-icon>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+
+              <div class="row MultipleSelectInputStyle">
+                <mat-chip-grid #chipGridColumn aria-label="Fruit selection" >
+                  <mat-chip-row *ngFor="let element of ColumnNameList" (removed)="remove(element)">
+                    <div class="d-flex align-items-center justify-content-center" [matTooltip]="'Reports_Dropdown.'+element | translate">
+                    <div class="reports_width_chart">{{"Reports_Dropdown."+element | translate}}</div>
+                    <button matChipRemove [attr.aria-label]="'remove ' + element">
+                      <mat-icon>cancel</mat-icon>
+                 
+                    </button>
+                    </div>
+                  </mat-chip-row>
+                </mat-chip-grid>
+                <input class="MultiSelectInput" [matChipInputFor]="chipGridColumn" [matAutocomplete]="autoColumn"
+                  [matChipInputSeparatorKeyCodes]="separatorKeysCodes" (keyup)="searchOptionForCompanyList($event)"
+                  (click)="searchOptionForCompanyList($event)">
+                <mat-autocomplete #autoColumn="matAutocomplete" (optionSelected)="selectedColumn($event)"
+                  ngDefaultControl formControlName="selectedColumn" [displayWith]="displayFn">
+                  <mat-option *ngFor="let name of ColumnListCopy;let i=index;" [value]="i">
+                    {{"Reports_Dropdown."+name | translate}}
+                  </mat-option>
+                </mat-autocomplete>
+              </div>
+            </mat-expansion-panel>
+
+
+            <mat-expansion-panel class="field_dropdown" (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false" hideToggle #drop5>
+              <mat-expansion-panel-header class="exp_header">
+                <mat-panel-title class="exp_title">
+                  {{'report.Status' | translate }}<span class="astrich">*</span>
+                </mat-panel-title>
+                <mat-panel-description class="exp_descrip justify-content-end">
+                  <mat-icon *ngIf="!drop5.expanded">arrow_drop_down</mat-icon>
+                  <mat-icon *ngIf="drop5.expanded">arrow_drop_up</mat-icon>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <div class="row MultipleSelectInputStyles_reports">
+
+                <mat-chip-listbox aria-label="Fish selection" multiple="true" *ngIf="idPurchase">
+                  <mat-chip-option *ngFor="let option of purchaseStatus" [selected]="isSelected(option.name)"
+                    (click)="toggleSelection(option.name)">{{ "Reports_Status."+option.name | translate }}</mat-chip-option>
+                </mat-chip-listbox>
+
+
+                <mat-chip-listbox aria-label="Fish selection" multiple="true" *ngIf="!idPurchase">
+                  <mat-chip-option *ngFor="let option of digitalPaperStatus" [selected]="isSelected(option.name)"
+                    (click)="toggleSelection(option.name)">{{ "Reports_Status."+option.name | translate}} </mat-chip-option>
+                </mat-chip-listbox>
+              </div>
+            </mat-expansion-panel>
+
+            <mat-expansion-panel class="field_dropdown" (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false" hideToggle #drop6>
+              <mat-expansion-panel-header class="exp_header">
+                <mat-panel-title class="exp_title">
+                  {{'report.File_type' | translate }}<span class="astrich">*</span>
+                </mat-panel-title>
+                <mat-panel-description class="exp_descrip justify-content-end">
+                  <mat-icon *ngIf="!drop6.expanded">arrow_drop_down</mat-icon>
+                  <mat-icon *ngIf="drop6.expanded">arrow_drop_up</mat-icon>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <div style="padding:0% 3%;">
+                <mat-radio-group *ngFor="let ele of fileType">
+                  <mat-radio-button style="color:Red" value="{{ele.name}}" [checked]=ele.check
+                    (click)="SelectFileType(ele.name)" ngDefaultControl
+                    formControlName="fileType">{{'report.'+ele.name | translate}}</mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </mat-expansion-panel>
+
+
+            <mat-expansion-panel class="field_dropdown" (opened)="panelOpenState = true"
+              (closed)="panelOpenState = false" hideToggle #drop7>
+              <mat-expansion-panel-header class="exp_header">
+                <mat-panel-title class="exp_title">
+                  {{'report.Report_Name' | translate }}<span class="astrich">*</span>
+                </mat-panel-title>
+                <mat-panel-description class="exp_descrip justify-content-end">
+                  <mat-icon *ngIf="!drop7.expanded">arrow_drop_down</mat-icon>
+                  <mat-icon *ngIf="drop7.expanded">arrow_drop_up</mat-icon>
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <div class="row static_input1">
+                <input type="text" name="text" maxlength="100" formControlName="reportName">
+              </div>
+            </mat-expansion-panel>
+          </mat-accordion>
+        </form>
+
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="bottom_btns a150btn">
+          <button type="submit" *ngIf=" previewReportPageAccessDto?.isView" (click)="previewReport(); f.onSubmit($event)"
+            class="btn_primary1 150btn1">{{'report.Preview_report' | translate }}</button>
+
+
+          <button type="button" [disabled]='isReportGenerated' *ngIf="generateReportPageAccessDto?.isView"  (click)="generateReport()"
+            class="btn_primary2 150btn2" >{{'report.Generate_report' | translate }}</button>
+      </div>
+      </div>
+
+
+    </div>
+    <div class=" col-12 col-md-12 col-sm-12 col-lg-9 col-xl-9 col-xxl-9 table_side">
+
+      <div class="table_header">
+        <mat-table class="table" matSort [dataSource]="dataSource" matSort class="mat-elevation-z8" class="scroll_bar">
+
+          <div  *ngIf="idPurchase">
+            <ng-container [matColumnDef]="col" *ngFor="let col of  displayedColumns;let i= index">
+              <mat-header-cell class="header-cell cursor-icon" *matHeaderCellDef (click)="shortingmethod(col)"> {{"REPORTS_TABLE_PURCHASE_STOCK."+col |translate}}&nbsp;
+                <img src="/assets/purchase_stock/arrow.svg" alt=""
+                  [ngStyle]="Purchase_ID?{'transform': 'rotateZ(180deg)'} : {'transform': 'rotateZ(0deg)'}">
+              </mat-header-cell>
+              <mat-cell *matCellDef="let element" > <span class="cellsize">{{element[col]}}</span>  </mat-cell>
+            </ng-container>
+          </div>
+
+          <div  *ngIf="!idPurchase">
+            <ng-container [matColumnDef]="col" *ngFor="let col of  displayedColumns;let i= index">
+              <mat-header-cell class="header-cell cursor-icon" *matHeaderCellDef (click)="shortingmethod(col)"> {{"REPORTS_TABLE_DIGITAL_PAPER."+col |translate}}&nbsp;
+                <img src="/assets/purchase_stock/arrow.svg" alt=""
+                  [ngStyle]="Purchase_ID?{'transform': 'rotateZ(180deg)'} : {'transform': 'rotateZ(0deg)'}">
+              </mat-header-cell>
+              <mat-cell *matCellDef="let element" > <span class="cellsize">{{element[col]}}</span>  </mat-cell>
+            </ng-container>
+          </div>
+
+          <mat-header-row class="header" *matHeaderRowDef="displayedColumns;sticky:true"></mat-header-row>
+          <mat-row mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+
+        <div *ngIf="dataNotFound" style="position: absolute;top: 50%;left: 56%;">
+          <div style="display: inline-grid;text-align: center;">
+            <img src="assets/no-data-found-icon.svg">
+            <small
+              style="font-weight: 400;font-size: larger;padding-top: 2%;">{{'report_card.No_Data_Found'|translate}}</small>
+          </div>
+        </div>
+        <div class = "pageIndex">
+        <mat-paginator *ngIf="tableopenstate" #paginator [pageSizeOptions]="[10, 20,30,40,50]" [length]="totalLength" [pageIndex]="pageIndex-1" 
+        (page)="changePage($event)"showFirstLastButtons class="positionFixed"></mat-paginator>
+
+          <div class="go_to_page" *ngIf="tableopenstate">
+            <span style="font-size: 13.5px;color: black;">{{'report_card.page' | translate}}</span>&nbsp;
+            <input type="number" class="pagenationinput"  [(ngModel)]="pageIndex"  (ngModelChange)="pageindex()" (keydown)="onKeyDown($event)"
+             [min]="1" [max] = "totalLength" appNumber onKeyPress="if(this.value.length == 5) return false;"
+               oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null" >
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </div>
+</div>
+</div>

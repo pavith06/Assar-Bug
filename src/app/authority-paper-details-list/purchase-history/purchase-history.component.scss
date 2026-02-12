@@ -1,0 +1,156 @@
+.view_paper {
+    align-items: center;
+
+    gap: 10px;
+
+    height: 33px;
+    background: rgba(28,39,44,1);
+    border-radius: 2px;
+    font-family: 'Inter' !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    white-space: nowrap;
+
+}
+.ps_2{
+  position: relative;
+    top: 4px;
+}
+.margin_top
+{
+  margin: auto 1%;
+}
+.h_w{
+  height: 26px !important;
+    width: 26px !important;
+    cursor: pointer;
+}
+.margin_left_right_paper_details_header{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+::ng-deep.mat-mdc-text-field-wrapper {
+    height: 25px !important;
+    // width: 65px !important;
+    align-items: center !important;
+}
+:host::ng-deep.mat-mdc-paginator-page-size-label {
+  margin: 8px 4px !important;
+  font-size:13.5px;
+}
+
+:host::ng-deep.mdc-notched-outline {
+display: flex;
+position: absolute;
+top: 7px;
+right: 0;
+left: 0;
+box-sizing: border-box;
+width: 100%;
+max-width: 100%;
+height: 66%;
+text-align: left;
+pointer-events: none;
+}
+
+:host::ng-deep.mat-mdc-paginator-range-label {
+margin: 0 32px 0 24px;
+font-size: 13.5px;
+}
+
+
+:host::ng-deep.mat-mdc-paginator-page-size-select {
+margin: 0 4px;
+width: 84px;
+height: 38px;
+}
+// @media screen and (max-width:767px){
+//   .purchase_stock_button {
+//      margin-top: 0px !important;
+// }
+
+.padding-bottom{
+  padding-bottom: 1%;
+}
+// .card_img , .list_img,.download {
+//     width: 32px;
+// height: 32px;
+
+// }
+.arrow{
+    height: 15px;
+    margin: auto 1%;
+}
+.filter{
+    justify-content: space-between;
+align-items: center;
+padding: 0px 12px;
+gap: 10px;
+
+// width: 560px;
+height: 33px;
+
+background: #FFFFFF;
+
+border: 1px solid #DADADA;
+border-radius: 2px;
+
+}
+.gap{
+    height: 10px;
+}
+.padding_input{
+    padding: 0px 0px 0px 4.5%;
+}
+.padding_left{
+    padding-left: 0px !important;
+}
+.bg_color{
+    background: #F7F7F7;
+    height: 100% !important;
+    padding-bottom: 100%;
+}
+.downloadpaper{
+    position: absolute;
+    right: 50%;
+    top: 107%;
+}
+.purchase_main{
+
+}
+.padding_top_1{
+  padding-top: 1%;
+}
+
+@media only screen and (max-width: 840px)   {
+
+    .positionfixed {
+      display: none;
+  }
+  }
+  .header_height{
+    margin-right: 3%;
+  }
+  .cursor{
+    cursor: pointer;
+  }
+  @media only screen and (max-width: 600px)  {
+.mobilejustify{
+  justify-content: start !important;
+}
+    .margin_left_right_paper_details_header{
+      margin-left: 3%;
+      margin-right: 3%;
+  }
+  .mobilepaddingbottom {
+    padding-bottom: 1%;
+}
+.view_paper {
+
+  font-size: 11.5px;}
+  }

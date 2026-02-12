@@ -1,0 +1,8 @@
+<div>
+  <ngx-ui-loader text="in Progress..."></ngx-ui-loader>
+<app-language></app-language>
+  <div *ngIf="selectroute">
+    <app-header (showClaimEvent)="showReportLoss($event)"></app-header>
+  </div>
+  <router-outlet></router-outlet>
+</div>

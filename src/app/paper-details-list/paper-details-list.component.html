@@ -1,0 +1,166 @@
+<div class="bg_color">
+    <div class="">
+        <div class="margin_left_right">
+            <div class="row  pb-3">
+
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-start">
+                    <p class="font_size_16">{{'PaperDetails.Paper_Details' |translate}}</p>
+                </div>
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end ">
+
+<button type='button' class="bordernone" [disabled]="isButtonEnable">
+                    <img src="/assets/paper_details/Print.svg" *ngIf="printAccessData?.isView" alt="" class="card_img img-fluid"  [ngStyle]="{'cursor':isButtonEnable?'pointer':'not-allowed'}" (click)="printPreview()"></button>&nbsp; &nbsp;
+
+
+<button type='button' class="bordernone" [disabled]="isButtonEnable">
+                    <img src="/assets/paper_details/share.svg" alt="" class="card_img img-fluid" [ngStyle]="{'cursor':isButtonEnable?'pointer':'not-allowed'}" (click)="email()">
+                    </button>&nbsp; &nbsp;
+
+                    <button type='button' class="bordernone" [disabled]="isButtonEnable">
+                    <img src="/assets/paper_details/Download.svg" *ngIf="paperListAccessData?.isDownload" alt="" [ngStyle]="{'cursor':isButtonEnable?'pointer':'not-allowed'}" class="card_img img-fluid cursor" (click)="paperDetailsDownload()">
+                    </button>
+
+                    <!-- <div *ngIf="downloadclose">
+                        <app-common-download (click)="openDrowpown()" (closedownload)="closedowload($event)"
+                        [columnContentFromParent]="columnList" (paperDetails)="columnFromParent($event)"></app-common-download>
+                    </div> -->
+
+                </div>
+            </div>
+            <div class="row  pb-3">
+                <div class="col-12 col-sm-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-start padding_bottom_2">
+                    <app-search-bar  [filterObjectFromParent]="filterObjectArray"
+                    (emitFilterValue)="emitFilterValue($event)" [searchdisable]="searchdisable" (searchDataForInput)="searchItem($event)" ></app-search-bar>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end padding_bottom_2 mobile-justify-content-start ">
+                    <div class="d-flex justify-content-end gap-4">
+
+                            <button class="Bulk_Revoke font_size_13_5_color cursor " (click)="  openDialog()">{{'PaperDetails.Bulk_Revoke' |translate}}</button>
+
+                            <button class="Generate_Paper font_size_13_5_color cursor " (click)="redirect()">{{'PaperDetails.Generate_Paper' |translate}}</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="header">
+    <div class="margin_left_right_table">
+        <section class="zoom_150" *ngIf="paperListAccessData?.isView">
+            <section class="ScrollBarStyle">
+                <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+                    <ng-container matColumnDef="Check Box">
+                        <th mat-header-cell  class="hearderStyle " *matHeaderCellDef>
+                            <input type="checkbox" class="height_width_th cursor" [(ngModel)]="globalCheckboxState" (click)="toggleGlobalCheckBox()">
+                        </th>
+                        <td mat-cell *matCellDef="let element index as i">
+                          <input type="checkbox" class="height_width_th cursor" [checked]="checkboxStateService.getGlobalCheckboxState() || checkboxStateService.getCheckboxState(tableId, element.digitalPaperId)" (change)="toggleCheckBox(element);sendObject(element,$event)">
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Digital Paper No">
+                        <th mat-header-cell  class="hearderStyle  cursor-icon" *matHeaderCellDef  >
+                          <span class="cursor" (click)="sortingmethod('Digital Paper No')">
+                            {{'Paper_Details_table_list.digital_paper_no'| translate}} &nbsp; <img
+                                src="/assets/purchase_stock/arrow.svg" alt=""  [ngStyle]="Digital_Paper_No?{'transform': 'rotateZ(180deg)'} : {'transform': 'rotateZ(0deg)'}">
+                              </span></th>
+                        <td mat-cell *matCellDef="let element">{{element.pdDigiltaPaperId}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Policy No">
+                        <th mat-header-cell class="hearderStyle  cursor-icon" *matHeaderCellDef  >
+                          <span class="cursor" (click)="sortingmethod('Policy No')">
+                            {{'Paper_Details_table_list.policy_nO'| translate}} &nbsp; <img
+                                src="/assets/purchase_stock/arrow.svg" alt="" [ngStyle]="Policy_No?{'transform': 'rotateZ(180deg)'} : {'transform': 'rotateZ(0deg)'}">
+                              </span></th>
+                        <td mat-cell *matCellDef="let element">{{element.pdPolicyNumber}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Insured Name">
+                        <th mat-header-cell  class="hearderStyle  cursor-icon" *matHeaderCellDef  >
+                          <span class="cursor" (click)="sortingmethod('Insured Name')">
+                            {{'Paper_Details_table_list.insured_name'| translate}} &nbsp; <img
+                                src="/assets/purchase_stock/arrow.svg" alt="" [ngStyle]="Insured_Name?{'transform': 'rotateZ(180deg)'} : {'transform': 'rotateZ(0deg)'}">
+                              </span></th>
+                        <td mat-cell *matCellDef="let element">{{element.pdInsuredName | titlecase}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Registration No">
+                        <th mat-header-cell class="hearderStyle  cursor-icon"  *matHeaderCellDef >
+                          <span class="cursor" (click)="sortingmethod('Registration No')">
+                            {{'Paper_Details_table_list.registration_no'| translate}} &nbsp; <img
+                                src="/assets/purchase_stock/arrow.svg" alt="" [ngStyle]="Registration_NO?{'transform': 'rotateZ(180deg)'} : {'transform': 'rotateZ(0deg)'}">
+                              </span></th>
+                        <td mat-cell *matCellDef="let element">{{element.vdRegistrationNumber}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Effective From">
+                        <th mat-header-cell class="hearderStyle  cursor-icon" *matHeaderCellDef  >
+                          <span class="cursor" (click)="sortingmethod('Effective From')">
+                            {{'Paper_Details_table_list.effective_from'| translate}} &nbsp; <img
+                                src="/assets/purchase_stock/arrow.svg" alt="" [ngStyle]="Effective_From?{'transform': 'rotateZ(180deg)'} : {'transform': 'rotateZ(0deg)'}">
+                              </span></th>
+                        <td mat-cell *matCellDef="let element">{{element.pdEffectiveFrom  | date: 'dd/MM/yyyy'}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Effective to">
+                        <th mat-header-cell class="hearderStyle  cursor-icon" *matHeaderCellDef >
+                          <span class="cursor" (click)="sortingmethod('Effective to')">
+                            {{'Paper_Details_table_list.effective_to'| translate}} &nbsp; <img
+                                src="/assets/purchase_stock/arrow.svg" alt="" [ngStyle]="Effective_to?{'transform': 'rotateZ(180deg)'} : {'transform': 'rotateZ(0deg)'}">
+                              </span></th>
+                        <td mat-cell *matCellDef="let element">{{element.pdExpireDate  | date: 'dd/MM/yyyy'}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Status">
+                        <th mat-header-cell class="hearderStyle  cursor-icon" *matHeaderCellDef  >
+                          <span class="cursor" (click)="sortingmethod('Status')">
+                            {{'Paper_Details_table_list.status'| translate}} &nbsp; <img
+                                src="/assets/purchase_stock/arrow.svg" alt="" [ngStyle]="Status?{'transform': 'rotateZ(180deg)'} : {'transform': 'rotateZ(0deg)'}">
+                              </span></th>
+                        <td mat-cell *matCellDef="let element">
+                            <div [class.Active]="'Active'===element.status" [class.Revoked]="'Revoked'===element.status"
+                                [class.Expired]="'Expired'===element.status">{{element.status | titlecase}}</div>
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="View">
+                        <th mat-header-cell class="hearderStyle  " *matHeaderCellDef>
+                            {{'Paper_Details_table_list.view'| translate}}</th>
+                        <td mat-cell *matCellDef="let element">
+                            <img src="/assets/purchase_stock/icon.svg" alt="" class="cursor" (click)="openViewPopup(element)">
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="Revoke">
+                        <th mat-header-cell class="hearderStyle " *matHeaderCellDef>
+                            {{'Paper_Details_table_list.revoke'| translate}} </th>
+                        <td mat-cell *matCellDef="let element" class="underline cursor" [ngClass] ="{'active-sts' : 'Active'!==element.status}" (click)="openViewRevokePopup(element)">Revoke</td>
+
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                </table>
+                <div *ngIf="dataNotFound" style="position: absolute;top: 50%;left: 46%;">
+                    <div style="display: inline-grid;text-align: center;">
+                      <img src="assets/no-data-found-icon.svg" >
+                      <small style="font-weight: 400;font-size: larger;padding-top: 2%;">{{'report_card.No_Data_Found' | translate}}</small>
+                    </div>
+                  </div>
+            </section>
+            <div style="position:relative;">
+
+                <mat-paginator #paginator [pageSizeOptions]="[10, 20,30,40,50]" [pageIndex]="pageIndex-1" showFirstLastButtons
+                    [length]="totalLength" (page)="changePage($event);onpagebackward()"
+                    class="pagnation_height">
+                </mat-paginator>
+
+                <div class="positionfixed">
+                    <span class="font_size_13_5">{{'Pagination.Go_to_page'| translate}}</span>&nbsp;
+                    <input type="number" class="pagenationinput" [(ngModel)]="pageIndex" (keydown)="onKeyDown($event)"
+                     (ngModelChange)="pageindex();onpagebackward()"onKeyPress="if(this.value.length == 10) return false;"
+                        min="1" [max]="maximum" oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+</div>

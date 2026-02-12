@@ -1,0 +1,57 @@
+.popup-header {
+  background-color: #E7EDEE;
+  padding: 13px 24px 13px 24px;
+}
+.width_select{
+  width: 100%;
+}
+.cancel{
+  border: 1px solid rgba(55, 75, 81, 1);
+  border-radius: 2px;
+  padding: 5%;
+  background: white;
+  color: rgba(55, 75, 81, 1);
+}
+.Add_user_type{
+  border-radius: 2px;
+  padding: 5%;
+background: rgba(55, 75, 81, 1);
+color:  white;
+border: 1px solid rgba(55, 75, 81, 1);
+}
+.overflow_hidden{
+  overflow-x: hidden;
+}
+:host::ng-deep .mat-mdc-text-field-wrapper {
+  width: 100%;
+  border: 1px solid !important;
+  height: 46px !important;
+  border-radius: 2px !important;
+}
+:host::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: white !important;
+ }
+.padding_5{
+  padding: 5%;
+}
+
+.handSymbol{
+  cursor: pointer;
+}
+.padding_bottom_3{
+  padding-bottom: 3%;
+}
+.font_style{
+  font-family:  Inter;
+}
+.font_size_15_5{
+  font-size: 15.5px;
+  font-weight: 400;
+}
+.font_size_13_5{
+  font-size: 13.5px;
+  font-weight: 400;
+}
+.blue_color{
+  color: rgba(104, 143, 153, 1);
+}

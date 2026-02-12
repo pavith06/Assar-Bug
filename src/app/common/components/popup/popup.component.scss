@@ -1,0 +1,31 @@
+.popup-message{
+    padding:4%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+}
+.btns{
+    padding: 5% 0% 0% 2%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.btn{
+margin-right: 5%;
+width:25%
+
+}
+
+.black-btn-bg{
+    background-color: #374B51;
+    border-color: #374B51;
+    color: white;
+  }
+  .btn-font {
+	font-size: smaller;
+}
+.grey-btn-bg{
+    background-color: #D7DBDC;
+    border-color: #D7DBDC;
+    color: black;
+  }

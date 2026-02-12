@@ -1,0 +1,186 @@
+<!-- header -->
+<div class="purchase_stock_header">
+  <div class="margin_left_right">
+    <div class="row ">
+      <div class="col-md-12"></div>
+    </div>
+    <div class="row pb-3">
+      <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6  d-flex justify-content-start">
+        <span class="Purchase_stock">{{'PurchaseStock.Purchase_Stock'| translate}}</span>
+      </div>
+      <div class=" col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6   d-flex justify-content-end  ">
+        <img class="cursor" *ngIf="purchaseListAccessData?.isDownload" src="assets/purchase_stock/Download.svg" alt=""
+         [ngStyle]="{'cursor':isDownloadDisable?'not-allowed':'pointer'}" (click)="download()">
+      </div>
+    </div>
+    <div class="row pb-3">
+      <div
+        class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6   d-flex justify-content-start padding_bottom_2 ">
+        <app-search-bar [filterObjectFromParent]="filterObjectArray" (emitFilterValue)="emitFilterValue($event)"
+          [searchdisable]="searchdisable" (searchDataForInput)="searchItem($event)" ></app-search-bar>
+      </div>
+      <div
+        class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6  d-flex justify-content-end mobile-justify-content-start"
+        *ngIf="newPurchaseAccessData?.isView">
+        <button class="purchase_stock_button" (click)="openDialog()">{{'PurchaseStock.Purchase_Stock'|
+          translate}}</button>
+      </div>
+    </div>
+    <!-- <div *ngIf="downloadclose">
+
+            <app-common-download (click)="openDrowpown()" (closedownload)="closedowload($event)"
+                [columnContentFromParent]="columnContent" (closedownload)="closedowload($event)"></app-common-download>
+
+
+        </div> -->
+  </div>
+</div>
+<!-- header -->
+
+
+<div class="bg_color_main" *ngIf="purchaseListAccessData?.isView">
+  <div class="margin_left_right_table">
+
+    <section class="ScrollBarStyle">
+      <table mat-table [dataSource]="dataSource">
+        <ng-container matColumnDef="Purchase ID">
+          <th mat-header-cell class="hearderStyle  cursor-icon" *matHeaderCellDef>
+            <span class="cursor" (click)="shortingmethod('Purchase ID')">
+              {{'Purchase_stock_table.purchasId'| translate }}&nbsp; <img src="/assets/purchase_stock/arrow.svg" alt=""
+                [ngStyle]="Purchase_ID?{'transform': 'rotateZ(180deg)'} : {'transform': 'rotateZ(0deg)'}">
+            </span>
+          </th>
+          <td mat-cell *matCellDef="let element"> {{element.purchaseId}} </td>
+
+        </ng-container>
+
+        <ng-container matColumnDef="Transaction ID">
+          <th mat-header-cell class="hearderStyle  cursor-icon" *matHeaderCellDef>
+            <span class="cursor" (click)="shortingmethod('Transaction ID')">
+              {{'Purchase_stock_table.transcationId'| translate}} &nbsp; <img src="/assets/purchase_stock/arrow.svg"
+                alt="" [ngStyle]="Transaction_ID?{'transform': 'rotateZ(180deg)'} : {'transform': 'rotateZ(0deg)'}">
+            </span>
+          </th>
+          <td mat-cell *matCellDef="let element"> {{element.transactionId}} </td>
+
+        </ng-container>
+
+        <ng-container matColumnDef="Date of Purchase">
+          <th mat-header-cell class="hearderStyle  cursor-icon" *matHeaderCellDef>
+            <span class="cursor" (click)="shortingmethod('Date of Purchase')">
+              {{"Purchase_stock_table.dateOfPurchase"| translate}} &nbsp; <img src="/assets/purchase_stock/arrow.svg"
+                alt="" [ngStyle]="Date_of_Purchase?{'transform': 'rotateZ(180deg)'} : {'transform': 'rotateZ(0deg)'}">
+            </span>
+          </th>
+          <!-- {{'userRoleManag.Date' | translate}} -->
+          <td mat-cell *matCellDef="let element" maxlength="10"> {{element.purchaseDate | date: 'dd/MM/yyyy'}} </td> //|
+          date:
+          'dd-MM-yyyy'
+        </ng-container>
+        <ng-container matColumnDef="No.of Papers">
+          <th mat-header-cell class="hearderStyle  cursor-icon" *matHeaderCellDef>
+            <span class="cursor" (click)="shortingmethod('No.of Papers')">
+              {{"Purchase_stock_table.noOfPapers"| translate}} &nbsp; <img src="/assets/purchase_stock/arrow.svg" alt=""
+                [ngStyle]="NO_of_Papers?{'transform': 'rotateZ(180deg)'} : {'transform': 'rotateZ(0deg)'}">
+            </span>
+          </th>
+          <!-- {{'userRoleManag.Date' | translate}} -->
+          <td mat-cell *matCellDef="let element" maxlength="10"> {{element.stockCount | number}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="Purchase Amount">
+          <th mat-header-cell class="hearderStyle  cursor-icon" *matHeaderCellDef>
+            <span class="cursor" (click)="shortingmethod('Purchase Amount')">
+              {{'Purchase_stock_table.purchaseAmount'| translate}} &nbsp; <img src="/assets/purchase_stock/arrow.svg"
+                alt="" [ngStyle]="Purchase_Amount?{'transform': 'rotateZ(180deg)'} : {'transform': 'rotateZ(0deg)'}">
+            </span>
+          </th>
+          <td mat-cell *matCellDef="let element">{{element.currencyType}} {{element.purchaseAmount | number}} </td>
+
+        </ng-container>
+
+        <ng-container matColumnDef="Payment Method">
+          <th mat-header-cell class="hearderStyle  text-center cursor-icon" *matHeaderCellDef>
+            <span class="cursor" (click)="shortingmethod('Payment Method')">
+              {{'Purchase_stock_table.paymentMethod'| translate }} &nbsp;<img src="/assets/purchase_stock/arrow.svg"
+                alt="" [ngStyle]="Payment_Method?{'transform': 'rotateZ(180deg)'} : {'transform': 'rotateZ(0deg)'}">
+            </span>
+          </th>
+          <td mat-cell *matCellDef="let element" class="text-center">
+            {{element.paymentMethod | titlecase}}
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Payment Status">
+          <th mat-header-cell class=" hearderStyle text-center cursor-icon" style="text-align: center;"
+            *matHeaderCellDef>
+            <span class="cursor" (click)="shortingmethod('Payment Status')">
+              {{'Purchase_stock_table.paymentStatus'|
+              translate }} &nbsp; <img src="/assets/purchase_stock/arrow.svg" alt=""
+                [ngStyle]="Payment_Status?{'transform': 'rotateZ(180deg)'} : {'transform': 'rotateZ(0deg)'}">
+            </span>
+          </th>
+          <td mat-cell *matCellDef="let element" class="text-center">
+            <!--
+                        <div [class.Approved]="'Approved'===element.paymentStatus"
+                            [class.Submitted]="'Submitted'===element.paymentStatus"
+                            [class.Failed]="'Failed'===element.paymentStatus"
+                            [class.Rejected]="'Rejected'===element.paymentStatus">{{element.paymentStatus}}</div> -->
+
+
+            <div [class.Success]="'SUCCESS'===element.paymentStatus"
+              [class.Submitted]="'SUBMITTED'===element.paymentStatus" [class.Failed]="'FAILED'===element.paymentStatus"
+              [class.Rejected]="'REJECTED'===element.paymentStatus">{{element.paymentStatus | titlecase}}</div>
+
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="View">
+          <th mat-header-cell class=" hearderStyle text-center" *matHeaderCellDef>
+            {{'Purchase_stock_table.view'| translate }} </th>
+          <td mat-cell *matCellDef="let element" class="text-center">
+            <img class="cursor hoverimg" src="/assets/purchase_stock/icon.svg" alt="" (click)="openViewPopup(element)">
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Repeat">
+          <th mat-header-cell class=" hearderStyle text-center" *matHeaderCellDef>
+            {{'Purchase_stock_table.repeat' | translate}}</th>
+          <td mat-cell *matCellDef="let element" class="text-center cursor">
+            <div style="text-decoration: underline;" (click)="openDialogs(element)"><button
+                [class.hide]="'REJECTED'===element.paymentStatus" [disabled]=" isDissabelFoStatus(element)"
+                class="repeat_disabled"> Repeat</button></div>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+      </table>
+      <div *ngIf="dataNotFound" style="position: absolute;top: 40%;left: 46%;">
+        <div style="display: inline-grid;text-align: center;">
+          <img src="assets/no-data-found-icon.svg">
+          <small style="font-weight: 400;font-size:14.5;padding-top: 2%;">{{'report_card.No_Data_Found' | translate}}</small>
+        </div>
+      </div>
+    </section>
+    <div style="position:relative;">
+      <mat-paginator [pageSizeOptions]="[10, 20,30,40,50]" [pageIndex]="pageIndex-1" showFirstLastButtons
+        [length]="totalLength" (page)="changePage($event);onpagebackward()"
+        class="pagnation_height"
+        >
+      </mat-paginator>
+
+      <div class="positionfixed">
+        <span class="font_size_13_5">{{'Pagination.Go_to_page'| translate}}</span>&nbsp;
+        <input type="number" class="pagenationinput" [(ngModel)]="pageIndex" (keydown)="onKeyDown($event)"
+          (ngModelChange)="pageindex();onpagebackward()" min="1" [max]="maximum" onKeyPress="if(this.value.length == 10) return false;" 
+          oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
+      </div>
+    </div>
+
+
+
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="bg_color padding_top_1">
+
+    <div class="margin_left_right_paper_details_header" *ngIf="viewHistoryPageAccessDto?.isView">
+        <div class="containers_heading">
+            <div class="row purchase_main">
+                <div
+                    class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4   d-flex justify-content-start mobilepaddingbottom">
+                    <div *ngIf="cardcardview" class="margin_top">
+                      <img src="/assets/authority_paper_details/arrow.svg" alt="" class="arrow cursor"
+                      (click)="onBack()">
+                      </div>
+                      <div *ngIf="cardlistview" class="margin_top">
+                        <img src="/assets/authority_paper_details/arrow.svg" alt="" class="arrow cursor"
+                        (click)="backTocard()">
+                      </div>
+                 &nbsp;
+                    <app-search-bar [filterObjectFromParent]="filterObject"
+                        (emitFilterValue)="emitFilterValue($event)" (keyup)="search($event)" [searchdisable]="searchdisable" (searchDataForInput)="searchItem($event)"></app-search-bar>
+                </div>
+                <div class=" col-12 col-sm-6 col-md-6 col-lg-8 col-xl-8 col-xxl-8 d-flex justify-content-end mobilepaddingbottom mobilejustify">
+                    <div class="d-flex align-items-center gap-3" style="position: relative;">
+
+                            <img src="/assets/authority_paper_details/list.svg"  alt="" class="card_img cursor h_w"
+                                (click)="cardviewopen()" *ngIf="cardcardview" >
+
+                            <img src="/assets/authority_paper_details/card.svg" alt="" class="list_img cursor h_w"
+                                (click)="listViewOpen()" *ngIf="cardlistview">
+                            <img src="/assets/authority_paper_details/download.svg" *ngIf="isShowDownload && purchaseHistoryListPageAccessDto?.isDownload" alt="" class="cursor download cursor h_w"
+                                (click)="open()" [ngStyle]="{'cursor':isDownloadDisable?'not-allowed':'pointer'}">
+
+                        <div >
+                            <button *ngIf="viewHistoryPageAccessDto?.isView" class="view_paper cursor" (click)="transactionview()">{{'PurchaseHistoryCard.View_Transaction'|translate}}</button>
+                        </div>
+                        <!-- <div *ngIf="showDownload" class="downloadpaper">
+                            <app-common-download [columnContentFromParent]="columnContent"
+                                (closedownload)="closedownload($event)"
+                                (choosedColumnValue)="passValueParentToChild($event)"></app-common-download>
+                        </div> -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div>
+        <div *ngIf="cardlistview">
+            <app-purchase-history-list (emitObject)="getFilterObject($event)"></app-purchase-history-list>
+        </div>
+    </div>
+    <div *ngIf="transaction">
+        <app-transactions-list (emitObject)="getFilterObject($event)" [filterFromSearch]="filterVoObject"
+            [notificationId]="notificationStockId"></app-transactions-list>
+    </div> -->
+    <router-outlet></router-outlet>
+
+</div>

@@ -1,0 +1,430 @@
+$backround_color: #688F99;
+$font_family_inter: 'Inter';
+
+// header open
+.bg_color{
+  background: $backround_color;
+}
+
+.margin_left_right {
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-top: 1%;
+  position: relative;
+}
+
+.Bulk_Revoke {
+
+  border: 1px solid #FFFFFF;
+  border-radius: 2px;
+  align-items: center;
+
+
+  background: transparent;
+}
+.font_size_16 {
+  font-family: 'Inter' !important;
+  font-size: 16.5px;
+  align-items: center;
+  color: #FFFFFF;
+}
+.Generate_Paper {
+
+  background: rgb(28, 39, 44);
+  border-radius: 2px;
+  align-items: center;
+
+
+  white-space: nowrap;
+}
+// header close
+
+// table
+.underline {
+  text-decoration: underline;
+  color: #444444 !important;
+
+}
+
+.header {
+  background: #F7F7F7 !important;
+  height: 100%;
+  padding-bottom: 100%;
+}
+
+//table Containers open
+.margin_left_right_table {
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-top: 1.5%;
+
+}
+
+//table Containers close
+// table header and pagination open
+.mat-mdc-table .mdc-data-table__header-row {
+  height: 6.9vh;
+
+}
+
+.mat-mdc-table .mdc-data-table__row {
+  height: 5.7vh;
+}
+
+::ng-deep {
+  .mat-mdc-paginator-container {
+    justify-content: space-between !important;
+    background-color: #e7edee !important;
+    height: 6.7vh !important;
+    align-items: center !important;
+    flex-wrap: revert !important;
+    min-height: fit-content !important;
+  }
+}
+
+th {
+  white-space: nowrap;
+  font-size: 14.5px;
+  font-weight: 400;
+  background-color: #E7EDEE !important;
+  color: #688F99 !important;
+}
+
+td {
+  font-size: 14.5px;
+  font-weight: 400;
+  background: #FFFFFF;
+  border-bottom: 1px solid #E7EDEE;
+  white-space: nowrap;
+}
+
+//  pagination open
+:host::ng-deep.mdc-notched-outline {
+  display: flex;
+  position: absolute;
+  top: 7px;
+  right: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  height: 66%;
+  text-align: left;
+  pointer-events: none;
+}
+
+::ng-deep .mat-mdc-option .mdc-list-item__primary-text {
+  font-size: 11px !important;
+}
+
+:host::ng-deep.mat-mdc-paginator-page-size-select {
+  margin: 0 4px;
+  width: 67px;
+  height: 38px;
+}
+
+//  pagination close
+//  go to page open
+.pagenationinput {
+  height: 25px;
+  width: 55px;
+  background: #FFFFFF;
+  border: 1px solid #D2CFCF;
+  border-radius: 4px;
+}
+
+.positionfixed {
+  position: absolute;
+  bottom: 1.5vh;
+  right: 37%;
+}
+
+//  go to page close
+// table header and pagination close
+.ScrollBarStyle {
+  overflow-y: auto;
+  height: 64vh;
+background: white;
+&::-webkit-scrollbar {
+  width: 5px!important;
+height: 6px!important;
+overflow-y: scroll;
+background: #f7f7f7;
+box-shadow: inset 0 0 4px #707070;
+}
+&::-webkit-scrollbar-thumb {
+  background: #8a8b8b;
+border-radius:10px;
+}
+}
+
+.height_width_th {
+  height: 20px;
+  width: 20px;
+}
+
+
+
+.underline {
+  text-decoration: underline;
+  color: #3293D9;
+  cursor: pointer;
+
+}
+
+.rotate {
+  transform: rotateZ(180deg);
+}
+
+@media only screen and (max-width: 1229px) and (min-width: 768px) {
+
+  .positionfixed {
+    position: absolute;
+
+    right: 40%;
+  }
+}
+
+@media only screen and (max-width: 840px) {
+
+  .positionfixed {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+
+  .padding_bottom_2{
+    padding-bottom: 1%;
+  }
+}
+
+.mat-mdc-slide-toggle.mat-accent {
+  --mdc-switch-selected-focus-state-layer-color: rgb(108, 145, 175) !important;
+  --mdc-switch-selected-handle-color: rgb(232 238 243) !important;
+  --mdc-switch-selected-hover-state-layer-color: rgb(221 224 227) !important;
+  --mdc-switch-selected-pressed-state-layer-color: rgb(108, 145, 175) !important;
+  --mdc-switch-selected-focus-handle-color: rgb(230 235 240) !important;
+  --mdc-switch-selected-hover-handle-color: rgb(230 235 240) !important;
+  --mdc-switch-selected-pressed-handle-color: rgb(230 235 240) !important;
+  --mdc-switch-selected-focus-track-color: rgb(108, 145, 175) !important;
+  --mdc-switch-selected-hover-track-color: rgb(108, 145, 175) !important;
+  --mdc-switch-selected-pressed-track-color: rgb(108, 145, 175) !important;
+  --mdc-switch-selected-track-color: rgb(108, 145, 175) !important
+}
+
+.mat-mdc-slide-toggle {
+  --mdc-switch-disabled-selected-handle-color: #fff;
+  --mdc-switch-disabled-unselected-handle-color: #fff;
+  --mdc-switch-disabled-selected-track-color: #fff;
+  --mdc-switch-disabled-unselected-track-color: #fff;
+  --mdc-switch-unselected-focus-state-layer-color: #fff;
+  --mdc-switch-unselected-pressed-state-layer-color: #fff;
+  --mdc-switch-unselected-hover-state-layer-color: #fff;
+  --mdc-switch-unselected-focus-track-color: #e0e0e0;
+  --mdc-switch-unselected-hover-track-color: #e0e0e0;
+  --mdc-switch-unselected-pressed-track-color: #e0e0e0;
+  --mdc-switch-unselected-track-color: #e0e0e0;
+  --mdc-switch-unselected-focus-handle-color: #fff;
+  --mdc-switch-unselected-hover-handle-color: #fff;
+  --mdc-switch-unselected-pressed-handle-color: #fff;
+  --mdc-switch-handle-surface-color: var(--mdc-theme-surface, #fff);
+  --mdc-switch-unselected-handle-color: #fff;
+  --mdc-switch-selected-icon-color: #e0e0e000;
+  --mdc-switch-disabled-selected-icon-color: #fff0;
+  --mdc-switch-disabled-unselected-icon-color: #fff0;
+  --mdc-switch-unselected-icon-color: #fff;
+}
+
+.Active {
+  background: #EBFBF0;
+  border-radius: 30px;
+  color: #0A672A;
+  height: 25px;
+  width: 67px;
+  text-align: center;
+}
+
+.Revoked {
+  background: rgba(255, 155, 107, 0.2);
+  border-radius: 30px;
+  color: #FF9B6B;
+  height: 23px;
+  width: 80px;
+  text-align: center;
+}
+
+.Expired {
+  background: #FFE7EC;
+  border-radius: 30px;
+  color: #FD1044;
+  height: 23px;
+  width: 80px;
+  text-align: center;
+}
+
+
+
+.active-sts {
+  cursor: not-allowed !important;
+  opacity: 0.5;
+}
+
+.font_size_13_5 {
+  font-size: 13.5px;
+  font-weight: 400;
+}
+.font_size_13_5_color{
+  font-size: 14.5px;
+  font-weight: 400;
+color: white;
+}
+
+.cursor{
+  cursor: pointer;
+}
+
+
+.cursor{
+  cursor: pointer;
+}
+:host::ng-deep .mat-mdc-paginator-page-size-label {
+  font-size: 13.5px !important;
+}
+@media only screen and (max-width: 600px)  {
+  .Bulk_Revoke {
+    height: 5vh;
+  }
+  .Generate_Paper {
+     height: 5vh;
+  }
+  :host::ng-deep  .mat-mdc-paginator-container{
+      // flex-wrap: unset !important;
+      padding: 0 0px !important;
+      height: 5.5vh !important;
+    }
+
+    :host::ng-deep .mat-mdc-paginator-range-label {
+
+      display: none !important;
+  }
+
+    :host::ng-deep .mat-mdc-paginator-page-size-label {
+
+  display: none !important;
+}
+.font_size_16{
+
+  font-size: 13.5px;
+}
+.font_size_13_5_color{
+  font-size: 11.5px;
+}
+td{
+  font-size: 11.5px !important;
+  white-space: nowrap;
+}
+th{
+
+  font-size: 12.5px !important;
+  white-space: nowrap;
+}
+.mobile-justify-content-start
+{
+  justify-content: start !important;
+}
+.margin_left_right{
+
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.margin_left_right_table{
+  margin-left: 3%;
+  margin-right: 3%;
+
+}
+.mat-mdc-table .mdc-data-table__header-row{
+  height: 5.5vh !important;
+
+}
+.mat-mdc-table .mdc-data-table__row{
+  height: 5vh !important;
+}
+.mat-mdc-paginator-container {
+
+  height: 5.5vh !important;
+}
+.ScrollBarStyle {
+
+  height: 56vh;
+  &::-webkit-scrollbar {
+    width: 2px!important;
+  height: 2px!important;
+  overflow-y: scroll;
+  background: #f7f7f7;
+  box-shadow: inset 0 0 4px #707070;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #8a8b8b;
+  border-radius:10px;
+  }
+ }
+  .pb-3 {
+    padding-bottom: 0.2rem !important;
+}
+}
+@media only screen and (max-width: 1400px) and (min-width: 1200px)  {
+
+  ::ng-deep {
+    .mat-mdc-paginator-container {
+      justify-content: space-between !important;
+      background-color: #e7edee !important;
+      height: 7vh !important;
+    }
+  }
+  .pb-3 {
+    padding-bottom: 0.5rem !important;
+  }
+
+  .margin_left_right_table{
+
+    padding-top: 0.5rem;
+  }
+
+  .mat-mdc-table .mdc-data-table__header-row{
+    height: 7vh !important;
+
+  }
+  .mat-mdc-table .mdc-data-table__row{
+    height: 5.5vh !important;
+  }
+  .mat-mdc-paginator-container {
+
+    height: 7vh !important;
+  }
+  .ScrollBarStyle {
+    height: 63vh;
+  }
+
+  .positionfixed {
+    // bottom: 0.5rem;
+    right: 37% !important;
+  }
+
+}
+.bordernone
+{
+  border: none;
+    background: transparent;
+}
+tr:hover {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  box-shadow: 0px 0px 5px #FBFBFB;
+
+  -webkit-box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+  background: #FBFBFB !important;
+}

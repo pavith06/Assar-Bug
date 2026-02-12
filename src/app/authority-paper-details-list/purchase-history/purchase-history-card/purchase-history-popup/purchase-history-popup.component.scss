@@ -1,0 +1,225 @@
+.start {
+    // padding: 16px 0px 0px 30px !important;
+    font-family: 'Inter' !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16.5px;
+    line-height: 22px;
+    color: #688F99;
+    white-space: nowrap;
+}
+.padding_2rem
+{
+  padding-right: 2rem;
+}
+.end {
+    // padding: 16px 30px 0px 0px !important;
+    color: #688F99;
+}
+.img_fixed
+{
+  position: relative;
+    bottom: 0.5rem;
+}
+.popup-header {
+    background-color: #E7EDEE;
+
+      padding: 13px 24px 13px 24px
+
+}
+.font_size_14_5{
+  font-size: 14.5px;
+  font-weight: 400;
+}
+.margin_left_right {
+    margin-right: 3%;
+    margin-left: 3%;
+    margin-top: 3%;
+
+}
+
+.toatl_stock {
+    background: #88BAF0;
+    border-radius: 2px;
+}
+
+.font_size_color {
+    font-family: 'Inter' !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14.5px;
+    line-height: 19px;
+    color: #FFFFFF;
+}
+.font_size_36{
+    font-size: 36px;
+}
+
+.font_size_14{
+    font-family: 'Inter' !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+.aviable_stock {
+
+    background: #FF9B6B;
+    border-radius: 2px;
+}
+
+.common_stock {
+    padding: 3%;
+}
+
+.padding_common {
+    padding: 1%;
+}
+
+.height_width_input {
+    width: 100%;
+    height: 48px;
+}
+
+.padding_top_input {
+    padding-top: 1%;
+}
+
+.amount {
+    background: #688F99;
+    border-radius: 38px;
+    font-family: 'Inter' !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    border: 0px;
+    color: #FFFFFF;
+
+}
+
+.allocate_paper {}
+
+.radio_margin_top {
+    margin-top: 2%;
+}
+.available_stock_img{
+    // height: 89%;
+}
+.radio {
+    height: 15px;
+    width: 15px;
+}
+
+.display {
+    display: flex;
+}
+
+.Allocate_button {
+  width: 100%;
+  padding: 10%;
+    background: #374B51;
+    border-radius: 2px;
+    font-family: 'Inter' !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14.5px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+
+}
+
+.cancel_button {
+  width: 100%;
+  padding: 11%;
+    border: 1px solid #374B51;
+    border-radius: 2px;
+    font-family: 'Inter' !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14.5px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #374B51;
+
+}
+
+.text_hidden{
+    cursor: pointer;
+    font-size: 31.5px;
+    font-weight: 400;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+ max-width: 13ch;
+ margin: 0px;
+}
+.main_pop{
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .margin_left_right {
+        margin-right: 8%;
+        margin-left: 8%;
+
+    }
+    .close_img
+{
+  height: 14px !important;
+}
+    .img_fixed{
+
+      bottom: 1.5rem;
+  }
+    .cancel_button{
+
+      font-size: 12.5px;}
+    .Allocate_button{
+
+      font-size: 12.5px;}
+    .mobilepaddingbottom5
+    {
+      padding-bottom: 5%;
+    }
+    .height_width_input{
+
+      height: 35px;
+  }
+    .imgheight{
+      height: 30px
+    }
+    .font_size_14{
+
+      font-size: 13.5px;}
+    .start{
+
+      font-size: 13.5px;}
+    .text_hidden{
+
+      font-size: 24.5px;}
+    .font_size_14_5{
+      font-size: 13.5px;
+
+  }
+    .popup-header{
+
+      padding: 8px 12px 8px 12px;
+    }
+
+}
+:host::ng-deep .mat-mdc-dialog-container .mdc-dialog__surface {
+    overflow-x: hidden !important;
+}
+.cousor
+{
+  cursor: pointer;
+}

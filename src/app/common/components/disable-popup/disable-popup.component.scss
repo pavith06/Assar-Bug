@@ -1,0 +1,43 @@
+.marigin_left_right
+{
+  margin: 0rem 5rem;
+}
+.delete_color
+{
+  color:rgba(255, 0, 0, 1)
+}
+.cancel
+{
+  border: 1px solid rgba(255, 0, 0, 1);
+  background: white;
+  border-radius: 2px;
+  padding: 6px 14px
+}
+.yes_delete{
+  background: rgba(255, 0, 0, 1);
+  color: white;
+  border: 1px solid rgba(255, 0, 0, 1);
+  border-radius: 2px;
+  padding: 6px 14px
+}
+.line_height
+{
+  line-height: 1.5rem;
+}
+.font_size_16{
+  font-size: 16px;
+}
+.font_size_12
+{
+  font-size: 12px;
+}
+.position-absolute{
+  right: 0px !important;
+}
+.datepicker
+{
+  width:188px;
+  height: 32px;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 0.27);
+}

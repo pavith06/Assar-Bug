@@ -1,0 +1,55 @@
+<div class="container-fluid">
+  <div class="row">
+     <!-- Dynamic Data Load  -->
+    <div class="col-md-3 margin_bottom25px" *ngFor="let user of cardList">
+      <mat-card>
+        <mat-card-content>
+          <div class="row">
+            <div class="flex-display">
+              <h4 class="role-name">{{user.roleName}}</h4>
+              <span>
+                {{user.userCount}} {{'CommonCard.Users' | translate}}
+              </span>
+            </div>
+            <h6 class="role_id">Role ID : {{user.roleId}}</h6>
+            <p [ngClass]="{'green_status':user.isActive,'red_status':!user.isActive}">
+              <span class="dot" ></span>
+              <small style="padding-left: 3%;" *ngIf="user.isActive">Active</small>
+              <small style="padding-left: 3%;" *ngIf="!user.isActive">{{user.inActiveDate.substring(0,10)}}</small>
+              <small style="padding-left: 3%;" *ngIf="!user.isActive">inActive</small>
+            </p>
+          </div>
+          <!-- Action buttons -->
+          <div class="container">
+            <div class="row">
+              <div class="d-flex justify-content-end bottom-card">
+                <button class="btnStyle clonebtnstyle">
+                  <div class="deleteIcon">
+                    <img class="cardIcon " src="/assets/trash.svg">
+                    <h5>{{'CommonCard.Delete' | translate}}</h5>
+                  </div>
+                </button>
+                <button class="btnStyle clonebtnstyle ">
+                  <div class="cloneIcon">
+                    <img class="cardIcon" src="/assets/copy.svg">
+                    <h5>{{'CommonCard.Clone' | translate}}</h5>
+                  </div>
+                </button>
+                <button class=" btnStyle editcolo">
+                  <div class="editIcon" (click)="getOneUserRole(user.roleId)">
+                    <img class="cardIcon " src="/assets/edit-nwhite.svg">
+                    <h5>
+                      <a href="#/usermanagement/userrole/AddUserRole">
+                        {{'CommonCard.Edit' | translate}} </a>
+                    </h5>
+                  </div>
+
+                </button>
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

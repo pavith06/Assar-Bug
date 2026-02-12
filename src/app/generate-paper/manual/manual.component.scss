@@ -1,0 +1,339 @@
+
+
+.top-head h4{
+  margin: 0;
+  padding: 0;
+}
+.DevHeight {
+	height: 30px;
+	align-items: center;
+}
+.inputBox {
+	width: 83%;
+}
+
+.checkBoxStyle{
+  width: 42px;
+    height: 21px;
+}
+.example-container {
+	height: 380px;
+	max-width: 100%;
+  padding: 0px 30px;
+}
+
+.inputFeild {
+	outline: #d2c9c9;
+	width: 81%;
+	height: 42px;
+	border: 1px solid #b4a6a6;
+}
+.inputDiv {
+	padding-left: 1%;
+	height: 55px;
+}
+.payablesDiv {
+	align-items: center;
+	height: 44px;
+}
+.divHeight {
+	margin-left: 31px;
+  padding: 1% 0;
+}
+.panelTitls {
+	display: block;
+}
+.checkbox {
+	text-align: end;
+}
+.checkboxField {
+	margin-top: 11px;
+}
+.btncolor {
+	background-color:#688F99 !important;
+}
+
+
+.padding0{
+  padding: 0;
+}
+.margin-10px{
+  margin: 10px 0px;
+}
+
+.space-btwn{
+  background-color: white;
+  max-width: -webkit-fill-available;
+  padding: 0;
+}
+
+.paperDetailsStyle{
+    color: #688F99;
+    margin: 0;
+    margin-left: 1%;
+}
+.removeSpace{
+    margin-right: -11%;
+}
+.paperDetailsDynamicFieldStyle{
+    margin-left: 0%;
+}
+.marginTB{
+ max-width: 300px;
+  margin: 2% 0;
+  position: relative;
+}
+.verticleStyle_manual{
+    padding-top: 10px;
+    margin-left: 0%;
+}
+.verticleDynamicFieldStyle{
+    margin-left: 0%;
+}
+
+.verticleDetailsStyle{
+    color: #688F99;
+    margin: 0%;
+}
+.card-header1{
+  padding: 2%;
+  background-color: #E3EAF0;
+}
+
+.matCardContainer {
+	padding-top: 0% !important;
+  min-height: 240px;
+  max-height: fit-content;
+}
+
+.menuField1 {
+	height: 40px;
+	align-items: center;
+	background-color: rgb(246, 246, 246);
+	padding-left: 14px;
+}
+
+.form-control {
+    box-sizing: border-box;
+    width: 100%;
+    height: 35px;
+    border: 1px solid #D9D9D9;
+    border-radius: 2px;
+    font-weight: 400;
+    font-size: 14.5px;
+    color: #444444;
+    margin: 2% 0%;
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+
+.MultipleSelectInputStyle {
+	margin-left: 0;
+	width: 300px;
+  height: 10%;
+}
+.MultiSelectInput{
+	border: none;
+	outline: none;
+}
+.dashboardImg{
+  height:25px;
+}
+
+.astrich {
+  color: red;
+  font-weight: 1000;
+}
+label{
+  font-size: 14.5px;
+  font-weight: 400;
+}
+.font_size_16{
+  font-size: 16.5px;
+  font-weight: 500;
+}
+.fixed_save_cancel{
+  position: absolute;
+    top: 92%;
+    right: 1px;
+}
+.emtyDiv {
+	height: 12px;
+}
+.moveTextStyle1{
+  transform: translateX(20px);
+}
+
+.inputFiled {
+   width: 68%;
+  height: 40px;
+  border-color: grey;
+  }
+
+  .font_size{
+    font-size: 14.5px;
+  }
+
+  .btn-font {
+    font-size: smaller;
+}
+
+.btn-sz {
+    height: 41.49px !important;
+    background: #374B51;
+    border-radius: 1.80381px;
+}
+
+.black-btn-bg_manual {
+
+    background: rgba(28, 39, 44,1);
+    border-color: #374B51;
+    color: white;
+    position: relative !important;
+}
+
+.calender-toggler_manual {
+  position: absolute;
+  right: 0px;
+}
+
+.padding_left_top{
+  padding: 1% 0% 1% 0.70%;
+}
+
+
+
+@media only screen and (max-width: 600px)  {
+.scroolbar
+{
+  &::-webkit-scrollbar {
+    width: 2px!important;
+  height: 2px!important;
+  overflow-y: scroll;
+  background: #f7f7f7;
+  box-shadow: inset 0 0 4px #707070;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #8a8b8b;
+  border-radius:10px;
+  }
+}
+  .form-control
+  {
+    width: 274px !important;
+
+  }
+.calender-toggler_manual {
+    position: absolute;
+    left: 0rem !important;
+}
+  label{
+    font-size: 12.5px;
+
+}
+.btn-font {
+
+  font-size: 11.5px !important;
+}
+.paperDetailsStyle,.verticleDetailsStyle
+{
+  font-size: 12.5px !important;
+}
+.scroolbar {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 64vh;
+}
+
+  ::ng-deep .mat-mdc-icon-button.mat-mdc-button-base {
+    position: absolute;
+    left: 234px !important;
+}
+.black-btn-bg {
+  margin-left: 7% !important;
+
+}
+.manual_bulk {
+  padding-left: 4% !important;
+}
+.paperDetailsStyle {
+
+  margin-left: 4% !important;
+}
+
+
+.manual_bulk_main {
+  margin-left: 4.5% !important;
+
+}
+
+}
+::ng-deep .mat-datepicker-content {
+
+  height: 350px !important;
+
+}
+.file_btn{
+  position: absolute;
+  size: 10px;
+  border: none;
+  right: 1px;
+  top: 44%;
+
+}
+.astrich {
+  color: red;
+  font-weight: 1000;
+}
+.img{
+  width: 41px;
+  height: 33px;
+}
+.padding_left_right_manual{
+  padding-left: 1.5%;
+    padding-right: 1.5%;
+}
+.scroolbar{
+  overflow-y: auto;
+      overflow-x: hidden;
+      height: 61vh;
+
+
+}
+.button_bk_color{
+  background: rgba(249, 250, 251, 1);
+}
+
+@media only screen and (max-width: 1400px) and (min-width: 1200px)  {
+  .scroolbar {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 52vh;
+
+  }
+}
+.margin_zero
+{
+  margin: 0px !important;
+}
+
+.red-border{
+  border: 1px solid red;
+}
+.scroolbar
+{
+  &::-webkit-scrollbar {
+    width: 5px;
+  height: 6px!important;
+  overflow-y: scroll;
+  background: #f7f7f7;
+  box-shadow: inset 0 0 4px #707070;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #8a8b8b;
+  border-radius:10px;
+  }
+}

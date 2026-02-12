@@ -1,0 +1,158 @@
+<div class="bg_color" *ngIf="authorityPaperDetailsAccessDto?.isEnabled && purchaseHistoryPageAccessDto?.isView" >
+
+    <div class="margin_left_right" [ngStyle]="{'pointer-events': purchaseHistoryPageAccessDto?.isEdit ? 'auto' : 'none'}" >
+      <div class=" ScrollBarStyle zoom_150 padding_left_4_history">
+        <div class="padding_left_right">
+        <div class="row padding_top_1_authority">
+            <div class=" col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3" style="padding: 4px;" *ngIf="isAllCompanyShow">
+
+                <mat-card class="card">
+                    <div class="row">
+                        <div class=" col-12 col-sm-12 col-md-12">
+                            <div class="row ">
+                                <div class="col-6 col-sm-6 col-md-6 padding_company_name">
+                                    <div class="company white_space" matTooltip="All Companies">{{'PurchaseHistoryCard.All_Companies'|translate}}</div>
+                                </div>
+                                <div class="col-6 col-sm-6 col-md-6 d-flex justify-content-end padding_checkbox"
+                                    style="position: relative;">
+                                    <!-- <div><img src="assets/authority_purchase_history/notification.svg" alt=""
+                                            class="not_img" ></div>
+                                    <div><img src="assets/authority_purchase_history/notification_bell.svg" alt=""
+                                           ></div> -->
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <div> <input type="checkbox" name="" id="" class="checkbox cousor" (change)="onClick($event)" [(ngModel)]="allchecks"></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class=" col-6 col-sm-12 col-md-12 padding_allocate">
+                                    <h5 class="allocate_stock" style="cursor:pointer;visibility: hidden;" >
+                                      {{'PurchaseHistoryCard.Allocate_Stock'|translate}}</h5>
+                                </div>
+                            </div>
+                            <div class="row padding_stock_aviable_paper">
+                                <div class=" col-6 col-sm-6 col-md-6 padding_zero ">
+                                    <mat-card class="common available padding_body">
+                                        <div class="row">
+                                            <div class=" col-12 col-sm-12 col-md-12" style="padding: 0px;">
+                                                <div class="stock_color_cbt  padding_stock">{{'PurchaseHistoryCard.Total_Transcations'|translate}}</div>
+                                            </div>
+                                        </div>
+                                        <div class="row stock_paper">
+                                            <div class="col-6 col-md-6 col col-sm-6">
+                                                <div class="  control_width font_size_16"
+                                                    [matTooltip]="allCompanyCard?.totalCount | number">{{allCompanyCard?.totalCount | number}}
+                                                </div>
+                                            </div>
+                                            <div class="col-6 col-sm-6 col-md-6 padding_img">
+                                                <div><img src="assets/authority_purchase_history/total.svg" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </mat-card>
+                                </div>
+                                <div class=" col-6 col-sm-6 col-md-6 padding_zero">
+                                    <mat-card class="common paper padding_body">
+                                        <div class="row">
+                                            <div class="col-12 col-sm-12 col-md-12">
+                                                <div class="stock_color_cbt ">{{'PurchaseHistoryCard.Pending_Transcations'|translate}}</div>
+                                            </div>
+                                        </div>
+                                        <div class="row stock_paper ">
+                                            <div class="col-6 col-sm-6 col-md-6">
+                                                <div class=" control_width font_size_16"
+                                                    [matTooltip]="allCompanyCard?.pendingCount | number">{{allCompanyCard?.pendingCount | number}}
+                                                </div>
+                                            </div>
+                                            <div class="col-6 col-sm-6 col-md-6 padding_img">
+                                                <div><img src="assets/authority_purchase_history/pending.svg" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </mat-card>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card>
+                <div class="card_gap">
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3 "  style="padding: 4px;" *ngFor="let data of cardHistoryList  index as i;" >
+                <mat-card class="card">
+                    <div class="row">
+                        <div class=" col-12 col-sm-12 col-md-12">
+                            <div class="row ">
+                                <div class="col-6 col-sm-6 col-md-6 padding_company_name">
+                                    <div class="company  max_with" [matTooltip]="data?.comapanyName"> {{data?.comapanyName}}</div>
+                                </div>
+                                <div class="col-6 col-sm-6 col-md-6 d-flex justify-content-end padding_checkbox"
+                                    style="position: relative;">
+                                    <div><img src="assets/authority_purchase_history/notification.svg" alt=""
+                                            class="not_img" *ngIf="data.notification===0"></div>
+                                    <div style="cursor: pointer;" ><img src="assets/authority_purchase_history/notification_bell.svg" alt=""
+                                            *ngIf="data.notification >=1" (click)="onSelectNotification($event,data.companyId)"></div>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <div> <input type="checkbox" name="" id="" class="checkbox cousor" [(ngModel)]="checks[i]" (click)="onSelectOrDeselect($event,data.companyId)"></div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class=" col-6 col-sm-12 col-md-12 padding_allocate">
+                                    <h5 class="allocate_stock" style="cursor:pointer" (click)="openDialog(data)">
+                                      {{'PurchaseHistoryCard.Allocate_Stock'|translate}}</h5>
+                                </div>
+                            </div>
+                            <div class="row padding_stock_aviable_paper">
+                                <div class=" col-6 col-sm-6 col-md-6 padding_zero ">
+                                    <mat-card class="common available padding_body">
+                                        <div class="row">
+                                            <div class=" col-12 col-sm-12 col-md-12" style="padding: 0px;">
+                                                <div class="stock_color_cbt  padding_stock">{{'PurchaseHistoryCard.Total_Transcations'|translate}}</div>
+                                            </div>
+                                        </div>
+                                        <div class="row stock_paper">
+                                            <div class="col-6 col-md-6 col col-sm-6">
+                                                <div class="  control_width font_size_16 "
+                                                    [matTooltip]="data.totalCount | number">{{data.totalCount | number}}
+                                                </div>
+                                            </div>
+                                            <div class="col-6 col-sm-6 col-md-6 padding_img">
+                                                <div><img src="assets/authority_purchase_history/total.svg" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </mat-card>
+                                </div>
+                                <div class=" col-6 col-sm-6 col-md-6 padding_zero">
+                                    <mat-card class="common paper padding_body">
+                                        <div class="row">
+                                            <div class="col-12 col-sm-12 col-md-12">
+                                                <div class="stock_color_cbt ">{{'PurchaseHistoryCard.Pending_Transcations'|translate}}</div>
+                                            </div>
+                                        </div>
+                                        <div class="row stock_paper ">
+                                            <div class="col-6 col-sm-6 col-md-6">
+
+                                                <div class=" control_width font_size_16"
+                                                    [matTooltip]="data.pendingCount | number">{{data.pendingCount | number}}
+
+                                                </div>
+                                            </div>
+                                            <div class="col-6 col-sm-6 col-md-6 padding_img">
+                                                <div><img src="assets/authority_purchase_history/pending.svg" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </mat-card>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </mat-card>
+                <div class="card_gap">
+                </div>
+            </div>
+        </div>
+      </div>
+        </div>
+    </div>
+</div>

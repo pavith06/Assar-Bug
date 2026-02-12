@@ -1,0 +1,284 @@
+:host ::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background: #FFFFFF;
+  border: 0.702782px solid rgba(0, 0, 0, 0.21);
+  border-radius: 2.81113px;
+}
+.fieldname-block{
+    h6{
+      margin: 0;
+      font-weight: 400;
+font-size: 14.5px;
+color: #444444;
+padding-top: 4%;
+    }
+  display: block;
+}
+.fieldName{
+  width: 100%;
+  height: 70px;
+}
+.top-heading{
+    h4{
+      margin: 0;
+    line-height: 49px;
+    border: 1px solid #EAEAEA;
+    display: block;
+    text-indent: 22px;
+    color:rgba(104, 143, 153, 1);
+    font-weight: 400;
+    font-size: 16.5px;
+    background: #FCFCFC;
+    }
+}
+.checkbox-list{
+  list-style: none;
+
+}
+.amateur
+{
+  font-size: 14.5px;
+  font-weight: 400;
+}
+.mat-mdc-radio-button.mat-accent {
+  --mdc-radio-selected-focus-icon-color:#688f99;
+  --mdc-radio-selected-hover-icon-color:#688f99;
+  --mdc-radio-selected-icon-color:#688f99;
+  --mdc-radio-selected-pressed-icon-color:#688f99;
+  --mat-mdc-radio-checked-ripple-color:#688f99;
+  font-size: 14.5px !important;
+}
+
+.mat-mdc-checkbox.mat-accent {
+  --mdc-checkbox-selected-checkmark-color: #fff;
+  --mdc-checkbox-selected-focus-icon-color: #688f99;
+  --mdc-checkbox-selected-hover-icon-color: #688f99;
+  --mdc-checkbox-selected-icon-color: #688f99;
+  --mdc-checkbox-selected-pressed-icon-color: #688f99;
+  --mdc-checkbox-unselected-focus-icon-color: #212121;
+  --mdc-checkbox-unselected-hover-icon-color: #212121;
+  --mdc-checkbox-disabled-selected-icon-color: rgba(0, 0, 0, 0.38);
+  --mdc-checkbox-disabled-unselected-icon-color: rgba(0, 0, 0, 0.38);
+  --mdc-checkbox-unselected-icon-color: rgba(0, 0, 0, 0.54);
+  --mdc-checkbox-unselected-pressed-icon-color: rgba(0, 0, 0, 0.54);
+  font-size: 14.5px !important;
+}
+.access-block {
+  h6{
+    margin: 0;
+    font-weight: 400;
+    font-size: 12px;
+    color: #444444;
+  }
+}
+.top-option-head{
+  h6{
+    margin: 0;
+    font-weight: 400;
+    font-size: 12px;
+    color: #444444;
+  }
+  a{
+    margin: 0;
+    font-weight: 400;
+    font-size: 11px;
+    color: #44749D;
+    cursor: pointer;
+  }
+}
+.datatype-block{
+  h6{
+    margin: 0;
+    font-weight: 400;
+    font-size: 14.5px;
+    color: #444444;
+  }
+}
+:host ::ng-deep .mat-mdc-checkbox label{
+  font-size: 11px;
+}
+.checkbox-main{
+  display: flex;
+}
+.top-option-head{
+  a{
+    text-decoration: underline;
+  }
+  display: flex;
+  justify-content: space-between;
+}
+.radio_btn_grp{
+  display: block;
+  background: #FFFFFF;
+border: 0.702782px dashed #C9C9C9;
+border-radius: 2.81113px;
+margin: 10px 0px;
+}
+.underline{
+  text-decoration: underline;
+  color: rgba(104, 143, 153, 1);
+  white-space: nowrap;
+  position: absolute;
+}
+.datatype-chosse{
+  height: 8.3vh;
+  width: 100%;
+}
+:host ::ng-deep .mat-mdc-select-arrow {
+  width: 10px;
+  height: 6px;
+  position: relative;
+  bottom: 8px !important;
+}
+.datatype-block{
+  display: block;
+}
+.field-inner{
+  padding: 0px 10px;
+    border: 1.40556px solid #EAEAEA;
+    background: #FCFCFC;
+    height: 68.6vh;
+
+}
+.options_input{
+  width: 96%;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+}
+.dotted_line{
+  border: 1px dashed rgba(95, 149, 207, 1);
+  background: white;
+}
+.img_height_width{
+  height: 30px;
+    width: 30px;
+}
+.padding_top_3{
+  padding-top: 3%;
+}
+.padding_top_1{
+  padding-top: 1%;
+}
+
+.ScrollBarStyle {
+  height: 132px ;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+&::-webkit-scrollbar {
+	width: 3px !important;
+	overflow-y: scroll;
+	background: grey;
+	box-shadow: inset 0 0 4px #707070;
+}
+&::-webkit-scrollbar-thumb {
+	background: #dfeaf3;
+	border-radius: 10px;
+}
+}
+.width_select{
+  width: 100% !important;
+}
+:host::ng-deep .mat-mdc-text-field-wrapper {
+  width: 100%;
+  border: 1px solid !important;
+  height: 46px !important;
+  border-radius: 2px !important;
+}
+
+.font_size_14_3{
+font-size: 14.5px;
+font-weight: 400;
+}
+.font_style{
+  font-family:  Inter;
+}
+.addbutton {
+  padding: 1% 0%;
+}
+
+.input_add {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid rgba(199, 199, 199, 1);
+  outline: none;
+}
+
+.scrollbar {
+  max-height: 180px;
+  // min-height: 100px;
+  // height: 200px;
+  overflow-x: hidden;
+}
+
+.imgmlfdr {
+  margin-left: 1vw;
+}
+
+.fieldsUi {
+  background-color: white;
+    height: 5.6vh;
+    margin-left: 1px;
+    padding: 0;
+    margin-top: 3vh;
+    border: 2px dashed #688F99;
+    border-radius: 1px;
+    width: 99%;
+}
+.padding_top_2{
+  padding-top: 2%;
+}
+.padding_top_3{
+  padding-top: 3%;
+}
+.input_field{
+  height: 5.4vh;
+    width: 100%;
+    outline: none;
+}
+
+
+:host::ng-deep .mat-mdc-form-field-focus-overlay {
+  background-color:white !important;
+  /* border: none; */
+}
+/* Remove the blue border color on mat-input when focused */
+:host::ng-deep .mat-form-field.mat-focused .mat-form-field-underline {
+  background-color: transparent; /* Change the background color to transparent */
+  border-color: #ccc; /* Change the border color to a desired color */
+}
+:host::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::before {
+  border-bottom-color: none !important;
+}
+:host::ng-deep.mdc-line-ripple::before, .mdc-line-ripple::after {
+
+   border-bottom-style: none !important;
+
+}
+:host::ng-deep.mdc-line-ripple::before, .mdc-line-ripple:active {
+
+  border-bottom-style: none !important;
+
+}
+:host::ng-deep .mdc-text-field--filled .mdc-line-ripple::after {
+ border-bottom-color:white !important;
+}
+
+.padding_bottom_1vh{
+  padding-bottom: 1vh
+}
+@media only screen and (max-width: 1400px) and (min-width: 1200px)  {
+  .field-inner {
+    height: 61.6vh;
+}
+.datatype-chosse {
+  height: 10vh;
+
+}
+.input_field{
+  height: 6.4vh;
+
+}
+}

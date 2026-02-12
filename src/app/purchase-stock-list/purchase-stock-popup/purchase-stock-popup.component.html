@@ -1,0 +1,294 @@
+<div class="arabic_style_all_popup">
+  <div class="popup-header">
+    <div class="row">
+      <div class=" col-10 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6   d-flex justify-content-start align-items-center">
+        <span class="font_style  allocate_stock_color font_size_18">{{'Purchase_stock_popup.New_Purchase'|translate}} </span>
+      </div>
+      <div class="col-2 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end align-items-center">
+        <img src="/assets/purchase_stock/cross_button.svg" alt="" class="img-fluid close_img cursor" (click)="closeDialog(false)">
+      </div>
+    </div>
+  </div>
+  <form [formGroup]="reactiveForm" novalidate class="padding_bottom_1rem_mobile">
+    <div class="gap"></div>
+    <div class="mobileScrollbar">
+      <div class="containers">
+        <div class="row">
+          <div class=" col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 total_stock">
+            <div class="containers">
+              <div class="row total_stock_available_padding">
+                <div class="total_stock_available">
+                  <div class="row">
+                    <div class=" col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-9 stock_header_padding">
+                      <div class="stock_header">
+                       {{'Purchase_stock_popup.Total_Stock_Available'|translate}}
+                      </div>
+                    </div>
+                    <div
+                      class=" col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-3 d-flex justify-content-end end_img">
+                      <img src="/assets/purchase_stock/document.svg" alt="" class="img-fluid">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class=" col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                      <div class="total_stock_company max_with" >
+                        {{AvailableStockAmt  | number}}
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="row number_of_papers_padding">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" class="font_size_14_5">
+                {{'Purchase_stock_popup.Number_of_Papers'|translate}} <span style="color: red;">*</span>
+              </div>
+            </div>
+            <div class="containers">
+              <div class="row number_of_papers_input_padding">
+                <input type="text" class="number_of_papers_height_width" [(ngModel)]="Papers"
+                  formControlName="numberOfPapers" (ngModelChange)="totalCoustCalcu($event);paperCost($event) "
+                  (keypress)="matcher($event)" maxlength="9">
+                <span class="red_font_size" *ngIf="numberOfKeyValue < 100 && validateinputvalue ">
+                  {{'Purchase_stock_popup_formError.MinimumOrderError'|translate}}
+                </span>
+
+              </div>
+            </div>
+            <div class=" number_of_papers_amount">
+              <div class=" d-flex position_relative_1"
+                *ngFor="let paper of NumberOfPaper">
+                <button class="amount" (click)="Numberofpaper($event)"> {{paper}}</button>
+              </div>
+            </div>
+            <div class="row height_25" [class.height_20]="numberOfKeyValue < 100 && validateinputvalue ">
+              <div class="col-md-12"></div>
+            </div>
+            <div class="row ">
+              <div class="col-md-12" class="total_coast">
+                {{'Purchase_stock_popup.Total_Cost'|translate}}<span style="color: red;">*</span>
+              </div>
+            </div>
+            <div class="containers">
+              <div class="row total_coast_display_padding d-flex">
+
+                <span class="total_coast_display"><span>{{propName}}</span> {{totalCost}}</span>
+                <!-- <input type="text" class="total_coast_display" [value]="totalCost"
+                                formControlName="totalCostValue"> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-12 col-md-6 col-lg-8  col-xl-9 col-xxl-9  payment">
+
+            <div class="row">
+              <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 col-xxl-4">
+                <div class="containers">
+                  <div class="row ">
+                    <div class="col-md-12" class="payment_heading position_relative_15">
+                      {{'Purchase_stock_popup.Choose_Payment_Method'|translate}}
+                    </div>
+                  </div>
+                  <div class="row padding_3">
+                    <div class="col-md-12"></div>
+                  </div>
+                  <div class="row margin_top_14">
+
+                    <div class=" col col-sm-6 col-md-6">
+                      <span class="position_relatives">
+                        <img src="/assets/purchase_stock/credit_card.svg" alt="" (click)="creditcard()"
+                          class="img-fluid cursor" *ngIf="creditcardisInActive">
+                        <img src="/assets/purchase_stock/credit_card_tick.svg" alt="" class="img-fluid cursor"
+                          *ngIf="creditcardActive">
+                      </span>
+                    </div>
+                    <div class="col col-sm-6 col-md-6">
+                      <span class="position_relatives">
+                        <img src="/assets/purchase_stock/airtel_money.svg" alt="" class="img-fluid cursor"
+                          (click)="airtelMoney()" *ngIf="aittelmoneyInActive">
+                        <img src="/assets/purchase_stock/aitel_money_tick.svg" alt="" class="img-fluid cursor"
+                          *ngIf="airtelmoneyActive">
+                      </span>
+                    </div>
+                  </div>
+                  <div class="row  margin_top_14">
+                    <div class="col col-sm-6 col-md-6">
+                      <span class="position_relatives">
+                        <img src="/assets/purchase_stock/debit_card.svg" alt="" class="img-fluid cursor" (click)="debitCard()"
+                          *ngIf="debitcardInActive">
+                        <img src="/assets/purchase_stock/debit_card_tick.svg" alt="" class="img-fluid cursor"
+                          *ngIf="debitcardActive">
+                      </span>
+                    </div>
+                    <div class="col col-sm-6 col-md-6">
+                      <span class="position_relatives">
+                        <img src="/assets/purchase_stock/upi.svg" alt="" class="img-fluid cursor" (click)="upi()"
+                          *ngIf="upiInActive">
+                        <img src="/assets/purchase_stock/upi_tick.svg" alt="" class="img-fluid cursor" *ngIf="upiActive">
+                      </span>
+                    </div>
+                  </div>
+                  <div class="row margin_top_14 position_relatives">
+                    <div class="col col-sm-6 col-md-6"><img src="/assets/purchase_stock/net_baking.svg" alt=""
+                        class="img-fluid cursor-default"></div>
+                    <div class="col col-sm-6 col-md-6">
+                      <span class="position_relatives">
+                        <img src="/assets/purchase_stock/cheque.svg" alt="" (click)="chequemethod()"
+                          *ngIf="chequeisActive" class="img-fluid cursor">
+                        <img src="/assets/purchase_stock/cheque_tick.svg" alt="" class="img-fluid cursor" *ngIf="chequeActive">
+                      </span>
+                    </div>
+                  </div>
+                  <div class="row  margin_top_14">
+                    <div class=" col-6 col-sm-6 col-md-6 ">
+                      <span>
+                        <img src="/assets/purchase_stock/cash_payment.svg" alt="" class="img-fluid cursor"
+                          (click)="cashPayment()" *ngIf="cashpaymentInActive">
+                        <img src="/assets/purchase_stock/cash_payment_tick.svg" alt="" class="img-fluid cursor"
+                          *ngIf="cashpaymentActive">
+                      </span>
+                    </div>
+                    <div class=" col-6 col-sm-6 col-md-6 d-flex align-items-center" *ngIf="sensorval===true">
+                      <button class="process_pay" (click)="proceedTopay()">{{'Purchase_stock_popup.Proceed_to_Pay'|translate}}</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-7 col-lg-8 col-xl-8 col-xxl-8">
+                <div *ngIf="cheque ||cash">
+                  <div class="row ">
+                    <div class=" col col-md-12" class=" payment_upload_cheque position_relative_15">
+                     {{'Purchase_stock_popup.Upload_Cheque' | translate}}
+                    </div>
+                  </div>
+                  <div class="row Browse_file">
+                    <div class=" col col-md-12">
+                      <div>
+                        <div class="dropzone">
+                          <input type="file" class="input-file" #fileDropRef multiple [disabled]="" multiple
+                            (change)="onChange($event)"
+                            accept="application/pdf,application/vnd.ms-excel,application/pdf,image/*">
+                          <img src="/assets/CloudArrowUp.svg" alt="" class="img-fluid h2rem">
+                          <img [src]="" alt="">
+                          <h3 class="file-text p_t_0_5"><span>{{'Purchase_stock_popup.Drag_and_Drop_your_file_or'|translate}}</span></h3>
+                          <button [disabled]="" class="btn  black-btn-bg ml btn-sz btn-font" for="fileDropRef">{{'Purchase_stock_popup.Browse_files'|translate}}</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row height_37">
+                    <div class="col-md-12">
+                    </div>
+                  </div>
+                  <div class="row " *ngIf="showFile">
+                    <div class="ScrollBarStyle">
+                      <div *ngFor="let data of fileNameList;let i = index">
+                        <div class="col col-md-12">
+                          <div class="cheque_list">
+                            <div class="row" style="padding: 19px;">
+                              <div class="col-md-6 col-sm-6">
+                                <div class="row">
+                                  <div class="col-md-12  " style="position: relative;">
+
+                                    <img src="/assets/purchase_stock/file_type/pdf.svg" alt="" class="img-fluid"
+                                      *ngIf="data.fileType ==='application/pdf'">
+
+                                    <img src="/assets/purchase_stock/image.svg" alt="" class="img-fluid"
+                                      *ngIf="data.fileType ==='image/png'|| data.fileType==='image/jpeg'">
+                                    &nbsp;&nbsp;
+                                    <span style="position: absolute;" class="name_file"
+                                      [matTooltip]="data.name"><span>{{data.name}}</span>
+
+                                    </span>
+                                    <span class="file_mb">
+                                      <div class="file_size"></div>{{data.size}}
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class=" col col-sm-6 col-md-6 d-flex justify-content-end">
+                                <img src="/assets/purchase_stock/file_type/eye.svg" alt=""
+                                  class="eye_img img-fluid position_relative_100 cursor"
+                                  (click)="openDialog(i)">&nbsp;&nbsp;&nbsp;
+                                <img src="/assets/purchase_stock/file_type/delete.svg"
+                                  class="delete_img img-fluid position_relative_100 cursor" alt=""
+                                  (click)="fileDelete(data.name)">
+                              </div>
+                              <div class="height_10">
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="row height_10">
+                          <div class="col-md-12"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="margin_top_11" *ngIf="credit_card || debitcard">
+                  <div class="row margin_top_14">
+                    <div class=" col col-md-12 col-lg-6"><label for="" class="card_number"> {{'Purchase_stock_popup.Card_Number'|translate}} </label>
+                      <div class="height_5"></div>
+                      <input type="text" class="card_number_input">
+                    </div>
+                    <div class=" col col-md-12 col-lg-6"><label card_number_inputfor="" class="card_number">{{'Purchase_stock_popup.CVC'|translate}}</label>
+                      <div class="height_5"></div>
+                      <input type="text" class="cvc">
+                    </div>
+                  </div>
+                  <div class="row margin_top_14">
+                    <div class=" col col-md-12 col-lg-6"><label for="" class="card_number">{{'Purchase_stock_popup.Card_Holder_Name'|translate}}</label>
+                      <div class="height_5"></div>
+                      <input type="text" class="card_number_input">
+                    </div>
+                    <div class="col-md-12 col-lg-6"><label for="" class="card_number">{{'Purchase_stock_popup.Expiry_Date'|translate}}</label>
+                      <div class="height_5"></div>
+                      <input type="text" class="card_number_input">
+                    </div>
+                  </div>
+                  <div class="row " style="margin-top: 30px;">
+                    <div class=" col col-md-12 d-flex align-items-center">
+                      <input type="checkbox" name="" id="" class="checkbox_height_width"
+                        (click)="checkbox($event)">&nbsp;&nbsp;
+                      <label for="" class="card_number">{{'Purchase_stock_popup.Save_my_details_for_future_payments'|translate}} </label>
+                    </div>
+                  </div>
+                </div>
+                <div class="margin-top_airtel_upi" *ngIf="airtel">
+                  <div class="row margin_top_14">
+                    <div class=" col col-md-12 col-lg-6"><label for="" class="card_number">
+                      {{'Purchase_stock_popup.Enter_Mobile_Number'|translate}}</label>
+                      <div class="height_5"></div>
+                      <input type="text" class="card_number_input">
+                    </div>
+
+                  </div>
+                  <div class="height_5"></div>
+                </div>
+                <div class="margin-top_airtel_upi" *ngIf="upipayment">
+                  <div class="row" style="margin-top: 14px;">
+                    <div class=" col col-md-12 col-lg-6"><label for="" class="card_number">
+                      {{'Purchase_stock_popup.UPI'|translate}}</label>
+                      <div class="height_5"></div>
+                      <input type="text" class="card_number_input">
+                    </div>
+                  </div>
+                  <div class="height_5"></div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="row" *ngIf="!sensorval">
+            <div class=" col-6 col-sm-6 col-md-7 col-lg-6 col-xl-6 col-xxl-6"></div>
+            <div class=" col-6 col-sm-6 col-md-5 col-lg-6 col-xl-6 col-xxl-6 process_pay_padding">
+              <button class="process_pay" [disabled]="blockProceedToPay" (click)="proceedTopay()"> {{'Purchase_stock_popup.Proceed_to_Pay'|translate}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

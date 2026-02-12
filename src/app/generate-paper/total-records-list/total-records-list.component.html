@@ -1,0 +1,178 @@
+<div class="inside_color">
+    <div class="margin_left_right">
+        <div class="row padding_top_1">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  d-flex justify-content-start ">
+               <span  routerLink="/generate-paper/bulk" class="cursor-icon ash_color d-flex align-items-center mobileclose"> <img src="/assets/bulk_upload/back.svg" alt="" class="img-fluid">&nbsp;{{'TotalRecordsList.Back'|translate}}</span>
+
+            </div>
+        </div>
+        <div class="padding_top_1 scroll_mobile">
+            <div class="shadow">
+                <div class="row padding_1_5">
+                    <div [class]="four " *ngIf="fullscreen">
+                        <div class="white_color_bk total_records_list">
+                            <div class="row padding_2_total_records_list">
+                                <div class="row">
+                                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex justify-content-between"> 
+                                        <span class="font_style font_size_18 color_blue " *ngIf="totalCount > 1"> {{'TotalRecordsList.Total_Records'|translate}}({{totalCount}})</span>
+                                        <span class="font_style font_size_18 color_blue " *ngIf="totalCount <= 1"> {{'TotalRecordsList.Total_Record'|translate}}({{totalCount}})</span>
+                                            <!-- <span (click)="refreshPage()" style="cursor: pointer;" ><mat-icon>cached</mat-icon></span> -->
+                                          </div>
+                                          <span style="font-weight: 500;" [ngStyle]="{'color':progress==='Completed'?'green':'red' }" > {{"Progress_status."+progress | translate}}</span>
+
+                                </div>
+                                <div class="row padding_top_4">
+                                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                                        <div class="success_record" style="cursor:pointer" (click)="successRecords()" [ngClass]="{'success_focus' : error===false}">
+                                            <div class="row padding_succes">
+                                                <div
+                                                    class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 padding_top_1">
+                                                    <span class="font_size_13 font_style color_green success_record_laptop"  *ngIf="successCount > 1">{{'TotalRecordsList.Success_Records'|translate}}</span>
+                                                    <span class="font_size_13 font_style color_green success_record_laptop"  *ngIf="successCount <= 1">{{'TotalRecordsList.Success_Record'|translate}}</span>
+                                                </div>
+                                                <div
+                                                    class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 padding_top_1">
+                                                    <span class=" font_size_18 font_style color_green">{{successCount}}</span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                                        <div class="error_record"   style="cursor:pointer" (click)="errorRecords()"  [ngClass]="{'error_focus':error===true}">
+                                            <div class="row padding_error">
+                                                <div
+                                                    class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 padding_top_1">
+                                                    <span class="font_size_13 font_style color_red success_record_laptop" *ngIf="errorCount > 1">{{'TotalRecordsList.Error_Records'|translate}}</span>
+                                                    <span class="font_size_13 font_style color_red success_record_laptop" *ngIf="errorCount <= 1">{{'TotalRecordsList.Error_Record'|translate}}</span>
+                                                </div>
+                                                <div
+                                                    class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 padding_top_1">
+                                                    <span class="font_size_18 font_style color_red">{{errorCount}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="row padding_top_bottom">
+                                    <div class="col-md-12">
+                                        <div class="dropzone">
+                                            <input [type]="filename ? 'text' : 'file'" [class.Zero]="filename" class="input-file" #fileDropRef [disabled]="" multiple
+                                                (change)="onChange($event)"
+                                                accept="application/pdf,application/vnd.ms-excel,application/pdf,image/*">
+                                                <img src="/assets/CloudArrowUp.svg" alt="" class="img-fluid cloudimg" *ngIf="filename === null" />
+                                                <img src="/assets/file/excel.svg" alt="" class="img-fluid"  *ngIf="filename "/>
+                                            <img [src]="" alt="">
+                                            <h3 class="file-text" *ngIf="filename===null"><span>{{'Purchase_stock_popup.Drag_and_Drop_your_file_or'|translate}}</span></h3>
+                                            <h3 class="file-text position_relative" *ngIf="filename" [matTooltip]="filename">
+                                              <span class="toolTip">{{ filename }}</span> &nbsp;<img src="assets/bulk_upload/delete_bulk.svg"
+                                                class="img-fluid position_absolute_delete" alt="" (click)="DeleteFile()">
+                                            </h3>
+                                            <button [disabled]="" class="btn  black-btn-bg ml btn-sz btn-font"
+                                                for="fileDropRef" *ngIf="filename===null">{{'Purchase_stock_popup.Browse_files'|translate}}</button>
+                                            <button *ngIf="filename" [disabled]=""
+                                                class="btn  black-btn-bg ml btn-sz btn-font" for="fileDropRef"  >{{'TotalRecordsList.Generate_Paper'|translate}}</button>
+                                        </div>
+
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div [class]="eight" >
+                        <div class="row padding_error_header">
+                            <div class="col-4 col-sm-4 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-start padding_top_1_error_header">
+                                <span class="font_style font_size_18 color_blue" *ngIf="error && errorCount > 1">{{'TotalRecordsList.Error_Records'|translate}}({{errorCount}})</span>
+                                <span class="font_style font_size_18 color_blue" *ngIf="success && successCount > 1">{{'TotalRecordsList.Success_Records'|translate}}({{successCount}})</span>
+                                <span class="font_style font_size_18 color_blue" *ngIf="error  && errorCount <= 1">{{'TotalRecordsList.Error_Record'|translate}}({{errorCount}})</span>
+                                <span class="font_style font_size_18 color_blue" *ngIf="success && successCount <= 1 ">{{'TotalRecordsList.Success_Record'|translate}}({{successCount}})</span>
+                            </div>
+                            <div class="col-8 col-sm-8 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end align-items-center">
+                                <button class="download_file font_size_13 color_blue " *ngIf="error" (click)="onDownloading()">  <img src="/assets/bulk_upload/download_popup.svg" alt="" class="img-fluid img_height_width">{{'TotalRecordsList.Download_File'|translate}}</button>
+                                &nbsp;<img src="/assets/bulk_upload/Expand.svg" alt="" class="img-fluid " *ngIf="fullscreen===true" (click)="fullscreenc()">
+                                <img src="/assets/bulk_upload/No_Expand.svg" alt="" class="img-fluid "*ngIf="fullscreen===false" (click)="not_fullscreenc()">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 padding_top_1">
+
+                                 <!-- <div class="header">
+                                    <div class="margin_left_right"> -->
+                                        <section style="position:relative;">
+                                            <section class="ScrollBarStyle" id="TotalRecordsTable" [class.scroll_bar]="scrollBar" [class.scroll_bar_height]="!scrollBar">
+                                                <table mat-table [dataSource]="dataSource"  matSort class="mat-elevation-z8">
+
+                                                    <ng-container matColumnDef="Action" *ngIf="error">
+                                                        <th mat-header-cell class="hearderStyle tableHeader" *matHeaderCellDef [ngStyle]="scrollBar?{'border': '0px solid #E7EDEE'} : {'border': '1px solid #E7EDEE'}">
+                                                            {{'Error_Records_table.action'| translate}} &nbsp;</th>
+                                                        <td mat-cell *matCellDef="let element">
+
+                                                            <img *ngIf="uploadType === 'UPLOAD'" src="/assets/bulk_upload/edit.svg" alt="" class="img-fluid " style="cursor: pointer;" (click)="onEditing(element)">&nbsp;
+                                                            <img src="/assets/bulk_upload/delete.svg" alt="" class="img-fluid " style="cursor: pointer;" (click)="onDeleting(element)">
+                                                        </td>
+                                                    </ng-container>
+
+                                                    <div *ngIf="error">
+                                                        <ng-container [matColumnDef]="data" *ngFor="let data of displayedColumns | slice:1">
+                                                            <th mat-header-cell class="hearderStyle tableHeader" *matHeaderCellDef (click)="tableSorting(data)" [ngStyle]="data ==='Error Message'? {'min-width':'400px'}:{'width':'400px'}"  [ngStyle]="scrollBar?{'border': '0px solid #E7EDEE'} : {'border': '1px solid #E7EDEE'}">
+                                                                {{"GENERATE_PAPER_MANUAL."+data | translate}} &nbsp; <img
+                                                                    src="/assets/purchase_stock/arrow.svg" alt="" [ngStyle]="isAscending?{'transform': 'rotateZ(180deg)'} : {'transform': 'rotateZ(0deg)'}"></th>
+
+                                                                    <div *ngIf="bulkUpload">
+                                                                      <td  mat-cell *matCellDef="let element;let i=index" [ngStyle]="{'color':getColor(data, i)?'red':'black'}">{{element[data]}} </td>
+                                                                    </div>
+                                                              <td  mat-cell *matCellDef="let element;let i=index" >{{element[data]}} </td>
+
+                                                        </ng-container>
+                                                    </div>
+
+                                                    <div *ngIf="success">
+                                                        <ng-container [matColumnDef]="data" *ngFor="let data of displayedColumns">
+                                                            <th mat-header-cell class="hearderStyle tableHeader" *matHeaderCellDef (click)="tableSorting(data)"  [ngStyle]="scrollBar?{'border': '0px solid #E7EDEE'} : {'border': '1px solid #E7EDEE'}" >
+                                                                {{"GENERATE_PAPER_MANUAL."+ data | translate}} &nbsp; <img
+                                                                    src="/assets/purchase_stock/arrow.svg" alt=""></th>
+                                                            <td mat-cell  *matCellDef="let element">{{element[data]}} </td>
+                                                        </ng-container>
+                                                    </div>
+                                                    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                                                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+                                                </table>
+                                            </section>
+                                            <div style="position:relative;">
+
+                                                <mat-paginator #paginator [pageSizeOptions]="[7,14,28,35,42]" [pageIndex]="pageIndex-1" showFirstLastButtons
+                                                    [length]="totalLength" (page)="changePage($event)"
+                                                    class="pagnation_height">
+                                                </mat-paginator>
+
+                                                <div class="positionfixed" [class.paginationClass]="scrollBar">
+                                                    <span style="font-size: 13.5px;">{{'Pagination.Go_to_page'| translate}}</span>&nbsp;
+                                                    <input type="number" class="pagenationinput" [(ngModel)]="pageIndex" (ngModelChange)="pageindex()"  (keydown)="onKeyDown($event)" onKeyPress="if(this.value.length == 10) return false;"
+                                                    min="1" max={{maximum}} oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
+                                                </div>
+                                            </div>
+                                            <div *ngIf="dataNotFound" class="no-data" [class.paginationClass]="scrollBar" >
+                                                <div style="display: inline-grid;text-align: center;">
+                                                  <img src="assets/no-data-found-icon.svg" >
+                                                  <small style="font-weight: 400;font-size: larger;padding-top: 2%;">{{'report_card.No_Data_Found'|translate}}</small>
+                                                </div>
+                                              </div>
+                                        </section>
+
+                                    <!-- </div>
+                                </div> -->
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

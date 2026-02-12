@@ -1,0 +1,136 @@
+<div class="style"   appClickOutside  (clickOutside)="closePopUp()">
+  <div class="form-group position-relative">
+
+    <img src="assets/icons/Filter.svg" alt="" (click)="openFilter()" *ngIf="searchdisable === false" class="filter img-fluid">
+    <input type="text" class="form-control search-bar  search-style padding-right_cbt" appSpecialCharacter  [placeholder]="'Fliter.Search' | translate"
+     (keyup)="Search($event)" (keyup)="handleKeyup($event)"
+
+    [class.search_text]="searchdisable"  [class.search_text_padding]="searchdisable===false" [(ngModel)]="searchData">
+
+    <mat-icon *ngIf = "closeIconEnable" class="close-icon" (click) = "removeSearchValue()" >close</mat-icon>
+    <img   *ngIf = "!closeIconEnable" src="assets/icons/Search.svg" alt="" class="search_filter img-fluid">
+    <div>
+      <div class="wrapper french-scroll-bar-cbt" *ngIf="showFilter" >
+        <div *ngFor="let item of filterObject">
+
+          <div *ngIf="validateTypeIsField(item)" class="margin">
+            <div class="row">
+              <div class="col-3 mb-0 mt3">{{item.aliasName | translate}}</div>
+              <div class="col-9">
+                <input type="text" class="col-12 " ngDefaultControl  [(ngModel)]="item?.value[0]" >
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="validateTypeIsString(item)" class="margin">
+            <div class="row">
+              <div class="col-3 mb-0 mt3">{{item.aliasName | translate}}</div>
+              <div class="col-9">
+                <input type="text" class="col-12 " ngDefaultControl  [(ngModel)]="item.value" >
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="validateTypeIsDates(item)" class="margin">
+            <div class="row" (click)="$event.stopPropagation()">
+              <div class="col-3 mb-0 mt3">{{item.aliasName | translate }}</div>
+              <div class="col-9">
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <div class="d-flex position-relative justify-content-around date-field">
+                      <input matInput  [matDatepicker]="picker" ngDefaultControl class="form-control DateStyle date-focus" [readonly]="readOnly" [placeholder]="'Dashboard.From' | translate" [max]="item?.value[1]" [(ngModel)]="item?.value[0]">
+                      <mat-datepicker-toggle matIconSuffix [for]="picker" class="calender-toggler datepickerStyle_search"></mat-datepicker-toggle>
+                      <mat-datepicker #picker class="cbt-harsha"  ></mat-datepicker>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <div class="d-flex position-relative justify-content-around date-field">
+                      <input matInput  [matDatepicker]="picker1" ngDefaultControl class="form-control DateStyle date-focus" [readonly]="readOnly" [placeholder]="'Dashboard.To' | translate"  [min]="item?.value[0]" [(ngModel)]="item?.value[1]">
+                      <mat-datepicker-toggle matIconSuffix [for]="picker1" class="calender-toggler datepickerStyle_search"></mat-datepicker-toggle>
+                      <mat-datepicker #picker1 class="cbt-harsha" ></mat-datepicker>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="validateTypeIsFields(item)" class="margin">
+            <div class="row">
+              <div class="col-3 mb-0 mt3">{{item.aliasName | translate}}</div>
+              <div class="col-9">
+                <div class="row">
+                <div class="col-6 "><input type="text" ngDefaultControl appNumber placeholder="Min" [(ngModel)]="item?.value[0]"></div>
+                <div class="col-6 "><input type="text" ngDefaultControl [ngClass]="{'errorMsgSty': item.isMax}" appNumber placeholder="Max" (change)="checkMaxValueToMin(item)" [(ngModel)]="item?.value[1]"  ></div>
+              </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div *ngIf="validateTypeIsRadio(item)" class="margin">
+            <div class="row">
+              <div class="col-3 mb-0 mt3">{{item.aliasName | translate}}</div>
+              <div class="col-9">
+                <mat-radio-group aria-label="Select an option">
+                  <mat-radio-button [checked]=item.radio[0].value value="item?.radio[0].name" ngDefaultControl (click)="checkedRadio(item?.radio[0].name,item)" ><span class="radio-mobile">{{item?.radio[0].name |translate}}</span> </mat-radio-button>
+                  <mat-radio-button [checked]=item.radio[1].value value="item?.radio[1].name" ngDefaultControl (click)="checkedRadio(item?.radio[1].name,item)" ><span class="radio-mobile">{{item?.radio[1].name |translate}}</span></mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="validateTypeIsDropdown(item)" class="margin">
+            <div class="row">
+              <div class="col-3 mb-0 mt3">{{item.aliasName | translate}}</div>
+              <div class="col-9">
+                <select class="form-select" ngDefaultControl [(ngModel)]="item?.value[0]"  aria-label="Default select example">
+                  <option>---Please Select Value---</option>
+                  <option *ngFor="let opt of item?.dropdown" value={{opt}}>
+                    {{opt}}
+                  </option>
+                  <option>{{ item?.value[0] }}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="validateTypeIsChips(item)" class="margin">
+            <div class="row" (click)="$event.stopPropagation()">
+              <div class="col-3 mb-0 mt3">{{item.aliasName | translate}}</div>
+              <div class="col-9" >
+              <mat-chip-grid  #chipGridColumn aria-label="Filter Selection" class="position-relative" >
+                <mat-chip-row *ngFor="let element of item?.value" (removed)="remove(element,item)" >
+                  {{element}}
+                  <button matChipRemove [attr.aria-label]="'remove ' + element">
+                    <mat-icon>cancel</mat-icon>
+                  </button>
+                </mat-chip-row>
+
+               <img src="/assets/user_management/arrow.svg" alt="" class="img-fluid arrow_icon">
+
+              </mat-chip-grid>
+              <input class="MultiSelectInput" [matChipInputFor]="chipGridColumn" [matAutocomplete]="autoColumn"
+              (click)="refreshSearchOption($event,item)">
+              <mat-autocomplete autoActiveFirstOption #autoColumn="matAutocomplete" (optionSelected)="selectedColumn($event,item)" ngDefaultControl [(ngModel)]="item?.value[0]" appClickOutside >
+                <mat-option  *ngFor="let name of item?.dropdown ">
+                 <small >{{name}}</small>
+                </mat-option>
+              </mat-autocomplete>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="d-flex flex-row-reverse position_left_7 gap-3">
+          <button type="button" class=" buttonsize btn btn-dark button" [disabled]="isInvalid" (click)="searchFilter()" >{{'Fliter.Search'|translate}}</button>
+          <button type="button" class=" buttonsize btn btn-outline-dark button" (click)="clearAll();triggerMethod()">{{'Fliter.Clear_Filter'|translate}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+

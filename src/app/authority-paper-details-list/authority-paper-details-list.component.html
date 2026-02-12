@@ -1,0 +1,17 @@
+
+<div class="authority_header">
+  <div class=" padding_authority">
+    <div class="row ">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 col-xxl-3">
+            <div class="row">
+                <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-5 control" > <a href="" routerLink="/authority-paper-details/paper-details" class="header" (click)="papperDetails()">{{'AuthorityPaperDetails.Paper_Details'|translate}}</a><br>
+                <div [class.active]="active"></div></div>
+                <div class=" col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-5 control " ><a href="" routerLink="/authority-paper-details/purchase-history" class="header"   (click)="purchasehistory()">{{'AuthorityPaperDetails.Purchase_History'|translate}}</a>
+                    <div [class.active]="inactive"></div></div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

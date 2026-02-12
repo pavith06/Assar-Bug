@@ -1,0 +1,290 @@
+<div class="arabic_style_all_popup">
+  <div class="popup-header">
+    <div class="row">
+      <div class=" col-10 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6   d-flex justify-content-start ">
+        <span class="font_style  allocate_stock_color font_size_18">{{'Purchase_stock_view_popup.Purchase_Details'|translate}} </span>
+      </div>
+      <div class="col-2 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end align-items-center">
+        <img src="/assets/purchase_stock/cross_button.svg" alt="" class="img-fluid cursor close_img" (click)="closeDialog()">
+      </div>
+    </div>
+  </div>
+
+  <div class="viewpopupScrollbar">
+  <div class="gap_top"></div>
+  <div class="containers">
+    <div class="tranIdDes"  *ngIf="purchaseStockDetails?.paymentStatus!=='SUBMITTED'">
+      <div class="row start">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  paragraph content " *ngIf="purchaseStockDetails?.paymentStatus==='SUCCESS'" >
+          {{'Purchase_stock_view_popup.Purchase_Details_success'|translate}}
+          <span class="transcationId">{{purchaseStockDetails.transactionId}}</span>.&nbsp;
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  paragraph content " *ngIf="purchaseStockDetails?.paymentStatus==='FAILED'">
+          {{'Purchase_stock_view_popup.Purchase_Details_rejected'|translate}}
+          <span class="transcationId">{{purchaseStockDetails.transactionId}}</span>.&nbsp;
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  paragraph content " *ngIf="purchaseStockDetails?.paymentStatus==='REJECTED'">
+          {{'Purchase_stock_view_popup.Purchase_Details_rejected'|translate}}
+          <span class="transcationId">{{purchaseStockDetails.transactionId}}</span>.&nbsp;
+        </div>
+      </div>
+    </div>
+    <div class="tranIdDes" *ngIf="!isAdmin && purchaseStockDetails?.paymentStatus==='SUBMITTED'">
+      <div class="row start">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  paragraph content " *ngIf="purchaseStockDetails?.paymentStatus==='SUBMITTED'">{{'Purchase_stock_view_popup.Purchase_Details_message1'|translate}}
+          <span class="transcationId">{{purchaseStockDetails.transactionId}}</span>.&nbsp; {{'Purchase_stock_view_popup.Purchase_Details_message2'|translate}}
+        </div>
+        </div>
+    </div>
+  </div>
+  <div class="gap"></div>
+  <div class="containers">
+    <div class="new_purchase">
+      <div class="row start">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 ">
+          <div class="row">
+            <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8  purchase_sytock_view_heading">
+              {{'Purchase_stock_view_popup.Company_Name'|translate}}
+            </div>
+            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 ">
+              :
+            </div>
+            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3  heading_info no_wrap content max_width cursor"
+              matTooltip=" {{purchaseStockDetails.companyName}}">
+              {{purchaseStockDetails.companyName}}
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 ">
+          <div class="row">
+            <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8  purchase_sytock_view_heading">
+              {{'Purchase_stock_view_popup.Purchase_ID'|translate}}
+            </div>
+            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1">
+              :
+            </div>
+            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3  heading_info no_wrap content max_width cursor"
+              matTooltip="{{purchaseStockDetails?.purchaseId}}">
+              {{purchaseStockDetails?.purchaseId}}
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 ">
+          <div class="row">
+            <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8  purchase_sytock_view_heading">
+              {{'Purchase_stock_view_popup.Transaction_ID'|translate}}
+            </div>
+            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1">
+              :
+            </div>
+            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3  heading_info no_wrap content max_width cursor"
+              matTooltip="{{purchaseStockDetails?.transactionId}}">
+              {{purchaseStockDetails?.transactionId}}
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 ">
+          <div class="row">
+            <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8  purchase_sytock_view_heading">
+              {{'Purchase_stock_view_popup.Payment_Type'|translate}}
+            </div>
+            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1">
+              :
+            </div>
+            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3  heading_info content max_width cursor pd_lft"
+              matTooltip="{{purchaseStockDetails?.paymentMethod[0] | uppercase}}{{purchaseStockDetails?.paymentMethod.substring(1).toLowerCase()}}">
+              {{purchaseStockDetails?.paymentMethod[0] | uppercase}}{{purchaseStockDetails?.paymentMethod.substring(1).toLowerCase() }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row starts">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 ">
+          <div class="row">
+            <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8  purchase_sytock_view_heading">
+              {{'Purchase_stock_view_popup.No_of_Papers'|translate}}
+            </div>
+            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1">
+              :
+            </div>
+            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3  heading_info no_wrap content max_width cursor"
+              matTooltip="{{purchaseStockDetails?.stockCount | number}}">
+              {{purchaseStockDetails?.stockCount | number}}
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 ">
+          <div class="row">
+            <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8    purchase_sytock_view_heading">
+              {{'Purchase_stock_view_popup.Purchase_Amount'|translate}}
+            </div>
+            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1">
+              :
+            </div>
+            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3  heading_info  no_wrap content max_width cursor"
+              matTooltip=" {{purchaseStockDetails?.currencyType}} {{purchaseStockDetails?.purchaseAmount | number }}">
+              {{purchaseStockDetails?.currencyType}} {{purchaseStockDetails?.purchaseAmount | number }}
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 ">
+          <div class="row">
+            <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8   purchase_sytock_view_heading ">
+              {{'Purchase_stock_view_popup.Payment_Status'|translate}}
+            </div>
+            <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1">
+              :
+            </div>
+            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3  heading_info no_wrap content max_width cursor"
+              matTooltip="{{purchaseStockDetails.paymentStatus[0] | uppercase}}{{ purchaseStockDetails.paymentStatus.substring(1).toLowerCase()}}">
+              {{purchaseStockDetails.paymentStatus[0] | uppercase}}{{ purchaseStockDetails.paymentStatus.substring(1).toLowerCase() }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="gap"></div>
+  <div class="attachment"> {{'Purchase_stock_view_popup.Attachments'|translate}}</div>
+  <div class="gap"></div>
+  <div class="containers">
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4">
+        <div style="height: 10px;"></div>
+        <div class="row">
+          <div class="ScrollBarStyles">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12"
+              *ngFor="let data of uploadFileNameList;let i = index">
+              <div class="cheque_list">
+                <div class="row" style="padding: 19px;">
+                  <div class="col-8 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                    <div class="row">
+                      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex "
+                        *ngIf='data.fileType.includes("pdf")'>
+                        <img class="img-pt" src="/assets/purchase_stock/file_type/pdf.svg" alt="">&nbsp;&nbsp;
+                        <span class="name_file data cursor" matTooltip="{{data.fileName}}">{{data.fileName.split('_').pop()}}
+                          <br>
+                          <span class="file_mb">{{data.fileSize}}
+                          </span>
+                        </span>&nbsp;
+                        <br>
+                      </div>
+                      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex "
+                        *ngIf='data.fileType.includes("jpeg") || data.fileType.includes("png") || data.fileType.includes("jpg")'>
+                        <img class="img-pt" src="/assets/purchase_stock/image.svg" alt="">&nbsp;&nbsp;
+                        <span class="name_file data cursor" matTooltip="{{data.fileName}}">{{data.fileName}}
+                          <br>
+                          <span class="file_mb">{{data.fileSize}}
+                          </span>&nbsp;
+                        </span>&nbsp;
+                        <br>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end">
+                    <img src="/assets/download_btn.svg" (click)="getDownloadFile(data.fileName)" class="delete_img"
+                      alt="">
+                    &nbsp;&nbsp;&nbsp;
+                    <img src="/assets/purchase_stock/file_type/eye.svg" alt="" (click)="preview(i,data.fileName)"
+                      class="eye_img" (click)="showCheque()">
+                  </div>
+                  <div style="height: 10px;">
+
+                  </div>
+
+                </div>
+              </div>
+              <div class="row" style="height: 10px;">
+                <div class="col-md-12"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8 padding_bottom4">
+        <div *ngIf="noData">
+          <div class="no_data">
+            <img src="/assets/purchase_stock/no_data.svg" alt="" class="search_img">
+          </div>
+          <div class="gap"></div>
+          <div class="row">
+            <div class=" col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 ">
+              <div class="row">
+                <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5 col-xxl-5"></div>
+                <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 font_size_13_5 mobilecenter"> {{'Purchase_stock_view_popup.No_preview_to_Show'|translate}}.</div>
+                <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3 col-xxl-3"></div>
+              </div>
+              <div class="row">
+                <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4"></div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 margin_left_no_data font_size_13_5 mobilecenter">
+                  {{'Purchase_stock_view_popup.Please_click_the_cheque_to_view'|translate}}</div>
+                <div class="col-2 col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="img_cheque" *ngIf="show">
+          <div class="containers_heading">
+            <div class="row">
+              <div class="col-md-12 d-flex justify-content-end end">
+                <img src="/assets/purchase_stock/cross_button.svg" alt="" class="cursor close_img" (click)="close()">
+              </div>
+            </div>
+            <div class="col-md-12 "
+              *ngIf='fileType.includes(".png") || fileType.includes(".jpg") || fileType.includes(".jpeg")'>
+              <img src='{{ "data:image/png;base64," + uploadFileName}}' class="img-fluid" alt=""
+                class="img_cheque_height">
+            </div>
+            <div class="col-md-12 " *ngIf='fileType.includes(".pdf")'>
+              <!-- <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl('data:application/pdf;base64,' + uploadFileName)"
+                class="img-fluid" alt="" class="img_cheque_height"></iframe> -->
+                <div >
+                  <div class="pdf-container">
+                    <pdf-viewer class="img_cheque_height"
+                      [src]="('data:application/pdf;base64,' + uploadFileName)"
+                      [rotation]="0"
+                      [original-size]="false"
+                      [show-all]="true"
+                      [fit-to-page]="false"
+                      [zoom]="1"
+                      [zoom-scale]="'page-width'"
+                      [stick-to-page]="false"
+                      [render-text]="true"
+                      [external-link-target]="'blank'"
+                      [autoresize]="true"
+                      [show-borders]="false"
+                      style="overflow-x: hidden;"
+                    ></pdf-viewer>
+                    </div>
+                    </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="containers" *ngIf="isSuccess">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-6">
+
+            <div class="d-flex justify-content-start position_absolute_button">
+              <button *ngIf="approve" class="approve aprove_reject"
+                (click)="actionResponse(purchaseStockDetails,'SUCCESS')"> {{'Purchase_stock_view_popup.Approve'|translate}}</button>&nbsp;&nbsp;
+
+              <button *ngIf="reject" class="reject aprove_reject"
+                (click)="actionResponse(purchaseStockDetails,'REJECTED')">{{'Purchase_stock_view_popup.Reject'|translate}}</button>
+            </div>
+
+
+          </div>
+          <div class="col-md-6"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

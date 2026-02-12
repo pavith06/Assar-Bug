@@ -1,0 +1,173 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'arabic.scss';
+@import 'french.scss';
+
+html,
+body {
+  height: 100%;
+  overflow: hidden !important;
+}
+body {
+  margin: 0;
+  overflow: hidden !important;
+  font-family: 'Inter' !important;
+}
+
+.mat-typography{
+  font-family: 'Inter' !important;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+/* You can add global styles to this file, and also import other style files */
+.card-box {
+  padding: 10px;
+  border: 1px solid #ebebeb;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+}
+
+.header {
+  width: 100%;
+  background-color: lightblue;
+  height: 40px;
+}
+
+.menulink {
+  padding: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #000;
+}
+.error {
+  color: red;
+}
+.sucess {
+  color: green;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+}
+.title_style{
+  text-transform: capitalize;
+  font-size:16px;
+}
+.content_style{
+  text-transform: capitalize;
+  font-size:14.5px;
+}
+
+.card_container_height{
+  height: 85vh;
+}
+
+html, body { height: 100%; }
+body { margin: 0; }
+
+@media only screen and (max-width:470px){
+
+  html,
+  body {
+    height: 100%;
+    overflow-y: scroll;
+    margin: 0;
+  }
+}
+
+.mat-expansion-panel-body {
+  padding: 0 !important;
+}
+
+.mat-content{
+  margin: 0 !important;
+}
+#toast-container {
+
+  // margin-right: 600px !important;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-transform: capitalize;
+}
+#toast-container > .toast-success {
+   background-image: url(./assets/sucucess_icon.svg);
+  background-color: #CADBED;
+  color:#3EA0F4 ;
+  border: 1px #3EA0F4 solid;
+  height: 100%;
+  width: 400px;
+ position: relative;
+//  bottom: 10px;
+top:54px;
+text-align: start;
+}
+#toast-container > .toast-error {
+
+ height: 100%;
+ width: 400px;
+position: relative;
+//  bottom: 10px;
+top:54px;
+text-align: start;
+}
+@media only screen and (max-width: 600px)  {
+  #toast-container > .toast-success {
+
+   width: 200px;
+
+ }
+ #toast-container > .toast-error {
+
+
+  width: 200px;
+
+ }
+}
+
+
+.cursor-icon{
+  cursor: pointer;
+}
+
+.ScrollBarStyle {
+	overflow-y: auto;
+	height: 74vh;
+
+&::-webkit-scrollbar {
+	width: 3px !important;
+	overflow-y: scroll;
+	background: grey;
+	box-shadow: inset 0 0 4px #707070;
+}
+&::-webkit-scrollbar-thumb {
+	background: #dfeaf3;
+	border-radius: 10px;
+}
+}
+div{
+  font-family: 'Inter' !important;
+  }
+  h1,h2,h3,h4,h5,h6,span,th,td,li
+  {
+    font-family: 'Inter' !important;
+  }
+
+  // :host::ng-deep .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background
+  // {
+  // background-color: #688F99 !important;
+  // border-color: #688F99 !important;
+  // }
+  // :host::ng-deep .mat-mdc-checkbox .mdc-checkbox__ripple {
+  //   background: none !important;
+  // }
+  // :host::ng-deep .mat-ripple{
+  //   display: none;
+  // }

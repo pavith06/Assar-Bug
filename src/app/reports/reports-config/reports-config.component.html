@@ -1,0 +1,24 @@
+<div class="report_header" *ngIf="getPageInfo(appConst.PAGE_NAME.REPORTS.PAGEID)">
+  <div class="margin_left_right">
+    <div class="row">
+      <div class="col-md-6 d-flex" >
+        <div class="col-md-4 generatereports" *ngIf="!checkUserIsAdmin()">
+          <img (click)="generatepage()" src="assets/backarrow.svg" />&nbsp;
+          <a (click)="generatepage()" class="title_style">{{'reportHeader.REPORT' | translate }}</a>&nbsp;/&nbsp;
+          <a class="title_style" *ngIf="edit === 'Edit'" >{{'report.Edit_report' | translate }}</a>
+          <a class="title_style" *ngIf="edit === 'Generate'" >{{'report.Genarate_Report' | translate }}</a>
+        </div>
+
+        <div class="col-md-4 generatereports" *ngIf="checkUserIsAdmin()">
+          <img (click)="generatepage()" src="assets/backarrow.svg" />&nbsp;
+          <a (click)="generatepage()" class="title_style">{{'reportHeader.REPORT' | translate }}</a>&nbsp;/&nbsp;
+          <a class="title_style" *ngIf="edit === 'Edit'" >{{'report.Edit_report' | translate }}</a>
+          <a class="title_style" *ngIf="edit === 'Generate'" >{{'report.Genarate_Report' | translate }}</a>
+        </div>
+
+        <div class="col-md-6">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

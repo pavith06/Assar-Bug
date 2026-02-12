@@ -1,0 +1,550 @@
+<div class="full_page_bg_color">
+  <div class="popup-header">
+    <div class="row">
+      <div class=" col-10 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6   d-flex justify-content-start ">
+        <span class="font_style  allocate_stock_color font_size_18">{{'Paper_Details_view_popup.Paper_Details'|
+          translate}}</span>
+      </div>
+      <div class="col-2 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end ">
+        <img src="/assets/purchase_stock/cross_button.svg" alt="" class="img-fluid cursor close_img"
+          (click)="closeDialog()">
+      </div>
+    </div>
+  </div>
+  <div class="padding_bottom_3rem_popup">
+    <div class="margin_left_right_top">
+      <div class="mobilescrollbar">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8 col-xxl-8 paper_vehicle">
+          <div class="margin_left_top">
+            <div class="row">
+              <div class="col-md-12  font_size_14">
+                <span>
+                  <span>
+                    {{paperDetailsDto.createdDate | date:'dd/MM/yyyy' }} &nbsp;{{paperDetailsDto.createdDate |
+                    date:'h:mm a' }} </span>
+                </span>
+              </div>
+            </div>
+            <div class="row row_padding_top_1 header_border_bottom">
+              <div class="row padding_right">
+                <div
+                  class=" col-10 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6   d-flex justify-content-start font_style font_size_16 color">
+                  <span class="min_char"> <span>{{'Paper_Details_view_popup.Digital_Paper_NO'|translate}}
+                      <span>:</span>&nbsp;<span>{{paperDetailsDto.pdDigiltaPaperId}}</span>
+                    </span></span>
+                </div>
+                <div
+                  class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end  padding_right position_relative_bottom">
+
+
+                  <img src="/assets/bulk_upload/download_popup.svg" alt="" class="img-fluid cursor"
+                    (click)="onDownloading()">
+                  &nbsp; &nbsp;&nbsp;<button class="btn_color" (click)="emailShare(paperDetailsDto)"><img
+                      src="/assets/bulk_upload/share.svg" alt="" class="img-fluid font_size_16"> &nbsp;{{'Paper_Details_view_popup.share'|translate}}</button>
+
+                </div>
+              </div>
+            </div>
+
+            <div class="row padding_top_2">
+              <div
+                class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12  font_style font_size_16_bold allocate_stock_color">
+                <span>{{'Paper_Details_view_popup.Paper_Details'|translate}}</span>
+              </div>
+            </div>
+
+            <div class="row row_padding_top font_style font_size_16 padding_top_0_5">
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-5">
+                <div class="row row_padding_top">
+                  <div class="col-5 col-sm-5 col-md-6 col-lg-6 col-xl-5 col-xxl-5">
+                    <span class="max_character_name"  matTooltip="{{'Paper_Details_view_popup.Insured_Name'|translate}}" >{{'Paper_Details_view_popup.Insured_Name'|translate}}</span> </div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 padding_zero text-center">
+                    <span>:</span>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 col-xxl-5 padding_zero">
+                    <span  class="max_character"[matTooltip]="paperDetailsDto.pdInsuredName" >{{paperDetailsDto.pdInsuredName}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-5">
+                <div class="row row_padding_top">
+                  <div class="col-5 col-sm-5 col-md-6 col-lg-6 col-xl-4 col-xxl-5">
+                    <span class="max_character_name" matTooltip="{{'Paper_Details_view_popup.Policy_No'|translate}}">{{'Paper_Details_view_popup.Policy_No'|translate}}</span></div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 padding_zero text-center">
+                    <span>:</span>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 col-xxl-5 padding_zero">
+                    <span  class="max_character"[matTooltip]="paperDetailsDto.pdPolicyNumber" >{{paperDetailsDto.pdPolicyNumber}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="row  font_style font_size_16 padding_top_0_5">
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-5">
+                <div class="row row_padding_top">
+                  <div class="col-5 col-sm-5 col-md-6 col-lg-6 col-xl-5 col-xxl-5">
+                    <span class="max_character_name" matTooltip="{{'Paper_Details_view_popup.Effective_From'|translate}}">{{'Paper_Details_view_popup.Effective_From'|translate}}</span></div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 padding_zero text-center">
+                    <span>:</span>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 col-xxl-5 padding_zero">
+                    <span [matTooltip]="paperDetailsDto.pdEffectiveFrom | date:'dd/MM/yyyy'"> 
+                      {{paperDetailsDto.pdEffectiveFrom | date:'dd/MM/yyyy'}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-5">
+                <div class="row row_padding_top">
+                  <div class="col-5 col-sm-5 col-md-6 col-lg-6 col-xl-4 col-xxl-5">
+                    <span class="max_character_name" matTooltip="{{'Paper_Details_view_popup.Effective_to'|translate}}">{{'Paper_Details_view_popup.Effective_to'|translate}}</span></div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 padding_zero text-center">
+                    <span>:</span>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 col-xxl-5 padding_zero">
+                    <span [matTooltip]="paperDetailsDto.pdExpireDate| date:'dd/MM/yyyy'">{{paperDetailsDto.pdExpireDate| date:
+                      'dd/MM/yyyy'}}</span>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            <div class="row font_style font_size_16 padding_top_0_5">
+  <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-5">
+    <div class="row row_padding_top">
+      <div class="col-5 col-sm-5 col-md-6 col-lg-6 col-xl-5 col-xxl-5">
+        <span class="max_character_name"
+              matTooltip="{{'Paper_Details_view_popup.Effective_From'|translate}}">
+          {{'Paper_Details_view_popup.Effective_From'|translate}}
+        </span>
+      </div>
+      <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 padding_zero text-center">
+        <span>:</span>
+      </div>
+      <div class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 col-xxl-5 padding_zero">
+        <span [matTooltip]="paperDetailsDto.pdEffectiveFrom | date:'dd/MM/yyyy HH:mm:ss'">
+          {{ paperDetailsDto.pdEffectiveFrom | date:'dd/MM/yyyy HH:mm' }}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-5">
+    <div class="row row_padding_top">
+      <div class="col-5 col-sm-5 col-md-6 col-lg-6 col-xl-4 col-xxl-5">
+        <span class="max_character_name"
+              matTooltip="{{'Paper_Details_view_popup.Effective_to'|translate}}">
+          {{'Paper_Details_view_popup.Effective_to'|translate}}
+        </span>
+      </div>
+      <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 padding_zero text-center">
+        <span>:</span>
+      </div>
+      <div class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 col-xxl-5 padding_zero">
+        <span [matTooltip]="paperDetailsDto.pdExpireDate | date:'dd/MM/yyyy HH:mm:ss'">
+          {{ paperDetailsDto.pdExpireDate | date:'dd/MM/yyyy HH:mm' }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+            <div class="row  font_style font_size_16 padding_top_0_5">
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-5">
+                <div class="row row_padding_top">
+                  <div class="col-5 col-sm-5 col-md-6 col-lg-6 col-xl-5 col-xxl-5">
+                    <span class="max_character_name"matTooltip="{{'Paper_Details_view_popup.Phone_Number'|translate}}">{{'Paper_Details_view_popup.Phone_Number'|translate}}</span></div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 padding_zero text-center">
+                    <span>:</span>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 col-xxl-5 padding_zero">
+                    <span  class="max_character" [matTooltip]="paperDetailsDto.pdPhoneNumber">{{paperDetailsDto.pdPhoneNumber}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-5">
+                <div class="row row_padding_top">
+                  <div class="col-5 col-sm-5 col-md-6 col-lg-6 col-xl-4 col-xxl-5">
+                    <span class="max_character_name" matTooltip="{{'Paper_Details_view_popup.Email_ID'|translate}}">{{'Paper_Details_view_popup.Email_ID'|translate}}</span></div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 padding_zero text-center">
+                    <span>:</span>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 col-xxl-5 padding_zero">
+                    <span class="max_character"[matTooltip]="paperDetailsDto.pdEmailId" >{{paperDetailsDto.pdEmailId}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="row  padding_top_0_5">
+              <div
+                class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 font_style font_size_16_bold allocate_stock_color">
+                <span> {{'Paper_Details_view_popup.Vehicle_Details'|translate}}</span>
+              </div>
+            </div>
+
+            <div class="row row_padding_top  font_style font_size_16 padding_top_0_5">
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-5">
+                <div class="row row_padding_top">
+                  <div class="col-5 col-sm-5 col-md-6 col-lg-6 col-xl-5 col-xxl-5"><span
+                      class="white_shape_nowhrap_view_paper max_character_name" matTooltip="{{'Paper_Details_view_popup.Registration_No'|translate}}">{{'Paper_Details_view_popup.Registration_No'|translate}}</span>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 padding_zero text-center">
+                    <span>:</span>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 col-xxl-5 padding_zero">
+                    <span  class="max_character"[matTooltip]="paperDetailsDto.vdRegistrationNumber" >{{paperDetailsDto.vdRegistrationNumber}}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-5">
+                <div class="row row_padding_top">
+                  <div class="col-5 col-sm-5 col-md-6 col-lg-6 col-xl-4 col-xxl-5">
+                    <span matTooltip="{{'Paper_Details_view_popup.Chassis'|translate}}">{{'Paper_Details_view_popup.Chassis'|translate}}</span>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 padding_zero text-center">
+                    <span>:</span>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 col-xxl-5 padding_zero">
+                    <span class="max_character" [matTooltip]="paperDetailsDto.vdChassis">{{paperDetailsDto.vdChassis}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row  font_style font_size_16 padding_top_0_5">
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-5">
+                <div class="row row_padding_top">
+                  <div class="col-5 col-sm-5 col-md-6 col-lg-6 col-xl-5 col-xxl-5"><span
+                      class="white_shape_nowhrap_view_paper max_character_name" matTooltip="{{'Paper_Details_view_popup.Licensed_to_carry'|translate}}">{{'Paper_Details_view_popup.Licensed_to_carry'|translate}}</span>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 padding_zero text-center">
+                    <span>:</span>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 col-xxl-5 padding_zero">
+                    <span [matTooltip]="paperDetailsDto.vdLicensedToCarry">{{paperDetailsDto.vdLicensedToCarry}}</span>
+                  </div>
+                </div>
+              </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-5 ">
+                <div class="row row_padding_top">
+                  <div class="col-5 col-sm-5 col-md-6 col-lg-6 col-xl-4 col-xxl-5">
+                    <span matTooltip="{{'Paper_Details_view_popup.Usage'|translate}}">{{'Paper_Details_view_popup.Usage'|translate}}</span>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 padding_zero text-center">
+                    <span>:</span>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 col-xxl-5 padding_zero">
+                    <span [matTooltip]="paperDetailsDto.vdUsage">
+                      {{paperDetailsDto.vdUsage}}</span>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-5">
+                <!-- <div class="row row_padding_top">
+                  <div class="col-5 col-sm-5 col-md-6 col-lg-6 col-xl-4 col-xxl-5">
+                    <span matTooltip="{{'Paper_Details_view_popup.Make'|translate}}">{{'Paper_Details_view_popup.Make'|translate}}</span>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 padding_zero text-center">
+                    <span>:</span>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 col-xxl-5 padding_zero">
+                    <span [matTooltip]="paperDetailsDto.vdVehicleMake">{{paperDetailsDto.vdVehicleMake}}</span>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+            <div class="row  font_style font_size_16 padding_top_0_5">
+              <!-- <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-5">
+                <div class="row row_padding_top">
+                  <div class="col-5 col-sm-5 col-md-6 col-lg-6 col-xl-5 col-xxl-5">
+                    <span matTooltip="{{'Paper_Details_view_popup.Model'|translate}}">{{'Paper_Details_view_popup.Model'|translate}}</span>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 padding_zero text-center">
+                    <span>:</span>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 col-xxl-5 padding_zero">
+                    <span  class="max_character" [matTooltip]="paperDetailsDto.vdModel">{{paperDetailsDto.vdModel}}</span>
+                  </div>
+                </div>
+              </div> -->
+            
+        
+
+            </div>
+
+            <div class="row  font_style font_size_16 padding_top_0_5">
+                  
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-5">
+              <div class="row row_padding_top">
+                <div class="col-5 col-sm-5 col-md-6 col-lg-6 col-xl-5 col-xxl-5">
+                  <span matTooltip="{{'Paper_Details_view_popup.Insurer'|translate}}">{{'Paper_Details_view_popup.Insurer'|translate}}</span>
+                </div>
+                <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 padding_zero text-center">
+                  <span>:</span>
+                </div>
+                <div class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 col-xxl-5 padding_zero">
+                  <span  class="max_character" [matTooltip]="paperDetailsDto.insurer">{{paperDetailsDto.insurer}}</span>
+                </div>
+              </div>
+            </div>
+              <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-5">
+                <div class="row row_padding_top">
+                  <div class="col-5 col-sm-5 col-md-6 col-lg-6 col-xl-4 col-xxl-5">
+                    <span matTooltip="{{'Paper_Details_view_popup.Make & Type'|translate}}">{{'Paper_Details_view_popup.Make & Type'|translate}}</span>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 padding_zero text-center">
+                    <span>:</span>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 col-xxl-5 padding_zero">
+                    <span [matTooltip]="paperDetailsDto.vdVehicleMake">{{paperDetailsDto.vdVehicleMake}}</span>
+                  </div>
+                </div>
+              </div>
+
+                <!-- <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-5">
+                <div class="row row_padding_top">
+                  <div class="col-5 col-sm-5 col-md-6 col-lg-6 col-xl-4 col-xxl-5">
+                    <span matTooltip="{{'Paper_Details_view_popup.Reason'|translate}}">{{'Paper_Details_view_popup.Reason'|translate}}</span>
+                  </div>
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 padding_zero text-center">
+                    <span>:</span>
+                  </div>
+                  <div class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 col-xxl-5 padding_zero">
+                     <span [matTooltip]="paperDetailsDto.vdVehicleMake">{{paperDetailsDto.reasonId}}</span> 
+                     <span *ngIf="paperDetailsDto.reasonId">
+  {{ getReasonLabel(paperDetailsDto.reasonId) }}
+</span>
+
+                  </div>
+                </div>
+              </div> -->
+<div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 col-xxl-7">
+              <div class="row row_padding_top" *ngIf="paperDetailsDto.reasonId">
+  <div class="col-5 col-sm-5 col-md-6 col-lg-6 col-xl-4 col-xxl-5">
+    <span matTooltip="{{'Paper_Details_view_popup.Revoke Reason'|translate}}">
+      {{'Paper_Details_view_popup.Revoke Reason'|translate}}
+    </span>
+  </div>
+  
+  <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 padding_zero text-center">
+    <span>:</span>
+  </div>
+
+  <div class="col-6 col-sm-6 col-md-5 col-lg-5 col-xl-5 col-xxl-5 padding_zero">
+    <span>{{ getReasonLabel(paperDetailsDto.reasonId) }}</span>
+  </div>
+</div>
+</div>
+
+</div>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 padding_top_2" style="padding: 0px;margin: 0px;">
+          <img [src]=getImage(paperDetailsDto) alt="" class="img-fluid resolution_150"  style="padding: 0px;margin: 0px;">
+        </div>
+      </div>
+      </div>
+    </div>
+</div>
+
+    <!--<img src="/assets/bulk_upload/testing.svg" alt=""class="img-fluid"> -->
+    <!-- <div style="background: #688F99;padding: 2%; box-shadow: 0px 0px 8.43311px rgba(0, 0, 0, 0.12);color: #FFFFFF;">
+        <div style=" margin-left: 2%;
+        margin-right: 2%;">
+            <div style="display: flex;">
+                <div class="col-md-12 "style="font-weight: 700;
+                font-size: 18px;">
+                    <span>DIGITAL PAPER NO:DP73345</span>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6font_size_12">
+                            <span>Insurance Name</span>
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 font_size_12">
+                            <span>Effective From</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">Darlene
+                            <span>Robertson</span>
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6"> <span>
+                                10/01/2023</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 font_size_12">
+                            <span>policy Number</span>
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 font_size_12">
+                            <span> Effective To</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                            <span>PN2262782323</span>
+                        </div>
+                        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
+                            <span>10/10/2024</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main font_size_12 ">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 bg_img">
+                <div class="row">
+                    <div class="col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8 ">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                            <div class="row">
+                                <div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 col-xxl-7">
+                                    <span class="font_size_12"> <span>Registraction NO</span></span>
+                                </div>
+                                <div
+                                    class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1  padding_zero">
+                                    <span> :</span>
+                                </div>
+                                <div
+                                    class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 padding_zero">
+                                    <span>RN43359392A</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 padding_top_4">
+                            <div class="row">
+                                <div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 col-xxl-7">
+                                    <span> Chassis</span>
+                                </div>
+                                <div
+                                    class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 padding_zero">
+                                    <span>:</span>
+                                </div>
+                                <div
+                                    class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 padding_zero">
+                                    <span> AD1001267222</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 padding_top_4">
+                            <div class="row">
+                                <div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 col-xxl-7 ">
+                                    <span>Licensed to carry</span>
+                                </div>
+                                <div
+                                    class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 padding_zero">
+                                    <span>:</span>
+                                </div>
+                                <div
+                                    class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 padding_zero">
+                                    <span>5</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 padding_top_4">
+                            <div class="row">
+                                <div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 col-xxl-7 ">
+                                    <span> Make</span>
+                                </div>
+                                <div
+                                    class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 padding_zero ">
+                                    <span> :</span>
+                                </div>
+                                <div
+                                    class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 padding_zero">
+                                    <span>Toyota</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 padding_top_4">
+                            <div class="row">
+                                <div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 col-xxl-7">
+                                    <span> Model</span>
+                                </div>
+                                <div
+                                    class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 padding_zero">
+                                    <span>:</span>
+                                </div>
+                                <div
+                                    class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 padding_zero">
+                                    <span>Camry</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 padding_top_4">
+                            <div class="row">
+                                <div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 col-xxl-7 ">
+                                    <span>Usage</span>
+                                </div>
+                                <div
+                                    class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 padding_zero">
+                                    <span>:</span>
+                                </div>
+                                <div
+                                    class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 padding_zero">
+                                    <span> Private</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 padding_top_4">
+                            <div class="row">
+                                <div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 col-xxl-7 ">
+                                    <span>insurer</span>
+                                </div>
+                                <div
+                                    class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 padding_zero">
+                                    <span> :</span>
+                                </div>
+                                <div
+                                    class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 padding_zero">
+                                    <span> ABC INSURANCE</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 padding_top_4">
+                            <div class="row">
+                                <div class="col-7 col-sm-7 col-md-7 col-lg-7 col-xl-7 col-xxl-7 ">
+                                    <span> DP Generated by</span>
+                                </div>
+                                <div
+                                    class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 padding_zero">
+                                    <span> :</span>
+                                </div>
+                                <div
+                                    class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 padding_zero">
+                                    <span> David</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4">
+                        <img src="/assets/bulk_upload/screenview.svg" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="row">
+                    <div
+                        class=" col-10 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6   d-flex justify-content-start ">
+                    </div>
+                    <div
+                        class="col-2 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end ">
+                        <img src="/assets/bulk_upload/sub_bk_img.svg" alt="" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->

@@ -1,0 +1,84 @@
+
+<div class="row" >
+    <div class="col-md-12 d-flex justify-content-end">
+        <mat-card class="mat_height_width">
+            <div class="header_downlad">
+                <div class="row margin_download">
+                    <div class="col-6 col-md-6  d-flex justify-content-start download_report">Download Report</div>
+                    <div class="col-6 col-md-6 d-flex justify-content-end ">
+                        <img src="/assets/purchase_stock/cross_button.svg" alt="" (click)="close()">
+                    </div>
+                </div>
+            </div>
+            <div class="select_colums">
+                <div class="purchase_stock_title"> Select Columns</div>
+                <div class="row gap">
+                    <div class="col-md-12"></div>
+                </div>
+                <div class="header_bg">
+                    <div class="row ">
+                        <mat-chip-grid #chipGridColumn aria-label="Fruit selection">
+                            <mat-chip-row *ngFor="let element of PurchaseStockList" [removable]="true" (removed)="remove(element)">
+                                {{element}}
+                                <button matChipRemove [attr.aria-label]="'remove ' + element">
+                                    <mat-icon>cancel</mat-icon>
+                                </button>
+                            </mat-chip-row>
+                        </mat-chip-grid>
+                        <div>
+                            <input class="MultiSelectInput" [matChipInputFor]="chipGridColumn"
+                                [matChipInputSeparatorKeyCodes]="separatorKeysCodes">
+                            <img src="assets/purchase_stock/input_arrow.svg" alt="" class="image_fixed"
+                                (click)="showpurchaselist()">
+                        </div>
+                    </div>
+                </div>
+                <div class="row gap">
+                    <div class="col-md-12"></div>
+                </div>
+                <div class="row ">
+                    <div class="col-md-4">
+                        <button class="stock_button" (click)="downloadData()">Download</button>
+                    </div>
+                    <div class="col-md-6">
+                         <button class="purchase_stock_button_cancel">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+        <mat-expansion-panel hideToggle [expanded]="listshow" *ngIf="listshow" class="expand_width">
+            <div class="row">
+                <div class="col-md-10" style="padding: 0px;">
+                    <div class="row" style="font-size: 16px;">
+                        <div class="col-md-1">
+                            <input type="checkbox" name="" id="" style="height: 20px; width: 20px;" #checkbox
+                                (click)="chechbox(checkbox.value)">
+                        </div>
+                        <div class="col-md-11"> Select All</div>
+                    </div>
+
+                </div>
+                <div class="col-md-1">
+                    <img src=" assets/purchase_stock/cross_button.svg" alt="" (click)="closecheckbox()">
+                </div>
+            </div>
+            <div *ngFor="let name of columnContentFromParent" #list style="font-size: 16px;">
+                <div class="row">
+                    <div class="col-md-1">
+                        <div class="col-md-6">
+                            <input type="checkbox" name="" id="" style="height: 20px; width: 20px;"
+                                [ngModel]="selectall" (click)="senddata(name)">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <option value="">
+                            <p>{{name}}</p>
+                        </option>
+                    </div>
+                </div>
+
+            </div>
+
+        </mat-expansion-panel>
+    </div>
+</div>

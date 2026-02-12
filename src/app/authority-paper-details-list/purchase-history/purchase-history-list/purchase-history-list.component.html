@@ -1,0 +1,78 @@
+<div class="margin_left_right" *ngIf="authorityPaperDetailsAccessDto?.isEnabled && purchaseHistoryPageAccessDto?.isView">
+    <section class="zoom_150" [ngStyle]="{'pointer-events': purchaseHistoryPageAccessDto?.isEdit ? 'auto' : 'none'}" >
+        <section class="ScrollBarStyle">
+            <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+                <ng-container matColumnDef="Check Box">
+                    <th mat-header-cell class="hearderStyle tableHeader" *matHeaderCellDef>
+                        <input type="checkbox" class="height_width_th cursor" [(ngModel)]="globalCheckboxState" (click)="onSelectAll()">
+                           </th>
+                    <td mat-cell *matCellDef="let element index as i">
+                         <input type="checkbox" class="height_width_th  cursor" [checked]="checkboxStateService.getGlobalCheckboxState() || checkboxStateService.getCheckboxState(tableId, element.companyId)" (change)="toggleCheckbox(element.companyId)">
+                         </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Insurance Company">
+
+                    <th mat-header-cell class="hearderStyle tableHeader" *matHeaderCellDef #chan  >
+
+                        <span class="cursor" (click)="shortingmethod('Insurance Company')">{{'Purchase_history_table.insuranceCompany'| translate}} &nbsp; <img
+                            src="/assets/purchase_stock/arrow.svg" alt="" [ngStyle]="insurance_Company?{'transform': 'rotateZ(180deg)'} : {'transform': 'rotateZ(0deg)'}" >
+                          </span></th>
+                    <td mat-cell *matCellDef="let element">{{element.comapanyName}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Total Transactions">
+                    <th  mat-header-cell class="hearderStyle tableHeader" *matHeaderCellDef >
+                      <span class="cursor" (click)="shortingmethod('Total Transactions')">{{"Purchase_history_table.totalTransactions"| translate}} &nbsp; <img
+                            src="/assets/purchase_stock/arrow.svg" alt=""  [ngStyle]="total_Transactions?{'transform': 'rotateZ(180deg)'} : {'transform': 'rotateZ(0deg)'}"  ></span></th>
+                    <!-- {{'userRoleManag.Date' | translate}} -->
+                    <td mat-cell *matCellDef="let element" maxlength="10">{{element.totalCount | number}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Pending Transactions">
+                    <th mat-header-cell class="hearderStyle tableHeader" *matHeaderCellDef >
+                      <span class="cursor" (click)="shortingmethod('Pending Transactions')">{{'Purchase_history_table.pendingTransactions'| translate}} &nbsp; <img
+                            src="/assets/purchase_stock/arrow.svg" alt=""    [ngStyle]="pending_Transactions?{'transform': 'rotateZ(180deg)'} : {'transform': 'rotateZ(0deg)'}"></span></th>
+                    <td mat-cell *matCellDef="let element">{{element.pendingCount | number}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="View Transactions">
+                    <th mat-header-cell class="hearderStyle tableHeader text-center" *matHeaderCellDef>
+                        {{'Purchase_history_table.viewTransactions'| translate }}
+                      </th>
+                    <td mat-cell *matCellDef="let element" class="text-center underline"  (click)="openViewTransactions(element)">
+                        {{'Purchase_history_table.viewTransactions' |translate}}
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            </table>
+            <div *ngIf="dataNotFound"class="no-data-found_cbt" >
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                  <img src="assets/no-data-found-icon.svg" >
+                  <small style="font-weight: 400;font-size: larger;padding-top: 2%;">{{'report_card.No_Data_Found' | translate}}</small>
+                </div>
+              </div>
+        </section>
+        <div style="position:relative;">
+
+            <mat-paginator [pageSizeOptions]="[10, 20,30,40,50]" [pageIndex]="pageIndex-1" showFirstLastButtons
+                [length]="totalLength" (page)="changePage($event);onpagebackward()"
+                class="pagnation_height">
+            </mat-paginator>
+
+            <div class="positionfixed">
+                <span class="font_size_13_5">{{'Pagination.Go_to_page' | translate}}</span>&nbsp;
+                <input type="number" class="pagenationinput" [(ngModel)]="pageIndex" (ngModelChange)="pageindex();onpagebackward()"
+                min="1" max={{maximum}} (keydown)="onKeyDown($event)" onKeyPress="if(this.value.length == 10) return false;"
+                oninput="this.value = !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
+            </div>
+        </div>
+
+    </section>
+
+</div>

@@ -1,0 +1,130 @@
+
+<div class="main_pop">
+    <form [formGroup]="reactiveForm" >
+<div class="popup-header">
+    <div class="row">
+        <div class=" col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6   d-flex justify-content-start start">
+            {{'PurchaseHistoryPopup.Allocate_Paper'|translate}} </div>
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end end">
+            <img src="/assets/purchase_stock/cross_button.svg" alt="" (click)="closeDialog()" class="cursor close_img">
+        </div>
+    </div>
+</div>
+
+<div class="margin_left_right mobilepaddingbottom5">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 padding_common">
+            <div class='toatl_stock common_stock font_size_color'>
+                <div class="row">
+
+                    <div class="col-md-6 font_size_14_5">
+                      {{'PurchaseHistoryPopup.Total_Stock_Allocated'|translate}}
+                    </div>
+                    <div class="col-md-6 font_size_14_5">
+
+                    </div>
+                    <div class="col-md-6 d-flex align-items-end">
+                        <div class="font_size_36">
+                            <h1 class="text_hidden" [matTooltip]="authorityPaperDetailsDto.stockCount | number">{{authorityPaperDetailsDto.stockCount | number}}</h1>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-end padding_2rem">
+                      <img src="/assets/purchase_stock/document_document.svg" alt="" class="img-fluid img_fixed imgheight">
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 padding_common">
+            <div class='aviable_stock common_stock font_size_color'>
+                <div class="row">
+                    <div class="col-md-6 font_size_14_5">
+                      {{'PurchaseHistoryPopup.Available_Stock'|translate}}
+                    </div>
+                    <div class="col-md-6 ">
+
+                  </div>
+                    <div class="col-md-6 d-flex align-items-end">
+                        <div class="font_sizeavailable_stock_img_36 ">
+                           <h1 class="text_hidden" [matTooltip]="authorityPaperDetailsDto.availableStock | number"> {{authorityPaperDetailsDto.availableStock | number}}</h1>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6 d-flex justify-content-end padding_2rem">
+                      <img src="/assets/header/available_stock_big.svg" alt="" class="img-fluid img_fixed imgheight">
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="margin_left_right">
+    <div class="row ">
+        <div class="col-md-12">
+            <div class="font_size_14">
+              {{'PurchaseHistoryPopup.Number_Of_Papers'|translate}} <span style="color: red;">*</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+            <div class="padding_top_input">
+                <input type="text"  class="height_width_input" [(ngModel)]="Papers"    formControlName="numberOfPapers"  (keypress)="matcher($event)"  maxlength="7">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="margin_left_right mobilepaddingbottom5">
+    <div class="row ">
+
+        <div class=" col-4 col-sm-4 col-md-1 col-lg-1 col-xl-1 col-xxl-1 " *ngFor="let paper of NumberOfPaper">
+
+            <button class="amount" (click)="Numberofpaper($event)"> {{paper}}</button>
+
+        </div>
+
+
+    </div>
+</div>
+<div class="margin_left_right mobilepaddingbottom5">
+    <div class="row ">
+        <div class="col-md-12">
+            <div class="allocate_paper font_size_14">
+              {{'PurchaseHistoryPopup.Allocate_Paper_as'|translate}}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="radio_margin_top display d-flex gap-3">
+
+            <div class="d-flex align-items-center" *ngFor="let BonusOrPaid of BonusOrPaid">
+                <input type="radio" name="" id="" class="radio cousor" (click)="Bonusorpaid(BonusOrPaid.name)" formControlName="allocatePaperMethod"
+                    value="{{BonusOrPaid.name}}" [checked]="BonusOrPaid.check"> &nbsp;<label
+                    for="">{{"Purchase_Allocation."+BonusOrPaid.name | translate}}</label>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="margin_left_right">
+
+    <div class="row">
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2 col-xxl-2">
+            <div>
+                <button class="Allocate_button" (click)="allocate()"> {{'PurchaseHistoryPopup.Allocate'|translate}}</button>
+            </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2 col-xxl-2">
+            <div>
+                <button class="cancel_button" (click)="closeDialog()" > {{'PurchaseHistoryPopup.Cancel'|translate}}</button>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+</form>
+</div>

@@ -1,0 +1,29 @@
+.arabic_style_all_popup{
+  direction: ltr;
+}
+.cheque_pading{
+    padding: 2% !important;
+}
+.img_cheque_height {
+    height: 36vh;
+    width: 57vw;
+    transform: translateY(-14px);
+}
+.name_file {
+  font-family: 'Inter' !important;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13.5px;
+  line-height: 19px;
+  font-size: small;
+  font-weight: 400;
+  max-width: 24ch;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #888888;
+
+}
+.cursor{
+  cursor: pointer;
+}

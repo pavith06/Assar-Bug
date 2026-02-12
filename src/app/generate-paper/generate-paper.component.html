@@ -1,0 +1,46 @@
+<div class="bg_color">
+    <div class="margin_left_right">
+        <div class="row ">
+
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex justify-content-start">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 single_line"><img
+                            src="/assets/paper_details/Arrow.svg" alt="" class=" img-fluid" routerLink="/paper-details" class="arrow_size cursor-icon">&nbsp;
+                        <span class="font_size_18 color_paper" *ngIf="bulkrevoke!=='Bulk Revoke'">{{'paperDetailsManual.Paper_Details_Generate_Paper' |translate}}</span>
+                        <span class="font_size_18 color_paper" *ngIf="bulkrevoke==='Bulk Revoke'">{{'paperDetailsManual.Paper_Details_Bulk_Revoke' |translate}}</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="bg_color_main">
+<div class="margin_left_right">
+    <div class="manual_bulk">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 col-xxl-3 manual_bulk_main">
+                <div class="row ">
+                    <div class="col-3 col-sm-3 col-md-4 col-lg-3 col-xl-3 col-xxl-3  d-flex justify-content-star position_relative padding_top_2_5" *ngIf="bulkrevoke!=='Bulk Revoke'">
+                        <span class="font_size_16 " (click)="manualUpload()" [class.manual_bulk_color]="manual_underline" (click)="manual()"> {{'paperDetailsManual.Manual' |translate}}</span>
+
+
+                        <div class=" underline_manual" *ngIf="manual_underline"></div>
+                    </div>
+                    <div class="col-8 col-sm-8 col-md-8 col-lg-9 col-xl-9 col-xxl-9  d-flex justify-content-star position_relative padding_top_2_5" *ngIf="bulkrevoke!=='Bulk Revoke'">
+                       <span class="font_size_16" (click)="bulkUpload()"  [class.manual_bulk_color]="bulk_underline" routerLink="/generate-paper/bulk"> {{'paperDetailsManual.Bulk_Upload' |translate}}</span>
+                        <div class=" underline_bulk" *ngIf="bulk_underline"></div>
+                    </div>
+                    <div class="col-8 col-sm-8 col-md-8 col-lg-9 col-xl-9 col-xxl-9  d-flex justify-content-star position_relative padding_top_2_5" *ngIf="bulkrevoke==='Bulk Revoke'">
+                        <span class="font_size_16" (click)="bulkUpload()"  [class.manual_bulk_color]="bulk_underline" routerLink="/generate-paper/bulk-revoke"> {{'paperDetailsManual.Bulk_Revoke' |translate}}</span>
+                         <div class=" underline_bulk" *ngIf="bulk_underline"></div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div >
+        <router-outlet></router-outlet>
+    </div>
+</div>
+</div>

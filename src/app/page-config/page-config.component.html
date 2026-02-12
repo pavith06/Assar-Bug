@@ -1,0 +1,12 @@
+<!-- <app-breadcrumb></app-breadcrumb> -->
+<mat-tab-group [className]="main_page" animationDuration="0ms" mat-stretch-tabs="false" mat-align-tabs="start" (selectedTabChange)="tabchange($event)">
+  <mat-tab label="Field Configuration" [labelClass]="fieldconfigure_Class">
+    <app-field-configure></app-field-configure>
+  </mat-tab>
+  <mat-tab label="Implement Configuration" [labelClass]="fieldconfigure_Class">
+    <app-implement-config></app-implement-config>
+  </mat-tab>
+  <!-- <mat-tab label="Scheduler" [labelClass]="scheduler_Class">
+    <app-scheduler></app-scheduler>
+  </mat-tab> -->
+</mat-tab-group>

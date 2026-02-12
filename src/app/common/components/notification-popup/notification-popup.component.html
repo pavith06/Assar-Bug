@@ -1,0 +1,36 @@
+<div class="notification_main_1">
+  <div class="card-header headercolor">
+    <span class="notifi_header">Notifications</span>
+    <span class="close-btn">
+      <mat-icon class="close"(click)="closeTab()">close</mat-icon>
+    </span>
+  </div>
+  <div class="card-content">
+    <ul class="notification-list liststyle ScrollBarStyle"  *ngIf="!noNotification">
+      <li *ngFor="let notification of purchaseHistoryDetailsList,let i = index"  (click)="notificationMsg(notification)">
+        <span class="profile-list profile_list1 jai" >
+
+          <div class="notification-info notification-info1">
+            <img class="profile-image img_style" [src]="notification.imageUrl"  (error)="notification.imageUrl = 'assets/no-logo.svg'">
+
+          </div>
+          <div class="mess-style"  >
+          <p class="notify-message" >{{ notification.notificationMsg }}</p>
+          <div class="date-time-container"><small class="date-time" style="padding-right: 5px;" ><img style="height: 15px;padding-right: 3px;" src="assets/Date.svg" alt="">{{notification.createdDate | date: 'dd/MM/yyyy'}} </small> <small  class="date-time"  ><img style="height: 12px;padding-right: 3px;" src="assets/Time.svg" alt="">{{notification.createdDate | date: 'h:mm a'}} </small> </div>
+          </div>
+        </span>
+      </li>
+      <app-loader *ngIf="isLoadStart"></app-loader>
+    </ul>
+    <!-- <ul class="notification-list ScrollBarStyle"  *ngIf="noNotification">
+      <li>
+        <span class="noNotification-content">No Notification</span>
+      </li>
+    </ul> -->
+  </div>
+</div>
+
+
+
+
+

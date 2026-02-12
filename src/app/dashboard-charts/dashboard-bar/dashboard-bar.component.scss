@@ -1,0 +1,151 @@
+.chart-container1 {
+  padding: 0% 0 0 0;
+  width: 100%;
+}
+.font_size_16_5
+{
+  font-size:16.5px
+}
+
+.mat-form-field {
+	+ {
+		.mat-form-field {
+			margin-left: 8px;
+		}
+	}
+}
+.boder_applied{
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.12);
+}
+.mat-raised-button {
+	margin-left: 8px;
+}
+.example-user-input {
+	margin-right: 8px;
+    &::backdrop {
+	  background-color:  rgba(255,255,255,0);
+  ;
+}
+
+
+}
+.chartunexpand
+{
+  height: 228px !important;
+}
+.chartexpand
+{
+  height: 450px !important;
+}
+.chartstyle{
+
+  width: 100% !important;
+  padding: 0rem 1rem 1rem 0rem !important;
+}
+.expandchartstyle{
+  height: 515px !important;
+}
+.fullscreen {
+  margin-top: 10% !important;
+}.expandview{
+  height:100%;
+
+}
+.mat-mdc-card-content:first-child {
+  padding-top: 10px !important;
+}
+.height_fixed{
+  height: 38.5vh;
+}
+
+@media only screen and (max-width: 1400px) and (min-width: 1200px)  {
+  .height_fixed {
+    height: 49.5vh;
+}
+}
+
+
+
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 767px) {
+  .height_fixed {
+    height: 49.5vh;
+}
+}
+
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 770px) and (max-width: 1024px){
+  .height_fixed {
+    height: 49.5vh;
+}
+}
+
+
+   /* Media Query for low resolution  Tablets, Ipads */
+   @media (min-width: 481px) and (max-width: 769px) {
+    .height_fixed {
+      height: 52.5vh;
+  }
+}
+.bar_chart_height{
+  height: 100%;
+}
+:host::ng-deep .mat-mdc-icon-button.mat-mdc-button-base {
+  width: 35px !important;
+  height: 48px;
+  padding: 12px;
+}
+
+
+:host::ng-deep .mat-mdc-icon-button.mat-mdc-button-base {
+  width: 35px !important;
+  height: 48px;
+  padding: 12px;
+}
+.cursor
+{
+  cursor: pointer !important;
+}
+:host::ng-deep .mat-mdc-icon-button {
+  // --mat-mdc-button-persistent-ripple-color: none !important;
+
+}
+@media only screen and (max-width: 600px)  {
+  .font_size_16_5
+{
+  font-size:14.5px
+}
+
+.chartstyle{
+
+  height: 100% !important;
+
+}
+.scrollbar
+{
+  width: 85vw;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.height_width
+{
+  width: 97rem;
+    height: 20rem;
+}
+.overflowhiiden
+{
+  overflow: hidden;
+}
+}
+:host::ng-deep .mat-mdc-icon-button {
+  --mat-mdc-button-persistent-ripple-color: none !important;
+
+}
+
+
+:host::ng-deep .mat-mdc-icon-button {
+  // --mat-mdc-button-persistent-ripple-color: #000;
+ --mat-mdc-button-ripple-color: none !important;
+}

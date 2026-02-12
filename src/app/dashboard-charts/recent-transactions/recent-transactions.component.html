@@ -1,0 +1,49 @@
+<mat-card class="card_margin boder_applied">
+  <div class="row padding_left_right">
+      <div class=" col-8 col-sm-8 col-md-8 col-lg-8 col-xl-7 col-xxl-7   d-flex justify-content-start ">
+          <span class="font_size_15_5 font_style dark_blue">{{'RecentTransactions.Recent_Transactions' |translate}}</span>
+      </div>
+      <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-5 col-xxl-5 d-flex justify-content-end " style="cursor:pointer" (click)="GoPaperDetails()">
+          <span class="font_size_15_5 font_style dark_blue"  >{{'RecentTransactions.View_All' |translate}}</span>
+      </div>
+  </div>
+  <div class="row padding_left_right ScrollBarStyle_recent_digital_paper" >
+      <div class="row padding_left_right recent_digital_paper_margin" *ngFor="let data of recentTransactionList">
+          <div class="col-12 bk_color">
+              <div class="row paddding_left_right_1">
+                  <div class="col-10 col-sm-12 col-md-10 col-lg-10 col-xl-10 col-xxl-10">
+                      <div class="row ">
+                          <div class="col-7 col-sm-7 col-md-5 col-lg-5 col-xl-7 col-xxl-6 ">
+                              <span class="font_style font_size_15_5 no_wrap_xxl">{{'RecentTransactions.Transactions_ID' |translate}}</span>
+                          </div>
+                          <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 diplay_content">
+                              <span class="font_style font_size_15_5">:</span>
+                          </div>
+                          <div class="col-4 col-sm-4 col-md-6 col-lg-6 col-xl-4 col-xxl-5">
+                              <span class="font_style font_size_15_5 max_with" [matTooltip]="data.transactionId">{{data.transactionId}}</span>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-7 col-sm-7 col-md-5 col-lg-5 col-xl-7 col-xxl-6 ">
+                              <span class="font_style font_size_15_5 no_wrap_xxl">{{data.currencyType}}</span>
+                          </div>
+                          <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 diplay_content">
+                              <span class="font_style font_size_15_5">:</span>
+                          </div>
+                          <div class="col-4 col-sm-4 col-md-6 col-lg-6 col-xl-4 col-xxl-5">
+                              <span class="font_style font_size_15_5 max_with"  [matTooltip]="data.purchaseAmount | number: '1.2-2'">{{data.purchaseAmount | number: '1.2-2'}}</span>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-2 col-sm-12 col-md-2 col-lg-2 col-xl-2 col-xxl-2 position_relative img_center" (click)="openViewPopup(data)" style="cursor:pointer">
+                      <!-- <span class="font_style font_size_15_5 sky_blue position_absolute_20">{{'RecentDigitalPapers.View'|translate}}</span> -->
+                      <img src="/assets/purchase_stock/color_icon.svg" alt="" class="img-fluid">
+                  </div>
+              </div>
+          </div>
+      </div>
+      <span class="no-data_cbt" *ngIf="noDataFound">
+        {{'report_card.No_Data_Found' | translate}}
+    </span>
+  </div>
+</mat-card>

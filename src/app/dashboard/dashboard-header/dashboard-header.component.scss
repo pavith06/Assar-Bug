@@ -1,0 +1,292 @@
+.margin_left_right {
+  margin-left: 5vw;
+  margin-right: 5vw;
+
+}
+.back_color{
+  background: #688F99;
+
+}
+.p_4
+{
+  padding: 4% 3%;
+}
+.p_4_1
+{
+  padding: 4% 4% 4.1% 4%;
+}
+.p4_5
+{
+  padding: 4% 4% 5% 4%;
+}
+.dark_blue{
+  background: #374B51;
+}
+.padding_top_bottom{
+  padding: 1% 0%;
+}
+.total_stock{
+  background: #88BAF0;
+border-radius: 4px;
+}
+.avialble_stock{
+  background: #FF9B6B;
+  border-radius: 4px;
+  padding-top: 2px;
+  }
+  .total_issued{
+    background: #B7E258;
+border-radius: 4px;
+padding-top: 2px;
+
+  }
+  .font_size_14_5{
+    font-size: 14.5px;
+  }
+  .white_color{
+    color: #FFFFFF !important;
+
+  }
+// .padding_4{
+//   padding: 4% 4% 4% 2%;
+// }
+.padding_left_zero_dashboard{
+  padding-left: 0px
+}
+.font_size_18{
+
+font-size: 15px;
+// white-space: nowrap;
+}
+.font_style{
+  font-family: 'Inter' !important;
+font-style: normal;
+}
+.font_size_30{
+
+font-size: 22.5px;
+}
+.padding_top_1{
+  padding-top: 1%;
+}
+.position_relative{
+  position: relative;
+}
+
+.dashboard_toatl_stcok
+{
+  position: absolute;
+
+}
+.nowhap{
+  white-space: nowrap;
+}
+
+
+.position_absolute_16{
+  position: absolute;
+
+  bottom: 1%;
+}
+.align_item_center{
+  align-items: center;
+}
+
+  .large_screen_dashboard
+  {
+    display: flex;
+    justify-content: end;
+  }
+  @media only screen and  (min-width: 1400px)
+  {
+    .padding_top_left{
+      padding-left: 3.5% !important;
+      padding-top: 1%;
+    }
+    .width_available_stock{
+      width: 28%;
+    }
+    .width_total_issued{
+      width: 31%;
+    }
+  }
+@media only screen and (max-width: 768px)and (min-width: 576px)
+{
+  .padding_left_zero_dashboard {
+    padding-left: 12px !important;
+}
+}
+@media only screen and (max-width: 1400px) and (min-width: 1200px)  {
+  :host::ng-deep .mat-datepicker-popup {
+    top: auto!important;
+}
+  .font_size_18{
+
+  font-size: 12.5px;
+
+  }
+  .p_4{
+    padding: 4.5% 2.5%;
+}
+.padding_left_total_stock
+{
+  padding-left: 0px !important;
+}
+.p_4_1{
+  padding: 4% 4% 5% 4%;
+}
+  .padding_top_left{
+    padding-left: 4.5%;
+    padding-top: 1%;
+}
+.margin_left{
+  margin-left: 6%;
+}
+
+  .font_size_30{
+  font-size: 20px;
+  }
+}
+.year{
+  padding: 9% 0% 9% 5%;
+background-color: transparent;
+border: 1px solid #FFFFFF;
+border-radius: 4px;
+}
+
+.font_size_13_5{
+
+  font-size: 16px;
+}
+.text-cbt{
+  width: 30%;
+}
+.DateStyle{
+width: 100%;
+  padding: 3%;
+}
+.dashboard_white_space_header{
+  white-space: nowrap;
+}
+.calender-toggler_dashboard{
+	position: absolute;
+	right: 0%;
+  top:-11%;
+
+}
+.padding_5{
+  padding: 4% 5% 4% 5%;
+}
+.padding_bottom_3{
+  padding-bottom: 5%;
+  width: 100%;
+}
+
+.padding_4{
+  padding: 4% 0% 4% 1%;
+
+}
+.dashboard_padding_10{
+  padding: 1%;
+}
+.cancel{
+  // background: transparent !important;
+  border: 1px #374B51 solid !important;
+  color: #374B51 !important;
+}
+@media only screen and (max-width: 1024px)  {
+.padding_bottom_1{
+  padding-bottom: 1%;
+}
+}
+.padding_zero{
+  padding: 1% 0% 0% 0% ;
+}
+.dashboard_header_padding_left{
+  padding-left: 20%;
+}
+.border_radius_3{
+  border-radius: 3% !important;
+}
+
+   /* Media Query for Tablets Ipads portrait mode */
+   @media (min-width: 768px) and (max-width: 1024px){
+    .padding_zero{
+      padding: 1% 0% 0% 2% ;
+    }
+  }
+.padding_top_left{
+  padding-left: 3.5%;
+  padding-top: 1%;
+}
+.max_with {
+
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 5ch;
+
+}
+.cursor
+{
+  cursor: pointer;
+}
+.max_with_avialble_stock{
+  cursor: pointer;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 5ch;
+}
+
+.p4{
+  padding: 4% 6%;
+}
+.mat-mdc-menu-item {
+
+  min-height: 39px !important;
+}
+
+
+@media (max-width: 600px)  {
+  .displaynone
+  {
+    display: none !important;
+  }
+  .font_size_18{
+    font-size: 13px;
+}
+.font_size_30{
+  font-size: 18.5px;
+}
+.year {
+  padding: 5% 0% 5% 5%;}
+  .font_size_14_5{
+    font-size: 12.5px;
+}
+.font_size_mobile
+{
+  font-size: 13px !important;
+}
+.button_width
+{
+  width: 12.3rem !important;
+  height: 100%;
+}
+.padding_cancel
+{
+  padding-bottom: 1rem !important;
+}
+.margin_left_right{
+  margin-left: 3%;
+  margin-right: 3%;
+}
+}
+.button_width
+{
+
+  height: 100%;
+}

@@ -1,0 +1,94 @@
+<div class="arabic_style_all_popup">
+  <div class="overflow_hidden">
+    <div class="popup-header">
+      <div class="row">
+        <div class=" col-10 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6   d-flex justify-content-start ">
+
+        </div>
+        <div class="col-2 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end ">
+          <img src="/assets/purchase_stock/cross_button.svg" alt="" class="img-fluid cursor close_img" (click)="closeDialog()">
+        </div>
+      </div>
+    </div>
+    <div>
+      <div *ngIf="revoke">
+        <div class="row ">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex justify-content-center">
+            <span><img src="/assets/bulk_upload/revoke.svg" alt="" class="img-fluid"></span>
+          </div>
+        </div>
+        <div class="row padding_top_2">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex justify-content-center">
+            <span class="red_color font_style font_size_15_5">{{'revoke_digital_paper.Revoke_Digital_Paper'|translate}}</span>
+          </div>
+        </div>
+        <div class="row padding_top_2">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex justify-content-center">
+            <span class="font_size_13_5 font_style">{{'revoke_digital_paper.revoke_message1'|translate}}({{policyNo}})?</span>
+          </div>
+        </div>
+        <div class="row padding_top_2">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex justify-content-center">
+            <span class="font_size_13_5 font_style">{{'revoke_digital_paper.revoke_message2'|translate}}</span>
+          </div>
+        </div>
+<div class="row padding_top_2">
+  <div class="col-12 d-flex justify-content-center align-items-center" style="gap: 1rem;">
+    <span style="font-size: 0.85rem; font-family: 'Arial', sans-serif;">Reason For Revoke</span>
+
+<select
+  class="form-select"
+  [(ngModel)]="selectedReason"
+  style="width: 15rem; height: 2rem; font-size: 0.85rem; padding: 0 0.5rem; line-height: 1.5; font-family: 'Arial', sans-serif;"
+>
+  <option value="" disabled>Select a reason</option>
+  <option *ngFor="let r of reasons" [ngValue]="r.id">{{ r.label }}</option>
+</select>
+
+    
+  </div>
+</div>
+
+<!-- Validation message -->
+<div *ngIf="validationMessage" class="text-danger text-center" style="font-size: 0.85rem; margin-top: 0.4rem;">
+  {{ validationMessage }}
+</div>
+
+
+        <div class="row padding_top_2">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex justify-content-center">
+            <button class="cancel font_size_13_5 font_style" (click)="closeDialog()">{{'revoke_digital_paper.cancel'|translate}}</button>&nbsp;&nbsp;<button
+              class="revoke font_size_13_5 font_style" (click)="paperRevoked()">{{'revoke_digital_paper.Yes_Revoked'|translate}}</button>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="paper_revoked">
+        <div class="row ">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex justify-content-center">
+            <span><img src="/assets/bulk_upload/tick.svg" alt="" class="img-fluid"></span>
+          </div>
+        </div>
+        <div class="row padding_top_2">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex justify-content-center">
+            <span class="green_color font_style font_size_15_5">{{'revoke_digital_paper.Paper_Revoked'|translate}}</span>
+          </div>
+        </div>
+        <div class="row padding_top_2">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex justify-content-center">
+            <span class="font_size_13_5 font_style">{{'revoke_digital_paper.The_Digital_Paper'|translate}} ({{policyNo}}){{'revoke_digital_paper.was'|translate}}</span>
+          </div>
+        </div>
+        <div class="row padding_top_2">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex justify-content-center">
+            <span class="font_size_13_5 font_style">{{'revoke_digital_paper.revoked_successfully'|translate}}</span>
+          </div>
+        </div>
+        <div class="row padding_top_2">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex justify-content-center">
+            <button class="view_paper font_size_13_5 font_style" (click)="viewPaper()">{{'revoke_digital_paper.View_Paper'|translate}}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

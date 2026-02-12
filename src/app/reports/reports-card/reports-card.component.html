@@ -1,0 +1,204 @@
+<app-report-header [pageInfo]="pageInfo"></app-report-header>
+
+<div *ngIf="dataNotFound" style="position: absolute;top: 50%;left: 46%;">
+  <div class="d-flex flex-column justify-content-center align-items-center">
+    <img src="assets/no-data-found-icon.svg">
+    <small style="font-weight: 400;font-size: larger;padding-top: 2%;">{{'report_card.No_Data_Found'|translate}}</small>
+  </div>
+</div>
+
+<div class="bg_color" *ngIf="reportCardPageAccessDto?.isView">
+  <div class="Padding_top">
+    <div class="margin_left_right">
+      <div class="ScrollBarStyle">
+        <div class="height_width zoom_150">
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3 " *ngFor="let data of reportdVo">
+              <div class="border_bg_color" *ngIf="data.reportType === 0">
+                <div class="row">
+                  <div class="col-8 col-sm-8 col-md-8 col-lg-7 col-xl-8 col-xxl-8  d-flex justify-content-star">
+                    <div class="font_size_18 font_style card_header pool max_with" [matTooltip]="data.reportName">{{data.reportName}}</div>
+                  </div>
+                  <div class="col-4 col-sm-4 col-md-4 col-lg-5 col-xl-4 col-xxl-4  d-flex justify-content-end">
+                    <div class="font_size_16 font_style organge white_space" [matTooltip]="data.selectedColumnCount+7 +' '+ 'Columns'"> <span>{{data.selectedColumnCount+7}}</span>
+                      &nbsp;<span>{{'report_card.Columns'|translate}}</span> </div>
+                  </div>
+                </div>
+                <div class="row company_padding">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex justify-content-star">
+                    <div class="font_size_16 font_style companyName ">{{data.insuredName}}</div>
+                  </div>
+                </div>
+                <div class="row padding_bottom_3">
+                  <div class="col-md-12">
+                    <div class="row padding_left_2">
+                      <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 padding_zero width_26">
+                        <div class="bg_color_allocate_stock">
+
+                          <div class="row">
+                            <div
+                              class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex  padding_top_6">
+                              <span [matTooltip]="'report_tooltip.purchase_Stock' | translate"><img src="/assets/reportloss/start_end.svg" alt=""
+                                  class=" img_height cursor"></span>
+                              &nbsp;&nbsp;
+                              <span
+                                class="bg_color_allocate_stock start_end_color font_size_16_5 max_with" [matTooltip]="data.purchaseOrderTotalCount.toString() | number">{{data.purchaseOrderTotalCount | number}}</span>
+                            </div>
+
+                          </div> 
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 padding_left width_26">
+                        <div class="bg_color_available_stock">
+
+                          <div class="row">
+                            <div
+                              class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex  padding_top_6">
+                              <span [matTooltip]="'report_tooltip.purchase_Stosk_Success' | translate"><img src="/assets/reportloss/success.svg" alt=""
+                                  class="img-fluid img_height cursor"></span>
+                              &nbsp;&nbsp;
+                              <span class="font_size_16_5  max_with green "  [matTooltip]="data.purchaseOrderSuccessCount | number">{{data.purchaseOrderSuccessCount | number}}</span>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 padding_right width_26">
+                        <div class="bg_color_paper_issued">
+
+                          <div class="row">
+                            <div
+                              class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex  padding_top_6">
+                              <span [matTooltip]="'report_tooltip.Purchase_stosk_summit' | translate"> <img src="/assets/reportloss/pending.svg" alt=""
+                                  class="img-fluid img_height cursor"></span>
+                              &nbsp;&nbsp;
+                              <span
+                                class="font_size_16_5 white_color max_with font_style yellow"  [matTooltip]="data.purchaseOrderPendingCount.toString() | number">{{data.purchaseOrderPendingCount | number}}</span>
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row padding_left_2">
+                  <div class="col-md-12">
+                    <div class="row">
+                      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 padding_zero">
+                        <span class="cursor"    (click)="download(data)" *ngIf="reportCardPageAccessDto?.isDownload">
+                        <span>
+
+                          <img src="/assets/reportloss/download.svg" alt="" class="img-fluid img_height">
+                        </span>&nbsp;&nbsp;<span class="font_size_16 font_style "
+                       >{{'report_card.Download'|translate}}</span>
+                        </span>
+                        &nbsp;&nbsp;
+
+                        <span class="cursor"    (click)="edit(data)" *ngIf="reportCardPageAccessDto?.isEdit">
+                        <span>
+
+                          <img src="/assets/reportloss/edit.svg" alt="" class="img-fluid img_height">
+                        </span>&nbsp;&nbsp;<span class="font_size_16 font_style "
+                          >{{'report_card.Edit'|translate}}</span>
+                          </span>
+                      </div></div>
+                  </div>
+                </div>
+
+             </div>
+              <div class="border_bg_color" *ngIf="data.reportType===1">
+                <div class="row">
+                  <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8 col-xxl-8  d-flex justify-content-star">
+                    <div class="font_size_18 font_style card_header pool max_with" [matTooltip]="data.reportName">{{data.reportName}}</div>
+                  </div>
+                  <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4  d-flex justify-content-end">
+                    <div class="font_size_16 font_style organge white_space"  [matTooltip]="data.selectedColumnCount+9 +' '+ 'Columns'"> <span>{{data.selectedColumnCount+9}}</span>
+                      &nbsp;<span>{{'report_card.Columns'|translate}}</span> </div>
+                  </div>
+                </div>
+                <div class="row company_padding">
+                  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex justify-content-star">
+                    <div class="font_size_16 font_style companyName ">{{data.insuredName}} </div>
+                  </div>
+                </div>
+                <div class="row padding_bottom_3">
+                  <div class="col-md-12">
+                    <div class="row padding_left_2">
+                      <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 padding_zero width_26">
+                        <div class="bg_color_allocate_stock">
+                          <div class="row">
+                            <div
+                              class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex  padding_top_6">
+                              <span [matTooltip]="'report_tooltip.Digital_Paper' | translate"><img src="/assets/reportloss/file.svg" alt="" class=" img_height cursor"></span>
+                              &nbsp;&nbsp;
+                              <span
+                                class="bg_color_allocate_stock start_end_color  font_size_16_5 max_with"  [matTooltip]="data.paperDetailsTotalCount.toString() | number">{{data.paperDetailsTotalCount | number}}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 padding_left width_26">
+                        <div class="bg_color_available_stock">
+                          <div class="row">
+                            <div
+                              class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex  padding_top_6">
+                              <span [matTooltip]="'report_tooltip.Active_Digital_Paper' | translate"><img src="/assets/reportloss/file_correct.svg" alt=""
+                                  class=" img_height cursor"></span>
+                              &nbsp;&nbsp;
+                              <span class="font_size_16_5 green max_with "   [matTooltip]="data.paperDetailsActiveCount.toString() | number">{{data.paperDetailsActiveCount | number}}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 padding_right width_26">
+
+                        <div class="bg_color_paper_issued_wrong">
+                          <div class="row">
+                            <div
+                              class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex  padding_top_6">
+                              <span [matTooltip]="'report_tooltip.Expiry_Digital_Paper' | translate"><img src="/assets/reportloss/file_wrong.svg" alt=""
+                                  class="img-fluid img_height cursor"></span>
+                              &nbsp;&nbsp;
+                              <span class="font_size_16_5  max_with red_color "  [matTooltip]="data.paperDetailsExpiredCount.toString() | number">{{data.paperDetailsExpiredCount | number}}</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row padding_left_2">
+                  <div class="col-md-12">
+                    <div class="row">
+                      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 padding_zero">
+                        <span class="cursor"  (click)="download(data)" *ngIf="reportCardPageAccessDto?.isDownload">
+                          <span>
+                            <img src="/assets/reportloss/download.svg" alt="" class="img-fluid img_height">
+                          </span>&nbsp;&nbsp;<span  class="font_size_16 font_style "
+                           >{{'report_card.Download'|translate}}</span>
+
+                            </span>
+                          &nbsp;&nbsp;
+
+                          <span class="cursor"    (click)="edit(data)" *ngIf="reportCardPageAccessDto?.isEdit">
+                          <span >
+                            <img src="/assets/reportloss/edit.svg" alt="" class="img-fluid img_height">
+                          </span>&nbsp;&nbsp;<span  class="font_size_16 font_style "
+                            >{{'report_card.Edit'|translate}}</span>
+                            </span>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card_gap"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

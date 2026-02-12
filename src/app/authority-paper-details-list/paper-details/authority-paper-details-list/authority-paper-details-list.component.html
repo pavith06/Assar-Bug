@@ -1,0 +1,89 @@
+<div class="margin_left_right" *ngIf="paperDetailsPageAccessDtoFromParent?.isView" [ngStyle]="{'pointer-events': paperDetailsPageAccessDtoFromParent?.isEdit ? 'auto' : 'none'}" >
+    <section class="zoom_150">
+        <section class="ScrollBarStyle">
+            <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+                <ng-container matColumnDef="Check Box">
+                    <th mat-header-cell class="hearderStyle tableHeader cursor" *matHeaderCellDef>
+                        <input type="checkbox" class="height_width_th cursor" [(ngModel)]="globalCheckboxState" (click)="onSelectAll()">
+                           </th>
+                    <td mat-cell *matCellDef="let element index as i">
+                        <input type="checkbox" class="height_width_th cursor" [checked]="checkboxStateService.getGlobalCheckboxState() || checkboxStateService.getCheckboxState(tableId, element.companyId)" (change)="toggleCheckbox(element.companyId)">
+                     </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Insured Company">
+
+                    <th mat-header-cell class="hearderStyle tableHeader cursor" *matHeaderCellDef #chan  >
+                      <span class="cursor" (click)="shortingmethod('Insurance Company')">
+                        {{'paper_details_table.insured_company'| translate}} &nbsp; <img
+                            src="/assets/purchase_stock/arrow.svg" alt="" [ngStyle]="insurance_Company?{'transform': 'rotateZ(180deg)'} : {'transform': 'rotateZ(0deg)'}" >
+                          </span></th>
+                    <td mat-cell *matCellDef="let element">{{element?.insuredComapny}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Stock Count">
+                    <th  mat-header-cell class="hearderStyle tableHeader " *matHeaderCellDef >
+                        <span class="cursor" (click)="shortingmethod('Stock Count')">{{"paper_details_table.stock_count"| translate}} &nbsp; <img
+                            src="/assets/purchase_stock/arrow.svg" alt=""  [ngStyle]="stock_Count?{'transform': 'rotateZ(180deg)'} : {'transform': 'rotateZ(0deg)'}"  >
+                          </span></th>
+                    <!-- {{'userRoleManag.Date' | translate}} -->
+                    <td mat-cell *matCellDef="let element" maxlength="10">{{element?.stockCount | number}} </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="Available Stock">
+                    <th mat-header-cell class="hearderStyle tableHeader " *matHeaderCellDef >
+                      <span class="cursor" (click)="shortingmethod('Available Stock')"> {{'paper_details_table.available_stock'| translate}} &nbsp; <img
+                            src="/assets/purchase_stock/arrow.svg" alt=""    [ngStyle]="available_Stock?{'transform': 'rotateZ(180deg)'} : {'transform': 'rotateZ(0deg)'}">
+                      </span> </th>
+                    <td mat-cell *matCellDef="let element">{{element?.availableStock | number }} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Papers Issued">
+                    <th mat-header-cell class="hearderStyle tableHeader " *matHeaderCellDef >
+                      <span class="cursor" (click)="shortingmethod('Papers Issued')">  {{'paper_details_table.papers_issued'| translate}} &nbsp; <img
+                            src="/assets/purchase_stock/arrow.svg" alt=""    [ngStyle]="papers_Issued?{'transform': 'rotateZ(180deg)'} : {'transform': 'rotateZ(0deg)'}">
+                      </span>
+                        </th>
+                    <td mat-cell *matCellDef="let element">{{element?.paperIssued | number }} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="View Papers">
+                    <th mat-header-cell class="hearderStyle tableHeader text-center " *matHeaderCellDef>
+                        {{'paper_details_table.view_papers'| translate }}
+                      </th>
+                    <td mat-cell *matCellDef="let element" class="text-center underline"  (click)="openViewPapers(element)">
+                       <div>{{'paper_details_table.view_papers'| translate }}</div>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+            </table>
+            <div *ngIf="dataNotFound" class="no-data-found_cbt" >
+                <div class="d-flex flex-column justify-content-center align-items-center" >
+                  <img src="assets/no-data-found-icon.svg" >
+                  <small style="font-weight: 400;font-size: larger;padding-top: 2%;">{{'report_card.No_Data_Found'| translate }}</small>
+                </div>
+              </div>
+        </section>
+        <div style="position:relative;">
+
+            <mat-paginator [pageSizeOptions]="[10, 20,30,40,50]" [pageIndex]="pageIndex-1" showFirstLastButtons
+                [length]="totalLength" (page)="changePage($event);onpagebackward()"
+                class="pagnation_height">
+            </mat-paginator>
+
+            <div class="positionfixed">
+                <span class="font_size_13_5">{{'Pagination.Go_to_page' | translate}}</span>&nbsp;
+                <input type="number" class="pagenationinput" [(ngModel)]="pageIndex" (ngModelChange)="pageindex();onpagebackward()"  (keydown)="onKeyDown($event)" onKeyPress="if(this.value.length == 10) return false;"
+                 min="1"   [max]="maximum"  [disabled]="isGotToPageDissabel">
+            </div>
+        </div>
+
+    </section>
+
+</div>
+

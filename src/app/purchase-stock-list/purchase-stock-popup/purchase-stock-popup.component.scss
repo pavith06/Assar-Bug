@@ -1,0 +1,666 @@
+
+.arabic_style_all_popup{
+  direction: ltr;
+}
+$font_content: 16px;
+$font_family_inter: 'Inter';
+$color_2: #44749dcc;
+
+.header_height {
+    height: 50px;
+    background: #E7EDEE;
+}
+.p_t_0_5
+{
+  padding-top: 0.5rem;
+}
+.font_style {
+    font-family: 'Inter';
+    font-style: normal;
+}
+.allocate_stock_color {
+    color: #688F99;
+}
+.font_size_18 {
+    font-weight: 500;
+    font-size: 16.5px;
+}
+.cursor{
+  cursor: pointer;
+}
+.cursor-default
+{
+  cursor: not-allowed;
+}
+.popup-header {
+    background-color: #E7EDEE;
+    padding: 13px 24px 13px 24px
+}
+.end {
+    padding: 16px 0px 0px 0px !important;
+    font-family: 'Inter' !important;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16.5px;
+    line-height: 22px;
+
+
+    color: #688F99;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.gap {
+    height: 19px;
+}
+
+.total_stock {
+    height: 450px !important;
+    background: rgba(231, 237, 238, 0.4) !important;
+}
+
+.payment {
+    height: 450px !important;
+    background: #FFFFFF !important;
+}
+
+.total_stock_available_padding {
+    padding: 18px 0px 0px 0px !important;
+    display: flex;
+    justify-content: center;
+
+}
+
+.total_stock_available {
+    height: 107px !important;
+    width: 96%;
+    background: #FF9B6B !important;
+    border-radius: 4px !important;
+}
+
+.stock_header_padding {
+    padding: 21px 12px 0px 15px !important;
+}
+
+.stock_header {
+    font-family: 'Inter' !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14.5px;
+    color: #FFFFFF;
+    display: flex;
+    white-space: nowrap;
+}
+.h2rem
+{
+  height: 2rem;
+}
+.font_size_14_5{
+  font-size: 14.5px;
+  font-weight: 400;
+}
+.end_img {
+  padding: 10% 10% 0% 0%;
+}
+
+.amount {
+    background: #688F99;
+    border-radius: 38px;
+    border: 0px solid #688F99;
+    font-weight: 400;
+    font-size: 12.5px;
+    color: #FFFFFF;
+    padding: 2px 11px;
+}
+
+.total_stock_company {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30.5px;
+    color: #FFFFFF;
+    display: flex;
+}
+
+.number_of_papers_padding {
+    padding: 13px 0px 0px 2px !important;
+}
+
+.number_of_papers_input_padding {
+    padding: 13px 0px 0px 0px !important;
+    display: flex;
+    justify-content: center;
+}
+
+.number_of_papers_height_width {
+    height: 46px;
+    width: 96%;
+}
+
+.number_of_papers_amount {
+    padding: 11px 0px 0px 5px !important;
+    display: flex;
+}
+
+.position_relative_1{
+  position: relative;
+  right: 1%;
+  padding-right: 2%;
+}
+
+
+.total_coast {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14.5px;
+    color: #444444;
+
+}
+
+.total_coast_display_padding {
+    padding: 13px 0px 0px 0px !important;
+    display: flex;
+    justify-content: center;
+}
+
+.total_coast_display {
+    height: 46px;
+    width: 96%;
+    background: #3293D9;
+    border: 0px;
+    font-family: 'Inter' !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14.5px;
+    color: #FFFFFF;
+    padding: inherit;
+    padding-left: 4%;
+    padding-right: 4%;
+}
+
+.payment_method_padding {
+    padding: 14px;
+}
+
+.payment_heading {
+    font-family: 'Inter' !important;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16.5px;
+    line-height: 22px;
+    color: #688F99;
+}
+
+.payment_padding {
+    padding: 5%;
+}
+
+.payment_upload_cheque {
+    font-family: 'Inter' !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14.5px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    color: #444444;
+}
+
+.dropzone {
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    margin: 0 auto;
+    height: 178px;
+    background: #F8F8F9;
+    border: 1px dashed #888888;
+    border-radius: 2px;
+}
+
+.input-file {
+    opacity: 0;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+
+.file-text{
+  font-size: 14.5px;
+  font-weight: 400;
+  color: #38424c;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 63ch;
+}
+
+.btn-font {
+    font-size: smaller;
+}
+
+.btn-sz {
+    height: 41.49px !important;
+    background: #374B51;
+    border-radius: 1.80381px;
+}
+
+.black-btn-bg {
+  background: rgba(28,39,44,1) !important;
+    border-color: #374B51;
+    color: white;
+    position: relative !important;
+}
+
+.cheque_list {
+    height: 65px;
+    left: 0px;
+    top: 0px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.eye_img {
+    height: 25px;
+    width: 25px;
+}
+
+.delete_img {
+    height: 21px;
+    width: 21px;
+}
+
+.process_pay {
+    justify-content: center;
+    align-items: center;
+    padding: 10px 16px;
+    gap: 10px;
+    height: 46px;
+    background: rgba(28,39,44,1);
+    border-radius: 2px;
+    font-family: 'Inter' !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14.5px;
+    line-height: 19px;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.name_file {
+    font-family: 'Inter' !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13.5px;
+    line-height: 19px;
+    font-size: small;
+    font-weight: 400;
+    max-width: 24ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #888888;
+
+}
+
+.ScrollBarStyle {
+    margin-top: 2%;
+    overflow-y: auto;
+    height: 120px;
+
+    &::-webkit-scrollbar {
+        width: 3px !important;
+        height: 3px !important;
+        overflow-y: scroll;
+        background: grey;
+        box-shadow: inset 0 0 4px #707070;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #dfeaf3;
+        border-radius: 10px;
+    }
+}
+
+.file_mb {
+    font-family: 'Inter' !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #CCCCCC;
+    position: absolute;
+    top:33%;
+}
+
+// .border {
+//     background: #F6FAFD;
+//     border: 2px solid #3293D9 !important;
+//     border-radius: 2px;
+// }
+
+// .tick_mask {
+//     position: absolute;
+//     left: 85%;
+//     bottom: 180%;
+// }
+
+.card_number {
+
+    font-family: 'Inter' !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14.5px;
+    line-height: 19px;
+    color: #444444;
+}
+
+.cvc {
+    align-items: center;
+    width: 50%;
+    height: 35px;
+    border: 1px solid #A5A5A5;
+    border-radius: 2px;
+}
+
+.card_number_input {
+    align-items: center;
+    width: 100%;
+    height: 35px;
+    border: 1px solid #A5A5A5;
+    border-radius: 2px;
+
+}
+
+.padding_zero {
+    padding: 0px !important;
+}
+
+.checkbox_height_width {
+    width: 16px;
+    height: 16px;
+}
+
+input {
+    font-size: 13.5px !important;
+    font-weight: 400 !important;
+}
+
+.process_pay_padding {
+    padding: 0px 0px 0px 22px !important;
+}
+
+.containers {
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.Browse_file {
+    margin-top: 8%;
+}
+
+@media screen and (max-width:767px) {
+    // .total_stock_company {
+    //     margin-top: -17px;
+    // }
+
+    .Browse_file {
+
+        margin-top: 12%;
+    }
+
+    .end {
+        padding: 16px 21px 0px 21px;
+    }
+
+    .process_pay_padding {
+        padding: 0px !important;
+        margin-top: -51px;
+    }
+
+    .payment_upload_cheque {
+        margin-top: 16px;
+    }
+
+    .process_pay {
+        padding: 0px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .end {
+        padding: 15px 7px 0px 7px;
+    }
+}
+
+@media only screen and (max-width: 768px) and (min-width:425px) {
+    .number_of_papers_amount {
+        padding: 11px 12px 0px 0px !important;
+    }
+}
+
+@media only screen and (max-width:1200px) and (min-width: 768px) {
+    .number_of_papers_amount {
+        padding: 11px 16px 0px 0px !important;
+    }
+}
+
+.file_size {
+    padding-bottom: 27%;
+}
+
+.margin-top_airtel_upi{
+    margin-top: 11%
+}
+@media only screen and (max-width:769px){
+    .margin-top_airtel_upi{
+        margin-top: 0%
+    }
+}
+
+.margin_top_14{
+    margin-top: 14px;
+}
+.margin_top_11{
+   margin-top: 11%;
+}
+.padding_3{
+   padding: 3%;
+}
+.position_relatives{
+    position: relative;
+}
+.height_25{
+  height: 25%;
+
+}
+.height_20{
+  height: 20%;
+}
+.red_font_size{
+  color: red;font-size: 13.5px;
+}
+@media only screen and (max-width: 1200px) and (min-width: 992px)  {
+  .height_20{
+    height: 16%;
+  }
+}
+@media only screen and (max-width: 992px) and (min-width:768px )  {
+  .height_20{
+    height: 15%;
+  }
+}
+.height_37{
+       height: 37px;
+}
+.height_10{
+    height: 10px;
+}
+.height_5{
+  height: 5px;
+}
+@media only screen and (max-width: 400px)  {
+    .margin_top_14 {
+        margin-top: 35px;
+    }
+    .ends{
+        padding: 16px 12px 0px 0px !important
+    }
+}
+
+.position_relative_15{
+  position: relative;
+    top: 15px;
+    display: flex;
+}
+@media only screen and (max-width: 600px)  {
+  .position_relative_100{
+    position: relative;
+    bottom: 100%;
+  }
+  .name_file {
+    font-family: 'Inter' !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14.5px;
+    line-height: 19px;
+    font-size: small;
+    font-weight: 400;
+    max-width: 10ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #888888;
+
+}
+
+
+.font_size_18 {
+
+  font-size: 13.5px;
+}
+.end {
+
+  font-size: 13.5px;
+ }
+
+.stock_header {
+
+
+  font-size: 12.5px;
+
+}
+
+.amount {
+
+  font-size: 10.5px;
+
+}
+
+.total_stock_company {
+
+  font-size: 27.5px;
+  }
+.total_coast {
+
+  font-size: 12.5px;
+
+
+}
+
+.total_coast_display {
+
+  font-size: 12.5px;
+
+}
+.payment_heading {
+
+
+  font-size: 14.5px;
+
+}
+
+.payment_upload_cheque {
+
+  font-size: 12.5px;
+
+}
+.file-text{
+font-size: 12.5px;
+
+}
+
+.process_pay {
+  width: 90%;
+  font-size: 12.5px;
+  padding: 4%;
+
+}
+.name_file {
+
+  font-size: 11.5px;
+
+}
+
+.file_mb {
+
+  font-size: 10px;
+
+}
+
+.card_number {
+
+
+  font-size: 12.5px;
+
+}
+input {
+  font-size: 11.5px !important;
+
+}
+.red_font_size{
+font-size: 11.5px;
+}
+
+.mobileScrollbar
+{
+  overflow-x: hidden;
+  overflow-y: scroll;
+    height: 56vh;
+    padding-bottom: 10%;
+    &::-webkit-scrollbar {
+      width: 0px !important;
+      overflow-y: scroll;
+      background: grey;
+      box-shadow: inset 0 0 4px #707070;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #dfeaf3;
+      border-radius: 10px;
+    }
+}
+.popup-header{
+
+  padding: 8px 12px 8px 12px;
+}
+.close_img
+{
+  height: 14px !important;
+}
+.font_size_14_5
+{
+  font-size: 12.5px;
+}
+}
+.padding_bottom_1rem_mobile{
+  padding-bottom: 1rem;
+}

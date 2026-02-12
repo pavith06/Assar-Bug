@@ -1,0 +1,56 @@
+.authority_header {
+
+
+    background: #688F99;
+
+}
+
+.header {
+    font-family: 'Inter' !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14.5px;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    background: #688F99;
+    text-decoration: none;
+   white-space: nowrap;
+}
+.padding_authority{
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 2% 0px 0px 0px;
+
+
+}
+
+
+.active{
+
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border: solid white;
+    margin-top: 5.3%;
+  }
+  .control{
+    position: relative;
+    text-align: center;
+  }
+
+  .position{
+    position: relative;
+    bottom: 8px;
+  }
+
+/* styles.css */
+::ng-deep .mat-mdc-option .mdc-list-item__primary-text {
+  font-size: 11px !important; /* Adjust the font size as per your requirement */
+}
+
+@media only screen and (max-width: 600px)  {
+  .header {
+    font-size: 13.5px;
+  }
+
+}

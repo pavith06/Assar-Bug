@@ -1,0 +1,8 @@
+<xng-breadcrumb  style="font-family: 'Inter';" [separator]="icontemplate">
+  <ng-container *xngBreadcrumbItem="let BREADCRUMB">
+    <ng-container>{{ BREADCRUMB | translate }}</ng-container>
+  </ng-container>
+</xng-breadcrumb>
+<ng-template #icontemplate>
+  &nbsp;/&nbsp;
+</ng-template>

@@ -1,0 +1,148 @@
+<section>
+  <div class="top-heading">
+    <h4>{{'Field_Config.field_config' | translate}}</h4>
+  </div>
+  <!-- FORM GROUP HERE -->
+  <form [formGroup]="fieldConfigForm" class="field-inner">
+    <!-- FIELD NAME BLOCK -->
+    <div class="fieldname-block padding_bottom_1vh">
+      <h6 class="font_size_14_3 font_style padding_bottom_1vh">{{'Field_Config.field_name' | translate}}</h6>
+      <!-- <mat-form-field class="fieldName"> -->
+        <input formControlName="fieldNameControl" matInput class="input_field padding_bottom_1vh">
+      <!-- </mat-form-field> -->
+    </div>
+    <!-- ACCESS FOR BLOCK -->
+    <!-- <div class="access-block">
+      <label>{{'Field_Config.access' | translate}}</label>
+      <div> -->
+
+        <!-- <mat-radio-group formControlName="coreDataControl">
+          <mat-radio-button *ngFor="let item of radio_data" [value]="item.value" >
+            {{item.viewValue}}</mat-radio-button>
+        </mat-radio-group> -->
+        <!-- <section class="example-section">
+          <mat-checkbox class="example-margin" formControlName="coreDataControl" *ngFor="let item of radio_data">
+            {{item.viewValue}}</mat-checkbox>
+
+        </section> -->
+
+        <!-- <div class="checkbox-main" formArrayName="AccessList">
+          <li class="checkbox-list" *ngFor="let chanel of channels.controls; let i = index">
+            <ng-container [formGroupName]="i">
+              <mat-checkbox formControlName="isActive">
+                {{ chanel.get('name').value}}
+              </mat-checkbox>
+            </ng-container>
+          </li>
+        </div> -->
+      <!-- </div>
+    </div> -->
+
+
+    <div class="access-block ">
+      <div class="row">
+        <div class="col-6 ">
+          <label >Options </label>
+        </div>
+        <!-- <div class="col-6 d-flex justify-content-end">
+
+          <label for="files" class="underline">Advanced Options </label>
+          <input id="files" style="visibility:hidden;" type="file">
+
+
+        </div> -->
+
+      </div>
+
+      <!-- <div class="ScrollBarStyle">
+        <div class="row padding_top_3 " *ngFor="let data of addOPtionsList">
+          <div class="col-12 ">
+            <div class="dotted_line">
+              <div class="row" > -->
+                <!-- <div class="col-6" *ngFor="let item of optionalInuputData; let i=index"> <mat-radio-button> &nbsp;
+                    <input type="text" class="options_input"
+                      (change)="setInpoutValue($event)"></mat-radio-button></div> -->
+                <!-- <div class="col-6"> <mat-radio-button> &nbsp;
+                    <input type="text" class="options_input" [(ngModel)]="optionalInputField"
+                      (change)="setInpoutValue($event)"></mat-radio-button></div>
+                  <div class="col-6 d-flex justify-content-end padding_top_1">
+                  <img src="assets/page_config_icons/plus.svg"
+                    alt="" class="img-fluid img_height_width" (click)="addPotions()">&nbsp;<img src="assets/page_config_icons/delete.svg" (click)="deleteOption(optionalInputField)"
+                    alt="" class="img-fluid img_height_width"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <div class="row" *ngIf="dropDownEnable">
+        <div class="scrollbar" formArrayName="dropdownList">
+          <div class="row col-md-12 fieldsUi" *ngFor="let options of dropDownData.controls; let i=index">
+            <div class="col-6 dc padding_top_3" [formGroupName]="i">
+              <input class="input_add padding_bottom_1vh" formControlName="fieldOptionName" type="text" >
+            </div>
+            <div class="col-6 dcs padding_top_2">
+              <span class="d-flex justify-content-end padding_bottom_1vh">
+                <img class="imgmlfdr" src="assets/page_config_icons/plus.svg" (click)="addOptionFormGroup(i+1)" />
+                <img class="imgmlfdr" src="assets/page_config_icons/delete.svg" (click)="deleteOptionFormGroup(i)" />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+
+
+
+      </div>
+    </div>
+
+
+
+
+
+    <!-- OPTION BLOCK -->
+    <div class="option-block">
+      <div class="top-option-head">
+        <!-- <h6>Options</h6> -->
+        <!-- <a>Advance Options</a> -->
+      </div>
+      <!-- <mat-form-field class="datatype-chosse" *ngIf="canShowDropDown">
+        <mat-select formControlName="datatypeControlControl" name="item"> -->
+          <!-- <mat-option>None</mat-option> -->
+          <!-- <mat-option *ngFor="let item of Options_Data" [value]="item.value">
+            {{item.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field> -->
+    </div>
+    <!-- MANDATORY BLOCK -->
+    <div class="mandatory-block padding_bottom_1vh">
+      <mat-checkbox id="amateur" class="amateur" color="primary"
+        formControlName="mandatoryControl" > <span style="font-size: 14.5px;">{{'Field_Config.mandatory' | translate}}</span></mat-checkbox>
+    </div>
+    <!-- DATA TYPE BLOCK -->
+    <div class="datatype-block padding_bottom_1vh ">
+      <h6 class="font_size_14_3 font_style padding_bottom_1vh">Data Type</h6>
+      <div>
+        <mat-form-field class="datatype-chosse">
+          <mat-select formControlName="optionControlControl" name="item">
+            <!-- <mat-option>None</mat-option> -->
+            <mat-option *ngFor="let item of data_Type_Data" [value]="item.viewValue">
+              {{item.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="datatype-block padding_bottom_1vh">
+      <h6 class="font_size_14_3 font_style padding_bottom_1vh">Error Message</h6>
+      <div>
+        <!-- <mat-form-field class="width_select margin_top_2"> -->
+          <input formControlName="errorMessageControl" matInput class="input_field" >
+        <!-- </mat-form-field> -->
+        </div>
+    </div>
+  </form>
+</section>

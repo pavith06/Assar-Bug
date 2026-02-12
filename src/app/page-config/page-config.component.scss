@@ -1,0 +1,60 @@
+$backround_theme:#688F99;
+
+
+
+.main-page  ::ng-deep {
+  // .mat-mdc-tab-labels{
+  //   width: 50%;
+
+  // }
+  .mat-mdc-tab-list{
+    // background-color: $backround_theme;
+    border-bottom: 1px solid #EAEAEA;
+    margin: 0px 55px;
+
+  }
+   .mdc-tab__content{
+    .mdc-tab__text-label{
+      color: #fff;
+      font-weight: 400;
+      font-size: 14.5px;
+
+    }
+
+  }
+}
+.main-page ::ng-deep  .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label{
+  color: #fff;
+  font-weight: 400;
+font-size: 14.5px;
+}
+.main-page ::ng-deep  .mat-mdc-tab:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline, .mat-mdc-tab-link:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline {
+  border-color: #fff;
+}
+:host ::ng-deep  .mdc-tab-indicator {
+
+  .mdc-tab-indicator__content--underline {
+    border-top-width: 4px;
+    border-radius: 4px 6px 0px 0px;
+  }
+}
+
+:host ::ng-deep .fieldconfigure{
+  .mdc-tab-indicator{
+    width: 80%;
+    left: 23px;
+  }
+}
+:host ::ng-deep .scheduler{
+  .mdc-tab-indicator{
+    width: 73%;
+    left: 24px;
+  }
+}
+
+:host ::ng-deep .mat-mdc-tab-labels{
+  // margin-left: 40px;
+}
+.main-page ::ng-deep .mat-mdc-tab-label-container{
+  background-color: $backround_theme;
+}

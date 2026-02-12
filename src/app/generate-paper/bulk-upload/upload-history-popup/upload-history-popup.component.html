@@ -1,0 +1,54 @@
+<div class="popup-header">
+    <div class="row">
+        <div class=" col-10 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6   d-flex justify-content-start ">
+            <span class="font_style  allocate_stock_color font_size_18">{{'paperDetailsBulkUpload.Uploaded_Files'|translate}}</span>
+        </div>
+        <div class="col-2 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end ">
+            <img src="/assets/purchase_stock/cross_button.svg" alt="" class="img-fluid close_img cursor" (click)="closeDialog()">
+        </div>
+    </div>
+</div>
+
+<div class="scrollbar">
+    <div class="margin_left_right">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3 card_padding" *ngFor="let data of bulkUploadDataList">
+                <div class="card_border">
+                    <div class="row heading_padding">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 maxlenghtheader">
+                            <span class="font_size_16 font_style allocate_stock_color cursor" [matTooltip]="(data.uploadImageName?.split('_')[1]).toString()">{{data.uploadImageName?.split("_")[1]}}</span>
+                        </div>
+                    </div>
+                    <div class="row date_padding">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                            <span class="font_size_14_italic font_style date_time">{{data.createdDate | date:'dd/MM/yyyy' }} &nbsp;{{data.createdDate | date:'h:mm a' }}</span>
+                        </div>
+                    </div>
+                    <div class="row correct_notCorrect">
+                        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 padding_left_right_card">
+                            <div class="data data_correct_wrong_padding name_file">
+                                <span><img src="/assets/bulk_upload/data.svg" alt=""
+                                        class="img-fluid"></span>&nbsp;<span class="font_size_14 font_style name_file cursor" [matTooltip]="data.totalCount">{{data.totalCount}}</span>
+                            </div>
+                        </div>
+                        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 padding_left_right_card">
+                            <div class="correct data_correct_wrong_padding name_file">
+                                <span><img src="/assets/bulk_upload/correct.svg" alt=""
+                                        class="img-fluid"></span>&nbsp;<span class="font_size_14 font_style name_file cursor" [matTooltip]="data.successCount">{{data.successCount}}</span>
+                            </div>
+                        </div>
+                        <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 padding_left_right_card">
+                            <div class="wrong data_correct_wrong_padding name_file">
+                            <span><img src="/assets/bulk_upload/wrong.svg" alt="" class="img-fluid"></span>&nbsp;<span
+                                class="font_size_14 font_style name_file name_file cursor" [matTooltip]="data.failureCount">{{data.failureCount}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row update_file">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12" (click)="openUploadFile(data)"> <span class="font_size_14 font_style  update_file_color cursor">{{'paperDetailsBulkUpload.Uploaded_file'|translate}}</span> </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

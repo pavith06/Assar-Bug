@@ -1,0 +1,145 @@
+{
+  "PurchaseStock": {
+    "Purchase Stock": "شراء الأسهم"
+
+  },
+  "Purchase_stock_table":{
+    "purchasId":"معرف الشراء",
+    "transcationId":"رقم المعاملة",
+    "dateOfPurchase":"تاريخ الشراء",
+    "noOfPapers":"عدد الأوراق",
+    "purchaseAmount":"مبلغ الشراء",
+    "paymentMethod":"طريقة الدفع او السداد",
+    "paymentStatus":"حالة السداد",
+    "view":"منظر",
+    "repeat":"يكرر"
+
+  },
+  "login": {
+    "Authority": "السلطة",
+    "InsuranceCompany": "شركة تأمين",
+    "Login": "تسجيل الدخول",
+    "LoginAuthority":"سلطة تسجيل الدخول",
+    "ForgotPassword":"?هل نسيت كلمة السر",
+    "UserName":"اسم المستخدم",
+    "Password":"كلمة المرور"
+  },
+  "Field_Config": {
+    "field_config": "تكوين المجال",
+    "field_name": "اسم الحقل",
+    "access": "الوصول إلى",
+    "mandatory": "إلزامي",
+    "data_Type": "نوع البيانات"
+  },
+  "LoginValidation":{
+    "Validation1":"أدخل كلمة مرور صالحة",
+    "Validation2":"أدخل كلمة مرور صالحة"
+  },
+  "Managment":{
+    "UserRoleManagement":"إدارة دور المستخدم",
+    "UserManagment":"إدارةالمستخدم",
+    "EntityManagement" : "إدارة الكيانات",
+    "InsuranceCompany" : "شركة تأمين",
+    "Garage":"كراج"
+  },
+  "userRoleManag":{
+    "AddNewUser":"إضافة دور جديد",
+    "Admin":"/ مسؤل",
+    "RoleName":"اسم الدور",
+    "Description":"وصف",
+    "Weight":"وزن",
+    "Mapped/UnMapped":"تم تعيينه / عدم تعيينه",
+    "Status":"حالة",
+    "Edit":"يحرر",
+    "Delete":"يمسح",
+    "UserRoleList":"قائمة دور المستخدم"
+  },
+  "CommonCard":{
+    "Admin":"مسؤل",
+    "Users":"المستخدمون",
+    "Edit":"يحرر",
+    "Delete":"إبطال",
+    "Clone":"استنساخ"
+},
+"reportLossHeader":{
+  "InsureName":"اسم المؤمن",
+  "AtFauldCompName":"في خطأ اسم الشركة",
+  "ReceivableAmt":"المبلغ المستحق",
+  "Status":"حالة",
+  "Accept":"يقبل",
+  "Reject":"يرفض",
+  "NeedInfo":"بحاجةالىمعلومات",
+  "ReceivableClaimId":"معرف المقبوضات / المطالبة",
+  "PayableClaimId":"معرف الدفع / المطالبة",
+  "InsuredName":"اسم مؤكد"
+},
+"Validation":{
+  "Error1":"لقد تم قبوله بنجاح",
+  "Error2":"تم رفضه بنجاح",
+  "Error3":"تم حفظ المعلومات بنجاح",
+  "Error4":"تم إلغاء البيانات"
+},
+"CommonLetters":{
+  "save":"يحفظ",
+  "cancel":"يلغي"
+},
+"DashBoard":{
+  "Receivable":"مستحق",
+  "TotalRecAmt":"إجمالي المبلغ المستحق",
+  "TotalPayAmt":"إجمالي المبلغ المستحق",
+  "Total_Rece_Pay_amt":"إجمالي عدد الذمم المدينة والدائنة",
+  "Rec_Claim_Count":"عدد المطالبات المستحقة القبض حسب الحالة",
+  "TopRecovery":"أعلى الانتعاش ",
+  "Recent_Rece_Claim":"مطالبات المقبوضات الأخيرة",
+  "Recent_payable_Claim":"مطالبات الدفع الأخيرة",
+  "Rece_for_Non_Claim":"مستحق لمطالبات غير مسددة",
+  "Pending_Rece":"الذمم المدينة المعلقة"
+},
+"Receivale_table":{
+  "ClaimNo":"رقم المطالبة",
+  "InsureName":"اسم المؤمن",
+  "At_Fauld_Comp":"في شركة فولت",
+  "Loss_of_Date":"فقدان التاريخ",
+  "Tol_Loss_amt":"فقدان التاريخ",
+  "Stage_Section":"المرحلة والقسم",
+  "InsuredName":"اسم مؤكد"
+},
+"Payable":{
+  "Payable":"مستحق الدفع",
+  "Search":"يبحث",
+  "Download_Report":"تنزيل التقرير",
+  "View_Payable":"مشاهدة ملف",
+  "Receivables":"الذمم المدينة",
+  "View_Receivables":"عرض الذمم المدينة",
+  "Report_Loss":"الإبلاغ عن الخسارة"
+},
+"report":{
+  "Config_Report":"تكوين التقرير",
+  "Insurance_Comp":"شركة مؤمنة",
+  "Thir_party_Comp":"في شركة فولت",
+  "Date":"تاريخ",
+  "From":"من",
+  "To":"ل",
+  "Type":" يكتب",
+  "Select_Column":"حدد الأعمدة",
+  "File_type":"نوع الملف",
+  "Excel":"اكسل",
+  "csv":"Csv",
+  "Pdf":"بي دي إف",
+  "Report_Name":"تقرير اسم",
+  "Preview_report":"معاينة التقرير",
+  "Generate_report":"انشاء تقرير",
+  "Claim_no":"رقم المطالبة ",
+  "At_Fault_Comp":" في شركة فولت",
+  "Not_At_Fault_compy":" ليست في خطأ شركة",
+  "Ttl_Loss_amt":"إجمالي مبلغ الخسارة",
+  "Insurance_Name":"اسم مؤكد",
+  "Generated_Reports":"التقارير التي تم إنشاؤها",
+  "Genarate_Report":"انشاء تقرير",
+  "Download":"تحميل",
+  "New_Report":"/ تقرير جديد",
+  "Select_Company_Name":"حدد اسم الشركة",
+  "Period":"فترة"
+}
+
+}

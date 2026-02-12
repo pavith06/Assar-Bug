@@ -1,0 +1,1213 @@
+{
+  "Fliter":{
+    "Search":"Recherche",
+    "Clear_Filter":"Effacer les filtres"
+      },
+      "PurchaseStockFliter":{
+        "Purchase_ID":"ID d'achat"
+          },
+  "PurchaseStock": {
+    "Purchase_Stock": "Achat d'achat"
+  },
+  "Purchase_stock_table": {
+    "purchasId": "ID d'achat",
+    "transcationId": "identifiant de transaction",
+    "dateOfPurchase": "Date d'achate",
+    "noOfPapers": "Nombre de papiers",
+    "purchaseAmount": "Montant des achats",
+    "paymentMethod": "Mode de paiement",
+    "paymentStatus": "Statut de paiement",
+    "view": "Voir",
+    "repeat": "Répéter"
+  },
+  "Purchase_stock_popup": {
+    "New_Purchase": "Nouvel achat",
+    "Total_Stock_Available": "Stock total disponible",
+    "Number_of_Papers": "Nombre de papiers",
+    "Total_Cost": "Coût total",
+    " Upload_Cheque": " Télécharger le chèque",
+    "Choose_Payment_Method": "Choisissez le mode de paiement",
+    "Card_Number": "Numéro de carte",
+    "CVC": "CVC",
+    "Card_Holder_Name": "Nom du titulaire",
+    "Expiry_Date": "Date d'expiration",
+    "Save_my_details_for_future_payments": "Enregistrer mes coordonnées pour les paiements futurs",
+    "Enter_Mobile_Number": "Entrez le numéro de portable",
+    "UPI": "UPI",
+    "Upload_Cheque": "Télécharger le chèque",
+    "Drag_and_Drop_your_file_or": "Faites glisser et déposez votre fichier ou",
+    "Browse_files": "Parcourir les fichiers",
+    "Proceed_to_Pay": "Procéder au paiement"
+  },
+  "Purchase_stock_view_popup": {
+    "Purchase_Details": "Détails d'achat",
+    "Purchase_Details_message1": "Votre demande d'achat de papier numérique a été envoyée et votre identifiant de transaction est",
+    "Purchase_Details_message2": "Veuillez attendre l'approbation de l'autorité",
+    "Purchase_Details_success": "Votre stock d'achat de papier numérique a été approuvé et votre identifiant de transaction est",
+    "Purchase_Details_rejected": "Votre stock d'achat de papier numérique a été rejeté et votre identifiant de transaction est",
+    "Company_Name": "Nom de l'entreprise",
+    "Purchase_ID": "ID d'achat",
+    "Transaction_ID": "identifiant de transaction",
+    "Payment_Type": "Type de paiement",
+    "No_of_Papers": "Nombre de papiers",
+    "Purchase_Amount": "Montant des achats",
+    "Payment_Status": "Statut de paiement",
+    "Attachments": "Pièces jointes",
+    "No_preview_to_Show": "Aucun aperçu à afficher",
+    "Please_click_the_cheque_to_view": "Veuillez cliquer sur le chèque pour voir",
+    "Approve": "Approuver",
+    "Reject": "Rejeter",
+    "Payment_Successful":"Paiement réussi",
+    "Approved":"Approuvé",
+    "Rejected":"Rejeté"
+  },
+  "PaperDetails": {
+    "Paper_Details": "Détails du papier",
+    "Bulk_Revoke": "Révoquer en masse",
+    "Generate_Paper": "Générer du papier",
+    "Revoke_Paper":"Révoquer le papier"
+  },
+  "Paper_Details_table_list": {
+    "digital_paper_no": "Papier numérique Non",
+    "policy_nO": "Politique Non",
+    "insured_name": "Nom de l'assuré",
+    "registration_no": "N ° d'enregistrement",
+    "effective_from": "À compter de",
+    "effective_to": "Efficace pour",
+    "status": "Statut",
+    "view": "Voir",
+    "revoke": "Révoquer",
+    "effective_date":"Date effective"
+  },
+  "Paper_Details_view_popup": {
+    "Paper_Details": "Détails du papier",
+    "Digital_Paper_NO": "Papier numérique NON",
+    "Insured_Name": "Nom de l'assuré",
+    "Policy_No": "Politique Non",
+    "Effective_From": "À compter de",
+    "Effective_to": "Efficace pour",
+    "Phone_Number": "Numéro de téléphone",
+    "Email_ID": "Identifiant de messagerie",
+    "Vehicle_Details": "Les détails du véhicule",
+    "Registration_No": "N ° d'enregistrement",
+    "Chassis": "Châssis",
+    "Licensed_to_carry": "Autorisé à porter",
+    "Make": "Faire",
+    "Model": "Modèle",
+    "Usage": "Usage",
+    "Insurer": "Assureur",
+    "share":"Partager"
+  },
+  "revoke_digital_paper": {
+    "Revoke_Digital_Paper": "Révoquer le papier numérique",
+    "revoke_message1": "Êtes-vous sûr de vouloir révoquer ce papier numérique",
+    "revoke_message2": "Une fois révoqué, il ne peut pas être récupéré.",
+    "cancel": "Annuler",
+    "Yes_Revoked": "Oui, révoqué",
+    "Paper_Revoked": "Papier révoqué... !",
+    "The_Digital_Paper": "Le papier numérique",
+    "was": "était",
+    "revoked_successfully": "révoqué avec succès.",
+    "View_Paper": "Afficher le papier"
+  },
+  "paperDetailsManual": {
+    "Vehicle_Details": "Les détails du véhicule",
+    "Generate_Paper": "Générer du papier",
+    "Manual": "Manuel",
+    "Bulk_Upload": "Transfert groupé",
+    "Bulk_Revoke": "Révoquer en masse",
+    "Paper_Details_Generate_Paper": "Détails du papier / Générer du papier",
+    "Paper_Details_Bulk_Revoke": "Détails du papier / Révocation groupée"
+  },
+  "paperDetailsBulkUpload": {
+    "Sample_file": "Exemple de fichier",
+    "Upload_History": "Historique des téléchargements",
+    "Digital_Paper_Type": "Type de papier numérique",
+    "Upload_your_Document": "Téléchargez votre document",
+    "Uploaded_Files": "Fichiers téléchargés",
+    "Uploaded_file": "Fichier téléchargé"
+  },
+  "TotalRecordsList": {
+    "Back": "Dos",
+    "Total_Records": "Nombre total d'enregistrements",
+    "Success_Records": "Records de réussite",
+    "Error_Records": "Enregistrements d'erreurs",
+    "Generate_Paper": "Générer du papier",
+    "Download_File": "Télécharger un fichier",
+    "Total_Record": "Nombre total d'enregistrement",
+    "Success_Record": "Record de réussite",
+    "Error_Record": "Enregistrement d'erreur"
+  },
+  "report_card": {
+    "No_Data_Found": "Aucune donnée disponible",
+    "Columns": "Colonnes",
+    "Download": "Télécharger",
+    "Edit": "Modifier",
+    "page":"Aller à la page"
+  },
+  "DisablePopUp":{
+ "ok":"D'accord",
+"cancel":"annuler",
+"message":"Voulez-vous désactiver ce rôle",
+"deleteText":"Voulez-vous désactiver cet utilisateur",
+"selectExceedDate":"Sélectionnez la date de dépassement"
+},
+  "reportHeader":{
+    "Generated_Report":"Générer des rapports",
+    "Generate_Report":"Générer un rapport",
+    "REPORT":"Rapports"
+  },
+  "report": {
+    "Config_Report": "Configurer le rapport",
+    "Insurance_Comp": "Compagnie assurée",
+    "Thir_party_Comp": "À la faute de l'entreprise",
+    "Date": "Date",
+    "From": "Depuis",
+    "To": "Pour",
+    "Type": " Taper",
+    "Select_Column": "Sélectionnez les colonnes",
+    "File_type": "Type de fichier",
+    "Excel": "Exceller",
+    "csv": "CSV",
+    "Pdf": "PDF",
+    "Report_Name": "Nom du rapport",
+    "Preview_report": "Aperçu du rapport",
+    "Generate_report": "Générer un rapport",
+    "Claim_no": "Réclamer Non",
+    "At_Fault_Comp": "À la faute de l'entreprise",
+    "Not_At_Fault_compy": "Pas à la faute de l'entreprise",
+    "Ttl_Loss_amt": "Montant total de la perte",
+    "Insurance_Name": "Nom de l'assuré",
+    "Generated_Reports": "Générer un rapport",
+    "Genarate_Report": "Générer un rapport",
+    "Download": "Télécharger",
+    "New_Report": "/ Nouveau rapport",
+    "Select_Company_Name": "Sélectionnez le nom de l'entreprise",
+    "Period": "Période",
+    "Status": "Statut",
+    "Edit_report":"Modifier le rapport"
+  },
+  "AllocationPool": {
+    "Active": "Actif",
+    "Allocate_Stock": "Allouer le stock",
+    "Allocated_Stock": "Stock alloué",
+    "Available_Stock": "Stock disponible",
+    "Papers_Issued": "Documents publiés"
+  },
+  "Allocation_Pool_table": {
+    "poolName": "Nom du pool",
+    "description": "Description",
+    "no_of_paper_allocated": "Nbre de papiers alloués",
+    "no_of_paper_Issued": "Nombre de papiers émis",
+    "no_of_paper_available": "Nb.de.papier disponible",
+    "allocate_and_Revoke": "Attribuer et révoquer",
+    "status": "Statut"
+  },
+  "Allocatio_Pool_Popup": {
+    "Allocate_Stock": "Allouer le stock",
+    "Revoke_Stock": "Révoquer le stock",
+    "Allocated_Stock": "Stock alloué",
+    "Available_Stock": "Stock disponible",
+    "Issued_Stock": "Actions émises",
+    "Allocate_New_Stock": "Allouer un nouveau stock",
+    "Allocate": "Allouer",
+    "Cancel": "Annuler",
+    "Allocated_Type": "Type alloué",
+    "Allocate_to": "Attribuer à",
+    "Stock_Count": "Inventaire des stocks",
+    "Count_To_Deallocate": "Compter pour désallouer",
+    "Reallocate": "Réaffecter",
+    "Deallocate": "Libérer"
+  },
+  "CommonCard": {
+    "Admin": "Administratrice",
+    "Users": "Utilisatrices",
+    "Active": "Actif",
+    "Inactive": "Inactive",
+    "Edit": "Modifier",
+    "Delete": "Désactiver",
+    "Clone": "Cloner",
+    "All Access": "All Access",
+    "Role_ID":"ID de rôle",
+    "RoleId":"ID de rôle",
+    "Disabled":"Désactivé"
+  },
+  "CommonUserRole": {
+    "New_User_Role": "Nouveau rôle d'utilisateur",
+    "Active": "Actif",
+    "Role_Details": "Détails du rôle",
+    "Access_Mapping": "Cartographie des accès",
+    "Menu": "Menu",
+    "Dashboard": "Tableau de bord",
+    "View": "Voir",
+    "Edit": "Modifier",
+    "Clone": "Cloner",
+    "Disable": "Désactiver",
+    "Download": "Télécharger",
+    "Save": "Sauvegarder",
+    "Cancel": "Annuler"
+  },
+  "userMangement":{
+"User_Role":"Rôle d'utilisateur","User_Management":"Gestion des utilisateurs","Customer":"Client"
+  },
+  "userRoleManag": {
+    "AddNewUser": "Ajouter un nouvel utilisateur",
+    "Admin ": " / Administrateur",
+    "RoleName": "Nom de rôle",
+    "Description": "Description",
+    "Weight": "Lester",
+    "Mapped/UnMapped": "Mappé/non mappé",
+    "Mapped_Status":"État Mappé",
+    "Mapped":"Assigné",
+    "UnMapped":"Non assigné",
+    "Status": "Statut",
+    "Edit": "Modifier",
+    "Delete": "Supprimer",
+    "UserRoleList": "Liste des rôles d'utilisateur",
+    "Clone": "Cloner",
+    "AddNewRole": "Ajouter un nouveau rôle",
+    "Added_Date":"Date d'ajout",
+    "Disable":"Désactiver"
+  },
+  "ManageUser": {
+    "User": "Utilisatrice",
+    "Active": "Actif",
+    "User_Details": "Détails de l'utilisateur",
+    "Save": "Sauvegarder",
+    "Cancel": "Annuler",
+    "Enable_Notification": "Activer les notifications",
+    "Pages": "pages",
+    "Stages": "Étapes",
+    "Notification": "Notification",
+    "New":"Nouveau",
+    "Edit":"Modifier",
+    "Clone":"Cloner"
+  },
+  "ManageUserList": {
+    "User_ID": "Identifiant de l'utilisateur",
+    "PHONE_NUMBER": "Numéro de téléphone",
+    "User_Name": "Nom d'utilisateur",
+    "Email_Id": "Identifiant de messagerie",
+    "User_Role": "Rôle d'utilisateur",
+    "Added_Date": "Date d'ajout",
+    "Status": "Statut",
+    "Edit": "Modifier",
+    "Delete": "Supprimer",
+    "Clone": "Cloner",
+    "Disable":"Désactiver"
+  },
+  "UserManagement":{
+    "User Role":"Rôle d'utilisateur",
+    "User Management":"Gestion des utilisateurs",
+    "Allocation_Pool":"Groupe d'allocations",
+    "Customer":"Client",
+    "User":"Utilisateur"
+    },
+  "Customer_table": {
+    "insurer_name": "Nom de l'assureur",
+    "email_id": "Identifiant de messagerie",
+    "phone_number": "Numéro de téléphone",
+    "added_date": "Date d'ajout",
+    "status": "Statut",
+    "edit": "Modifier",
+    "Active":"Actif",
+    "InActive":"Inactif",
+    "Disabled":"Désactivé"
+  },
+  "EditCustomer": {
+    "Edit_Customer": "Modifier le client",
+    "Customer_Details": "Détails du client",
+    "Active": "Actif",
+    "Insurer_Name": "Nom de l'assureur",
+    "Email_ID": "Identifiant de messagerie",
+    "Phone_Number": "Numéro de téléphone",
+    "Added_Date": "Date d'ajout",
+    "Save": "Sauvegarder",
+    "Cancel": "Annuler"
+  },
+  "Dashboard": {
+    "Dashboard": "Tableau de bord",
+    "Total_Stock_Allocated": "Stock total alloué",
+    "Total_Stock_Requested": "Stock total demandé",
+    "Available_Stock": "Stock disponible",
+    "Stock_Allocated": "Stock alloué",
+    "Total_Stock_Issued": "Total des actions émises",
+    "Pending_to_Allocate": "En attente d'attribution",
+    "Current Year": "Année actuelle",
+    "Current Date": "Date actuelle",
+    "Current Month": "Mois en cours",
+    "Custom": "Coutume",
+    "From": "Depuis",
+    "To": "Pour",
+    "Apply_Filter": "Appliquer le filtre",
+    "Cancel": "Annuler"
+  },
+  "DashBoard": {
+    "Authority_BarChart": "Nombre de papier numérique acheté vs nombre de papier numérique alloué",
+    "Insurance_Comp_BarChart": "Documents numériques pris",
+    "Top_purchases": "Principaux achats",
+    "Digital_Paper_Status":"État du papier numérique"
+  },
+  "Profile": {
+    "Manage_Profile": "Gérer le profil",
+    "Personal_Information": "Informations personnelles",
+    "Save_Changes": "Sauvegarder les modifications",
+    "Edit_Profile": "Editer le profil",
+    "User_ID": "ID de l'utilisateur",
+    "User_Name": "Nom d'utilisateur",
+    "Email_ID": "Identifiant de messagerie",
+    "Phone_Number": "Numéro de téléphone",
+    "Roles": "Les rôles",
+    "Password": "Mot de passe",
+    "Change_Password": "Changer le mot de passe",
+    "My Profile":"Mon profil",
+    "Log Out":"Se déconnecter"
+  },
+  "ChangePasswordPopup": {
+    "Change_password": "Changer le mot de passe?",
+    "message1": "Votre nouveau mot de passe doit être différent",
+    "message2": "à Mot de passe utilisé précédemment",
+    "Old_Password": "ancien mot de passe",
+    "Enter_old_password": "Entrez l'ancien mot de passe",
+    "New_Password": "nouveau mot de passe",
+    "Enter_new_password": "Entrez un nouveau mot de passe",
+    "message3": "Le nouveau mot de passe doit contenir 8 à 20 chiffres, 1 chiffre, 1 lettre majuscule et 1 caractère spécial.",
+    "Confirm_Password": "Confirmez le mot de passe",
+    "Confirm_Password_does_not_match": "Confirmer le mot de passe ne correspond pas",
+    "Change_Password": "Changer le mot de passe"
+
+  },
+  "PasswordChanged": {
+    "Password_Changed": "Mot de passe changé",
+    "message1": "Votre mot de passe a été changé avec succès.",
+    "Change_Password": "Changer le mot de passe",
+    "login_with":"Connectez-vous avec un nouveau mot de passe"
+  },
+  "RecentDigitalPapers": {
+    "Recent_Digital_Papers": "Documents numériques récents",
+    "View_All": "Tout afficher >",
+    "Policy_No": "Politique Non",
+    "Digital_Paper_No": "Papier numérique Non",
+    "View": "Voir"
+  },
+  "UpcomingExpiryDigitalPapers": {
+    "Upcoming_Expiry_Digital_Papers": "Documents numériques d'expiration à venir",
+    "View_All": "Tout afficher >",
+    "Paper_No": "Papier Non",
+    "Expiry_Date": "Date d'expiration",
+    "View": "Voir"
+  } , "RecentTransactions": {
+    "Recent_Transactions": "transactions récentes",
+    "View_All": "Tout afficher >",
+    "Transactions_ID": "identifiant de transaction",
+    "USD": "RWF",
+    "View": "Voir"
+  },
+  "AuthorityPaperDetails":{
+    "Paper_Details":"Détails du papier",
+    "Purchase_History":"Historique d'achat"
+    },
+    "AuthorityPaperDetailsCard": {
+      "All_Companies": "Toutes les entreprises",
+      "Stock_Count": "Inventaire des stocks",
+      "Available_Stock": "Stock disponible",
+      "Papers_Issued": "Documents publiés"
+    },  "paper_details_table": {
+      "checkbox": "Case à cocher",
+      "insured_company": "Compagnie assurée",
+      "stock_count": "Inventaire des stocks",
+      "available_stock": "Stock disponible",
+      "papers_issued": "Documents publiés",
+      "view_papers": "Voir les articles"
+    },
+    "paper_details_view_table": {
+      "digital_paper_no": "Papier numérique Non",
+      "company_name": "Nom de l'entreprise",
+      "policy_no": "Politique Non",
+      "insured_name": "Nom de l'assuré",
+      "registration_no": "N ° d'enregistrement",
+      "effective_from": "À compter de",
+      "effective_to": "Efficace pour",
+      "status": "Statut",
+      "view": "Voir"
+    },
+     "PurchaseHistoryCard": {
+      "View_Transaction": "Afficher la transaction",
+      "All_Companies": "Toutes les entreprises",
+      "Allocate_Stock": "Allouer le stock",
+      "Total_Transcations": "Total des transactions",
+      "Pending_Transcations": "Transactions en attente"
+    },
+    "PurchaseHistoryPopup": {
+      "Allocate_Paper": "Allouer du papier",
+      "Total_Stock_Allocated": "Stock total alloué",
+      "Available_Stock": "Stock disponible",
+      "Number_Of_Papers": "Nombre de papiers",
+      "Allocate_Paper_as": "Allouer le papier comme",
+      "Allocate": "Allouer",
+      "Cancel": "Annuler"
+    } ,
+    "Purchase_history_table": {
+      "checkbox": "Case à cocher",
+      "insuranceCompany": "Compagnie d'assurance",
+      "totalTransactions": "Transactions totales",
+      "pendingTransactions": "Transactions en attente",
+      "viewTransactions": "Afficher les opérations"
+    },
+    "Transactions_table": {
+      "purchaseId": "ID d'achat",
+      "companyName": "Nom de l'entreprise",
+      "noOfPapers": "Nombre de papiers",
+      "transactionId": "identifiant de transaction",
+      "paymentDate": "Date de paiement",
+      "paymentType": "Type de paiement",
+      "amount": "Montant",
+      "paymentStatus": "Statut de paiement",
+      "view": "Voir",
+      "approve/reject": "Approuver/Rejeter"
+    },
+     "CommonLetters": {
+      "Company_List_Edit_Company": "Liste des entreprises/Modifier l'entreprise",
+    "companyuserId":"Identifiant d'utilisateur de l'entreprise",
+     "nameofcomapny":"Nom de la société",
+     "emailAddress":"Adresse e-mail",
+     "phoneNumber":"Numéro de téléphone",
+     "location":"Emplacement",
+     "address":"Adresse",
+     "password":"Mot de passe",
+     "logo":"Logo",
+     "shortName":"Nom court",
+     "companyUserName":"Nom d'utilisateur de l'entreprise",
+      "Active": "Actif",
+      "Uploaded_Logo": "Logo téléchargé :",
+      "save": "Sauvegarder",
+      "cancel": "Annuler"
+    },  "companyManag": {
+      "AddNewCompany": "Ajouter une nouvelle société",
+      "CompanyList": "Liste des entreprises",
+      "Logo": "Logo",
+      "CompanyName": "Nom de l'entreprise",
+      "EmailAddress": "Adresse e-mail",
+      "PhoneNumber": "Numéro de téléphone",
+      "Address": "Adresse",
+      "Status": "Statut",
+      "Edit": "Modifier",
+      "Disable": "Désactiver",
+      "Clone": "Cloner"
+    },
+    "login": {
+      "Authority": "Autorité",
+      "InsuranceCompany": "Compagnie d'assurance",
+      "Login": "Connexion",
+      "LoginAuthority": "Connexion d'autorité",
+      "InsuranceLogin":"Connexion assurance",
+      "ForgotPassword": "Mot de passe oublié?",
+      "ForgotPassword2": "Mot de passe oublié",
+      "UserName": "Nom d'utilisateur",
+      "Password": "Mot de passe",
+      "enteremail":"ENTRER VOTRE EMAIL",
+      "sendrequest":"Envoyer une demande",
+      "changePassword":"Changer le mot de passe",
+      "email":"E-mail",
+      "validEmail":"Entrez une adresse email valide",
+      "reset":"réinitialiser le mot de passe",
+      "enterNewpassord":"Entrez un nouveau mot de passe",
+      "confirmpassword":"Confirmer que le mot de passe ne correspond pas",
+      "errorMsg": "Le nouveau mot de passe doit contenir 8 à 20 chiffres, 1 chiffre, 1 lettre majuscule et 1 caractère spécial.",
+      "NewPassword":"nouveau mot de passe",
+      "ConformPassword":"Confirmez le mot de passe"
+    },
+    "LoginValidation": {
+      "Validation1": "Entrez un nom d'utilisateur valide",
+      "Validation2": "Entrez un mot de passe valide"
+    },
+    "ForgotPassword": {
+      "Enter_your_Email": "Entrer votre Email",
+      "Enter_valid_email": "Entrez une adresse email valide",
+      "Invalid_email_format": "Format d'email invalide",
+      "Send_Request": "Envoyer une demande"
+    },  "ResetPassword": {
+      "Reset_Password": "réinitialiser le mot de passe",
+      "Enter_new_password": "Entrez un nouveau mot de passe",
+      "Message1": "Le nouveau mot de passe doit contenir 8 à 20 chiffres, 1 chiffre, 1 lettre majuscule et 1 caractère spécial.",
+      "Message2": "Confirmer le mot de passe ne correspond pas",
+      "Reset_password": "Réinitialiser le mot de passe",
+      "NewPasswordPlaceholder" : "nouveau mot de passe",
+      "confirmPasswordPlaceholder" : "Confirmez le mot de passe"
+    },
+    "pageConfig":{
+      "Save_Changes":"Sauvegarder les modifications"
+        },
+        "Pagination":{
+          "Go_to_page":"Aller à la page",
+          "Rows_per_page":"Lignes par page"
+        },
+        "Managment": {
+          "UserRoleManagement": "Gestion des rôles d'utilisateur",
+          "UserManagment": "Gestion des utilisateurs",
+          "EntityManagement": "Gestion des entités",
+          "InsuranceCompany": "Compagnie d'assurance",
+          "InsuranceCompany_List": " / Liste",
+          "InsuranceCompany_AddNew": " / Ajouter un nouveau",
+          "InsuranceCompany_Edit": " / Modifier",
+          "InsuranceCompany_Clone": " / Dupliquer",
+          "Garage": "Garage"
+        },
+
+  "ERROR_DATA":{
+    "PLATEFORM_ERROR":"Veuillez sélectionner PlateForm"
+  },
+
+  "GENERATE_PAPER_MANUAL": {
+    "Paper Details": "Détails du papier",
+    "Digital Paper": "Papier numérique",
+    "Policy Number": "Numéro de police",
+    "Insured Name": "Nom de l'assuré",
+    "Phone Number": "Numéro de téléphone",
+    "Email Id": "Adresse e-mail",
+    "Effective From": "Valable à partir de",
+    "Expiry Date": "Date d'expiration",
+    "Vehicle Details": "Détails du véhicule",
+    "Registration No": "Numéro d'enregistrement",
+    "Chassis Number": "Numéro de châssis",
+    "Licensed to carry": "Autorisé à transporter",
+    "Make": "Marque",
+    "Model": "Modèle",
+    "Usage": "Utilisation",
+    "please_select_value":"Veuillez sélectionner une valeur",
+    "Digital Paper Number":"Numéro de papier numérique",
+    "Vehicle Make":"Marque du véhicule",
+    "Vehicle Model":"Modèle du véhicule"
+}
+,
+"ENTITY_EDIT_FLOW": {
+  "Company Details": "Détails de l'entreprise",
+  "Company User ID": "ID de l'utilisateur de l'entreprise",
+  "Email Address": "Adresse e-mail",
+  "Name of the Company": "Nom de l'entreprise",
+  "Phone Number": "Numéro de téléphone",
+  "Location": "Emplacement",
+  "Address": "Adresse",
+  "Password": "Mot de passe",
+  "Logo": "Logo",
+  "Short Name": "Nom court",
+  "Company User Name": "Nom de l'utilisateur de l'entreprise",
+  "Upload Logo": "Télécharger le logo"
+}
+,
+"REPORTS_TABLE_DIGITAL_PAPER": {
+  "Digital Paper Number": "Numéro de papier numérique",
+  "Policy Number": "Numéro de police",
+  "Insured Name": "Nom de l'assuré",
+  "Registration Number": "Numéro d'enregistrement",
+  "Effective From": "Valable à partir de",
+  "Effective to": "Valable jusqu'à",
+  "Chassis Number":"Numéro de châssis",
+  "Usage Type":"Type d'utilisation",
+  "Licensed to carry":"Autorisé à transporter",
+  "Phone Number":"Numéro de téléphone",
+  "Email Id":"Identifiant de courrier électronique",
+  "Make": "Marque",
+  "Model": "Modèle",
+  "Status": "Statut"
+}
+,
+
+"REPORTS_TABLE_PURCHASE_STOCK": {
+  "Purchase ID": "Identifiant d'achat",
+  "Insured Name": "Nom de l'assureur",
+  "Purchase Date": "Date d'achat",
+  "Stock Count": "Nombre d'articles en stock",
+  "Order Amount": "Montant de la commande",
+  "Order Status": "Statut de la commande",
+  "Payment Method": "Méthode de paiement",
+    "Chassis Number":"Numéro de châssis",
+    "Usage Type":"Type d'utilisation",
+    "Licensed to carry":"Autorisé à transporter",
+    "Phone Number":"Numéro de téléphone",
+    "Email Id":"Identifiant de courrier électronique",
+    "Insurer Name":"Nom de l'assureur"
+}
+,
+
+"Progress_status": {
+  "New":"Nouveau",
+  "Completed": "Terminé",
+  "FAILED": "Échoué",
+  "IN PROGRESS": "En cours"
+}
+,
+
+"Bulk_Upload": {
+  "Normal": "Normale",
+  "Fleet": "Flotte"
+}
+
+,
+  "USER_ROLE_MANAGE": {
+    "Role ID": "ID du rôle",
+    "Role Name": "Nom du rôle",
+    "Description": "Description",
+    "User Type": "Type d'utilisateur"
+  },
+  "Export_and_Import": {
+  "Export and Import": "Exportation et Importation",
+  "Export": "Exporter",
+  "Select All": "Tout sélectionner",
+  "Wipe and Insert": "Effacer et Insérer",
+  "Override": "Surcharger",
+  "Upload your file here": "Téléchargez votre fichier ici",
+  "Import": "Importer"
+}
+,
+
+  "USER_ROLE_MANAGE_PVL": {
+    "Export and Import": "Exportation et Importation",
+    "Dashboard": "Tableau de bord",
+    "Digital Paper": "Papier numérique",
+    "Digital Paper Taken": "Papiers numériques pris",
+    "Digital Paper Status": "État des papiers numériques",
+    "Prediction": "Prédiction",
+    "Recent Digital Papers": "Papiers numériques récents",
+    "Upcoming Expiry Digital Papers": "Papiers numériques à expiration prochaine",
+    "Quick Links": "Liens rapides",
+    "Purchase Stock": "Stock d'achat",
+    "Purchase List": "Liste d'achats",
+    "New Purchase": "Nouvel achat",
+    "Paper Details Card":"Carte de détails papier",
+    "Purchase History Card":"Carte d'historique d'achat",
+    "Paper Details": "Détails du papier",
+    "Generate Paper (Manual)": "Générer un papier (manuel)",
+    "Generate Paper (Bulk)": "Générer un papier (en masse)",
+    "Revoke (Manual)": "Révoquer (manuellement)",
+    "Revoke (Bulk)": "Révoquer (en masse)",
+    "Print": "Imprimer",
+    "Reports": "Rapports",
+    "Generate Reports": "Générer des rapports",
+    "Preview Report": "Aperçu du rapport",
+    "Allocation Pool": "Pool d'allocation",
+    "Pool List": "Liste des pools",
+    "Allocate Stock": "Allouer le stock",
+    "Reallocate": "Réallouer",
+    "Deallocate": "Désallouer",
+    "User Role": "Rôle de l'utilisateur",
+    "User Role List": "Liste des rôles de l'utilisateur",
+    "Add New Role": "Ajouter un nouveau rôle",
+    "User Role Card": "Carte de rôle de l'utilisateur",
+    "User Management": "Gestion des utilisateurs",
+    "User List": "Liste des utilisateurs",
+    "Add New User": "Ajouter un nouvel utilisateur",
+    "Customer": "Client",
+    "No of Digital Paper Purchased vs No of Digital Paper Allocated":"Nombre de papier numérique acheté par rapport au nombre de papier numérique alloué",
+    "Digital paper status":"Statut du papier numérique",
+    "Top purchases":"Meilleurs achats",
+    "Recent Transaction":"Transaction récente",
+    "Recent Digital papers":"Articles numériques récents",
+    "Authority Paper Details":"Détails du document d'autorité",
+    "Paper Details List":"Liste des détails du papier",
+    "View Paper":"Afficher le document",
+    "Purchase History List":"Liste de l'historique des achats",
+    "View History":"Voir l'historique",
+    "Approve":"Approuver",
+    "Reject":"Rejeter",
+    "Entity Management":"Gestion des entités",
+    "Company List":"Liste des entreprises",
+    "Add New Company":"Ajouter une nouvelle entreprise",
+    "Company Card":"Carte d'entreprise",
+    "Page Configurator":"Configurateur de pages",
+    "All_access":"Tous les accès",
+    "Paper List":"Liste papier"
+  },
+
+  "USER_MANAGEMENT_MANAGE": {
+    "User ID": "ID de l'utilisateur",
+    "User Name": "Nom de l'utilisateur",
+    "Email ID": "ID de messagerie",
+    "Phone Number": "Numéro de téléphone",
+    "Address": "Adresse",
+    "User Role": "Rôle de l'utilisateur",
+    "Password": "Mot de passe",
+    "User Type": "Type d'utilisateur"
+  }
+  ,
+
+  "BREADCRUMB":{
+    "Add New User":"Ajouter un nouvel utilisateur",
+    "User List / Edit User":"Liste des utilisateurs/Modifier l'utilisateur",
+    "User List / Clone User":"Liste des utilisateurs/Cloner l'utilisateur",
+    "Add New Role":"Ajouter un nouveau rôle",
+    "Edit User Role":"Liste des rôles utilisateur/Modifier le rôle utilisateur",
+    "Clone User":"Liste des rôles utilisateur/Utilisateur clone",
+    "Company List":"Liste des entreprises",
+    "Company List/Add New Company":"Liste des entreprises/Ajouter une nouvelle entreprise"
+  }
+
+  ,
+
+  "Notification_Template":{
+    "FAILED":"COMPANY_NAME la demande a échoué pour STOCK_COUNT action",
+    "SUCCESS":"STOCK_COUNT demande de stocks acceptée par COMPANY_NAME",
+    "SUBMITTED":"COMPANY_NAME demandé STOCK_COUNT action",
+    "REJECTED":"Le stock demandé STOCK_COUNT a été rejeté par le COMPANY_NAME",
+    "BONUS":"L'association a alloué STOCK_COUNT actions bonus supplémentaires",
+    "No Notification":"Aucune notification",
+    "View All":"Voir tout",
+    "Notifications":"Notifications"
+  }
+  ,
+
+  "Papers_Taken_Months":{
+    "JAN":"JAN",
+    "FEB":"FÉV",
+    "MAR":"MAR",
+    "APR":"AVR",
+    "MAY":"PEUT",
+    "JUN":"JUIN",
+    "JUL":"JUILLET",
+    "AUG":"AOÛT",
+    "SEP":"SEP",
+    "OCT":"OCTOBRE",
+    "NOV":"NOV",
+    "DEC":"DÉC"
+  }
+  ,
+
+  "Digital_Paper_Status":{
+    "Active":"Actif",
+    "Expired":"Expiré",
+    "Revoked":"Révoqué"
+  }
+  ,
+
+  "Prediction_Charts":{
+    "Prediction":"Prédiction",
+    "Paper Count":"Nombre de papiers"
+  }
+  ,
+
+  "Top_purchase":{
+    "stock_count":"Inventaire des stocks"
+ }
+ ,
+  "Bar_Chart_Labels":{
+    "No of Stock Allocated":"Nombre d'actions allouées",
+    "No of Certificate Issued":"Nombre de certificats délivrés",
+    "No.of Digital Paper Allocated":"Nombre de papier numérique alloué",
+    "No.of Digital Paper Purchased":"Nombre de papier numérique acheté",
+    "Count":"Compter"
+  }
+  ,
+
+  "Date":{
+    "Choose a date":"Choisissez une date"
+  }
+  ,
+
+  "Error Data": {
+    "E0000": "Quelque chose s'est mal passé. Veuillez réessayer...",
+    "E0002": "Type de données non valide. Veuillez fournir des données avec un type de données valide..!",
+    "E0003": "Nom de colonne non valide pour le filtrage..!",
+    "E0004": "Nom de méthode non valide..!",
+    "E0005": "Nom d'utilisateur non valide..!",
+    "E0006": "Impossible d'envoyer plus de 3 e-mails par jour.",
+    "E0007": "L'e-mail n'est pas enregistré",
+    "E0008": "La réinitialisation du mot de passe a échoué",
+    "E0009": "Le nom d'utilisateur existe déjà",
+    "E0010": "L'e-mail existe déjà",
+    "E0011": "Nom d'utilisateur et mot de passe non valides",
+    "E0012": "Le nouveau mot de passe ne correspond pas au mot de passe de confirmation",
+    "E0013": "Le lien a expiré",
+    "E0014": "ShortName existe déjà",
+    "E0029": "Requête incorrecte",
+    "E5006": "Données non valides dans le rapport de perte",
+    "E5007": "Données non valides dans les informations d'assurance pour le rapport de perte",
+    "E5008": "Données non valides dans le rapport de perte - informations d'assurance - entreprise",
+    "E5009": "Données non valides dans le rapport de perte - informations d'assurance - détails du véhicule",
+    "E5010": "Données non valides dans le rapport de perte - informations sur les tiers",
+    "E5011": "Données non valides dans le rapport de perte - informations sur les tiers - entreprise",
+    "E5012": "Données non valides dans le rapport de perte - informations sur les tiers - détails du véhicule",
+    "E5013": "Données non valides dans le rapport de perte - informations sur le garage",
+    "E5014": "Données non valides dans le rapport de perte - informations sur le garage - contact",
+    "E5015": "ID de page ou ID de rôle non valide",
+    "E5016": "Nom de garage, date d'allocation de l'enquête du garage, date d'échéance de l'enquête du garage et emplacement de l'adresse du garage non valides dans les informations assurées",
+    "E5017": "Veuillez entrer le nom de l'entreprise tiers obligatoire",
+    "E5018": "Modèle, marque ou numéro d'immatriculation non valide dans les informations assurées",
+    "E5019": "Identité non valide",
+    "E5020": "ID de réclamation non valide",
+    "E5021": "Numéro non valide",
+    "E5022": "ID de page ou de rôle non valide",
+    "E5023": "Données de champ non valides",
+    "E5024": "Données de section non valides",
+    "E5025": "Méta-données non valides",
+    "E5026": "Détails de résumé de réclamation non valides",
+    "E5027": "Non autorisé",
+    "E5028": "Données non valides dans le rapport de perte - détails de perte",
+    "E5029": "Données non valides dans le rapport de perte - rapport de police",
+    "E5030": "Données non valides dans le rapport de perte - détails de l'enquête",
+    "E5031": "Données non valides dans le rapport de perte - rapport d'enquête",
+    "E5032": "Données non valides dans le rapport de perte - examen des réserves",
+    "E5033": "Données non valides dans le rapport de perte - facture de garage",
+    "E5034": "Données non valides dans le rapport de perte - note de débit",
+    "E5035": "Données non valides dans le rapport de perte - note de crédit",
+    "E5036": "Données non valides dans le rapport de perte - détails de récupération",
+    "E5037": "Fichier non valide",
+    "E5039": "Entreprise non valide",
+    "E5040": "Détails obligatoires à remplir sous le numéro de réclamation",
+    "E5041": "Détails obligatoires à remplir sous le numéro d'immatriculation",
+    "E5042": "Détails obligatoires à remplir sous le nom de l'entreprise tiers 'TP Nom de l'entreprise'",
+    "E5043": "Détails obligatoires à remplir sous le modèle",
+    "E5044": "Détails obligatoires à remplir sous la marque",
+    "E5045": "Détails obligatoires à remplir sous l'ID de police",
+    "E5046": "Numéro de réclamation TP à remplir",
+    "E5047": "Rapport de police à télécharger",
+    "E5048": "Détails obligatoires à remplir sous le nom du garage",
+    "E5049": "Détails obligatoires à remplir sous l'emplacement du garage",
+    "E5050": "Détails obligatoires à remplir sous 'Date d'échéance de l'enquête'",
+    "E5051": "Détails obligatoires à remplir sous la date d'allocation de l'enquête",
+    "E5052": "Rapport d'enquête à télécharger",
+    "E5053": "Frais à remplir",
+    "E5054": "Détails obligatoires à remplir sous les frais de main-d'œuvre",
+    "E5055": "Détails obligatoires à remplir sous Montant des pièces de rechange",
+    "E5056": "Détails obligatoires à remplir sous Note de crédit",
+    "E5057": "Détails obligatoires à remplir sous Note de débit",
+    "E5058": "Facture de garage à télécharger",
+    "E5059": "Détails obligatoires à remplir sous Nom de l'entreprise d'assurance",
+    "E5060": "Rapport de police à télécharger",
+    "E5061": "Données non valides dans le DTO de perte totale",
+    "E5062": "Quelqu'un travaille déjà sur cette réclamation",
+    "E5063": "Utilisateur non associé à un rôle. Veuillez contacter l'administrateur",
+    "E5064": "Modèle non disponible pour l'événement de notification donné",
+    "E5065": "Événement de notification non disponible pour le statut donné",
+    "E5066": "L'utilisateur n'est pas encore associé à une compagnie d'assurance",
+    "E5067": "Utilisateur introuvable !!",
+    "E5068": "L'utilisateur n'est pas lié à la réclamation",
+    "E5069": "Veuillez remplir le champ obligatoire - Montant de la perte totale 1",
+    "E5070": "Veuillez remplir le champ obligatoire - Nom de l'expert 1",
+    "E5071": "Veuillez remplir le champ obligatoire - Date de l'enquête 1",
+    "E5072": "Commentaires requis pour l'action.",
+    "E5073": "Identité de champ non valide",
+    "E5074": "Détails de scène non valides",
+    "E5075": "Données de configuration de champ non valides",
+    "E5076": "Impossible de supprimer le champ marqué comme CoreData",
+    "E5077": "Identité de liste déroulante non valide",
+    "E5078": "Identité de page non valide",
+    "E5079": "Données non valides dans le DTO de l'entreprise",
+    "E5080": "Données utilisateur non valides",
+    "E5081": "ID de page non valide",
+    "E5082": "Action non valide",
+    "E5083": "Limite approuvée dépassée pour le montant de la réclamation",
+    "E5084": "ID de téléchargement non valide",
+    "E5085": "Le montant de la réclamation est inférieur à votre limite d'approbation. Cela doit être approuvé par votre superviseur",
+    "E5086": "Le montant de la réclamation est supérieur à votre limite d'approbation. Cela doit être approuvé par votre superviseur",
+    "E5087": "Le montant assuré est inférieur à votre limite d'approbation. Cela doit être approuvé par votre superviseur",
+    "E5088": "Le montant assuré est supérieur à votre limite d'approbation. Cela doit être approuvé par votre superviseur",
+    "E5089": "Le montant de réserve est inférieur à votre limite d'approbation. Cela doit être approuvé par votre superviseur",
+    "E5090": "Le montant de réserve est supérieur à votre limite d'approbation. Cela doit être approuvé par votre superviseur",
+    "E5091": "Le montant estimé de la perte totale est inférieur à votre limite d'approbation. Cela doit être approuvé par votre superviseur",
+    "E5092": "Le montant estimé de la perte totale est supérieur à votre limite d'approbation. Cela doit être approuvé par votre superviseur",
+    "E5093": "Le montant saisi dépasse la limite (1 000 000)",
+    "E5094": "Aucune entreprise n'est associée à l'utilisateur",
+    "E5095": "Données de rôle utilisateur non valides",
+    "E5096": "Numéro de téléphone non valide",
+    "E5097": "ID utilisateur ou ID de page non valide",
+    "E5099": "Limite d'approbation non valide",
+    "E5100": "Numéro de séquence non valide",
+    "E5101": "Rôle déjà enregistré",
+    "E5102": "Limite approuvée dépassée pour la somme assurée",
+    "E5103": "Limite approuvée dépassée pour la perte totale estimée",
+    "E5104": "Limite approuvée dépassée pour le montant de la réclamation TP",
+    "E5105": "Saisie invalide des champs",
+    "E5106": "Chemin de fichier non valide",
+    "E5107": "Le montant total de la réclamation est inférieur à votre limite d'approbation. Cela doit être approuvé par votre superviseur",
+    "E5108": "Le montant total de la réclamation est supérieur à votre limite d'approbation. Cela doit être approuvé par votre superviseur",
+    "E5109": "Le mot de passe doit contenir 1 majuscule, 1 minuscule, 1 chiffre, 1 caractère spécial et au moins 8 caractères",
+    "E5110": "L'ID court existe déjà",
+    "E5111": "L'ID utilisateur existe déjà",
+    "E5112": "Entrez des commentaires pour les détails fournis",
+    "E5113": "Entrez des commentaires pour les besoins d'information",
+    "E5114": "L'entreprise d'assurance n'existe pas",
+    "E5115": "L'entreprise tierce n'existe pas",
+    "E5116": "Le jeton de rafraîchissement est invalide.",
+    "E5117": "Le nouveau mot de passe ne doit pas être le même que l'ancien mot de passe",
+    "E5118": "Échec de la mise à jour",
+    "E5119": "Le type d'utilisateur ne doit pas être vide",
+    "E5120": "Stock insuffisant",
+    "E5121": "Aucune entreprise n'a été sélectionnée",
+    "E5122": "Les données ne doivent pas être vides",
+    "E5123": "Données de réaffectation non valides",
+    "E5124": "Trop de tentatives",
+    "E5125": "Un papier actif existe pour le numéro de police donné avec l'ID de papier numérique : DIGITAL_PAPER",
+    "E5126": "Ancien mot de passe incorrect",
+    "E5127": "Stock non valide",
+    "E5128": "Veuillez remplir le champ requis",
+    "E5129": "Stock pool non valide",
+    "E5130": "Le nouveau mot de passe et le mot de passe de confirmation ne sont pas identiques",
+    "E5131": "Aucun pool d'allocation trouvé",
+    "E5132": "Détails obligatoires à remplir",
+    "E5133": "La valeur est vide",
+    "E5134": "ID de plateforme non valide",
+    "E5135": "Propriété système non valide",
+    "E5136": "La longueur minimale doit être de :",
+    "E5137": "La longueur minimale doit être : MIN_LENGTH pour ALIAS_NAME",
+    "E5138": "FIELD_FORMAT non valide",
+    "E5139": "ID en vrac non valide",
+    "E5140": "La longueur maximale doit être de :",
+    "E5141": "Seul le numéro de téléphone et le nom d'utilisateur peuvent être modifiés",
+    "E5142": "Statut non valide",
+    "E5143": "Le nouveau mot de passe ne doit pas être le même que l'ancien mot de passe",
+    "E5144": "Le numéro de police existe déjà",
+    "E5145": "Plus de 15 fichiers sont sélectionnés",
+    "E5146": "Téléchargez les documents nécessaires pour procéder au paiement",
+    "E5147": "La valeur doit être un numéro",
+    "E5148": "ID non valide",
+    "E5149": "Nom de section obligatoire",
+    "E5150": "Erreur lors de l'enregistrement des détails du papier",
+    "E5151": "Aucune donnée trouvée",
+    "E5152": "Aucune entreprise n'a été trouvée",
+    "E5153": "Mettez à jour les champs obligatoires *",
+    "E6101": "ID de référence non valide",
+    "E6102": "Veuillez saisir le champ obligatoire \"Numéro de rapport de police\"",
+    "E7101": "ID de liste déroulante non valide !",
+    "E7102": "Données non valides pour générer le rapport",
+    "E7103": "Nom d'utilisateur non valide",
+    "E7104": "Veuillez saisir le mot de passe",
+    "E7105": "Veuillez saisir le champ obligatoire - Raison de la perte totale",
+    "E7106": "Le nom du rôle existe déjà !",
+    "E7107": "Type d'utilisateur non valide",
+    "E7108": "Nom de rôle non valide",
+    "E7109": "Identifiant de messagerie invalide",
+    "E7110": "ID d'entreprise non valide",
+    "E7111": "L'ID court et l'ID utilisateur existent déjà",
+    "E7112": "Aucun logo disponible",
+    "E7113": "Veuillez saisir le montant maximum supérieur au montant minimum",
+    "E7114": "Table de mappage d'importation en vrac introuvable",
+    "E7115": "La réclamation existe déjà",
+    "E7116": "La réclamation n'existe pas",
+    "E7117": "Saisissez des commentaires pour contester",
+    "E7118": "Saisissez des commentaires pour le rejet",
+    "E7119": "Le jeton de rafraîchissement a expiré. Veuillez effectuer une nouvelle demande de connexion",
+    "E7120": "ID de stock invalide",
+    "E7121": "Identité de plateforme invalide",
+    "E7122": "Requête non valide",
+    "E7123": "La description ne doit pas être vide",
+    "E7124": "Le papier actif existe pour un numéro de registre donné avec l'ID de papier numérique : DIGITAL_PAPER",
+    "E7125": "Un papier actif existe pour le numéro de châssis donné avec l'ID de papier numérique : DIGITAL_PAPER",
+    "E7126": "Vous avez dépassé la longueur maximale du champ: FIELD_NAME",
+    "E7127": "Association non valide",
+    "E7128": "Vous avez dépassé la longueur maximale du champ: FIELD_NAME",
+    "E7129": "Le type de données est obligatoire",
+    "E7130": "Le nom du champ existe déjà",
+    "E7131": "Détails de la section non valides",
+    "E7132": "Date non valide",
+    "E7133": "Le papier n'est pas généré pour cet e-mail et ce nom",
+    "E7134": "Valeur de la propriété système non valide",
+    "E7135": "Le papier numérique n'a pas été enregistré",
+    "E7136": "Ancien mot de passe incorrect",
+    "E7137": "Données DTO non valides",
+    "E7138": "Détails obligatoires à remplir",
+    "E7139": "Comptage de stock non valide",
+    "E7140": "Le pool de stock est inactif",
+    "E7141": "Aucun client trouvé",
+    "E7142": "ID d'achat non valide",
+    "E7143": "Le nouveau mot de passe ne doit pas être le même que l'ancien mot de passe",
+    "E7144": "Le type d'utilisateur n'existe pas",
+    "E7145": "Échec de la génération du papier numérique",
+    "E7146": "La date d'expiration doit être supérieure à la date d'entrée en vigueur",
+    "E7147": "Numéro de police invalide",
+    "E7148": "L'achat a déjà été effectué",
+    "E7149":"Le fichier Excel ne doit pas être vide",
+    "E7150":"En-têtes de fichiers invalides",
+    "E7151":"Nom court invalide",
+    "E7152":"Aucun utilisateur n'est associé à POOL",
+    "E7153":"Échec de l'attribution des actions",
+    "E7154":"Stock insuffisant",
+    "E7155":"Réaffecter les utilisateurs existants à un autre rôle avant de désactiver ce rôle d'utilisateur",
+    "E7160": "Le nom de l’entreprise existe déjà",
+    "E7161":"Le nom de l'option déroulante existe déjà",
+    "E7162":"Veuillez fournir un type de champ valide",
+    "E7163":"L'utilisateur est désactivé, veuillez contacter l'administrateur",
+    "E7158":"Données d'entrée invalides",
+    "Unknown error occured":"Une erreur inconnue s'est produite",
+    "servererror":"impossible de se connecter au serveur",
+    "E7164" : "L'utilisateur est inactif, veuillez contacter l'administrateur pour l'accès.",
+    "E7165" : "L'utilisateur est inactif, veuillez contacter la compagnie d'assurance",
+    "E7166" : "Le rôle est inactif, veuillez contacter l'administrateur pour accéder au rôle"
+    }
+    ,
+
+    "Toaster_error" : {
+      "No_Companies_selection":"Aucune entreprise n'a été sélectionnée",
+      "Invalid_Excel":"Données invalides dans le rapport Excel",
+      "mandatory_fields":"Veuillez entrer le champ obligatoire",
+      "valid_image":"Télécharger une image valide",
+      "invalid_user":"Utilisateur invalide",
+      "captcha_error":"Le captcha saisi est incorrect",
+      "invalid_platform":"Il n'y a pas de plateforme valide",
+      "field_exist":"Le nom du champ existe déjà",
+      "fields_modify_none":"Aucun champ à modifier",
+      "exist_user_type":"Le type d'utilisateur existe déjà",
+      "unauthorized":"non autorisé",
+      "from_to_date_validation":"À ce jour est inférieur à la date à partir de la date. Veuillez le vérifier.",
+      "invalid_report_data":"Pas de données disponibles",
+      "invalid_preview":"Données invalides à prévisualiser",
+      "invalid_date_field":"Veuillez remplir le champ date",
+      "invalid_report_generate_download":"Données invalides pour générer/télécharger le rapport",
+      "invalid_phone_number":"Numéro de téléphone invalide",
+      "status_change_error":"Veuillez réaffecter ou désaffecter le stock disponible pour changer de statut",
+      "status_inactive_change_error":"Veuillez réaffecter ou désaffecter le stock disponible pour le modifier inactif",
+      "inactive_status_error":"Le statut est Inactif",
+      "exceed_allocation_limit":"L'allocation d'actions dépasse sa limite maximale",
+      "minimum_allocation_limit":"L'allocation minimale de stock doit être de 100",
+      "minimum_deallocation_limit":"La désallocation minimale des actions doit être de 100",
+      "minimum_reallocation_limit":"La réallocation minimale des stocks doit être de 100",
+      "Please_select_the_valid_user_role":"Veuillez saisir les champs obligatoires",
+      "No_Modified_Field":"Aucun champ à modifier",
+      "Please_select_user_type" : "Veuillez sélectionner le type d'utilisateur"
+    }
+
+    ,
+
+    "Toaster_success":{
+      "reset_password":"Réinitialiser le mot de passe avec succès",
+      "profile_update":"Mise à jour du profil réussie",
+      "digital_paper":"Papier numérique enregistré avec succès",
+      "login":"Connexion réussie",
+      "forget_email":"Si l'utilisateur existe, un e-mail a été envoyé à votre adresse e-mail enregistrée",
+      "fields_modify":"Les champs ont été modifiés avec succès",
+      "fields_delete":"Supprimé avec succès",
+      "update":"Mis à jour avec succès",
+      "delete":"Supprimé avec succès",
+      "save":"Enregistré avec succès",
+      "email":"E-mail envoyé avec succès",
+      "Approved Successfully":"Approuvé avec succès",
+      "Request Declined":"Demande refusée",
+      "user_deleted":"Utilisateur désactivé avec succès",
+      "download_excel":"Excel téléchargé avec succès",
+      "role_disable":"Rôle désactivé avec succès",
+      "status_change":"Le statut a été modifié avec succès",
+      "reallocate":"réaffecter",
+      "deallocate":"désallouer",
+      "allocate":"allouer",
+      "allocate_success":"Actions allouées avec succès",
+      "pool":"piscine"
+    }
+    ,
+    "pool_names":{
+      "Employee":"Employé",
+      "Broker":"Courtier",
+      "Sales":"Ventes",
+      "Agent":"Agent"
+    }
+    ,
+
+    "Purchase_stock_popup_formError":{
+      "MinimumOrderError":"La quantité minimale de commande doit être supérieure à 100 papiers"
+    }
+    ,
+    "Digital_Paper_Email_Success":{
+      "Success_Message":"Le document a été envoyé par courrier électronique avec succès"
+    },
+    "Digital_Paper_Email_Error":{
+      "error_message":"L'e-mail a échoué"
+    },
+    "Offline_Payment_Errors":{
+      "file_and_paperCount_invalid":"Mentionnez le nombre de documents requis et téléchargez la copie de",
+      "file_valid_and_paperCount_invalid":"Mentionner le nombre de papiers requis",
+      "file_invalid1":"Téléchargez la copie du ",
+      "file_invalid2":" Pour procéder au paiement",
+      "file_length_invalid":"Plus de 15 fichiers sélectionnés"
+    },
+    "Online_Payment_Success":{
+      "message1":"Transaction réussie et ajoutée ",
+      "message2":" Papiers en stock"
+    },
+    "Offline_Payment_Success":{
+      "message1":"Transaction réussie"
+    },
+    "Online_Payment_Errors":{
+      "payment_method_and_number_invalid":"Détails obligatoires encore à renseigner",
+      "payment_method_invalid":"Veuillez sélectionner l'option de paiement",
+      "file_valid_and_paperCount_invalid":"Mentionner le nombre de papiers requis"
+    },
+    "File_errors":{
+      "file_size_error":"La taille du fichier dépasse la limite autorisée",
+      "invalid_type":"type de fichier invalide",
+      "file_format":"Le format de fichier choisi n'est pas valide. Seuls les formats de fichiers Excel sont autorisés",
+      "excel_file":"Veuillez sélectionner un fichier Excel",
+      "extension_error":"Impossible de télécharger plusieurs extensions"
+    },
+    "Allocation_Pool_Success":{
+      "message1":"Le stock a été avec succès ",
+      "message2":"d Au ",
+      "message3":"d À "
+    },
+    "Authentication_Errors":{
+      "platform_invalid":"Veuillez choisir la plate-forme requise et continuer"
+    }
+    ,
+
+    "Platforms":{
+      "Recover EZ":"Récupérer EZ",
+      "Digital Certificate":"papier numérique",
+      "Data Lake":"Lac de données"
+    },
+
+    "DashBoard_Download":{
+      "Jpeg":"Jpeg",
+      "Pdf":"Pdf",
+      "Excel":"Exceller"
+    },
+
+    "CompanyCard": {
+      "CompanyId": "Identifiant de l'entreprise "
+    },
+
+    "report_tooltip":{
+      "Purchase_stosk_summit":"Achat de stock soumis",
+      "purchase_Stosk_Success":"Succès d’achat d’actions",
+      "purchase_Stock":"Acheter des actions",
+      "Digital_Paper":"Papier numérique",
+      "Active_Digital_Paper":"Papier numérique actif",
+      "Expiry_Digital_Paper":"Papier numérique d’expiration"
+    },
+    "Dissable_Popup":{
+      "Delete_Role":"Supprimer le rôle",
+      "Message":"Êtes-vous sûr de vouloir Désactivé ce rôle d'utilisateur ? Ce rôle sera actif jusqu'à la date dépassée que vous avez saisie ci-dessous.",
+      "Delete_User":"Désactiver l'utilisateur",
+      "User_Message":"Etes-vous sûr de vouloir désactiver cet utilisateur ? Cet utilisateur sera actif jusqu'à la date dépassée que vous avez saisie ci-dessous.",
+      "Exceed_Date":"Date de dépassement",
+      "To":"À",
+      "Yes_Delete":"Oui Désactivé",
+      "cancel":"Annuler"
+    }
+    ,
+    "Purchase_Allocation":{
+      "Bonus":"Prime",
+      "Paid":"Payé"
+    },
+    "Paginator":{
+      "ItemsPerPageLabel": "Lignes par page",
+      "FirstPage": "Première page",
+      "PreviousPage": "Page précédente",
+      "NextPage": "Page suivante",
+      "LastPage": "Dernière page"
+      },
+      "Reports_Status":{
+        "Failed":"Échoué",
+        "Submitted":"Soumis",
+        "Success":"Succès",
+        "Active":"Actif",
+        "Expired":"Expiré",
+        "Revoke":"Révoquer"
+      },
+      "Reports_Dropdown":{
+        "Chassis Number":"Numéro de châssis",
+        "Usage Type":"Type d'utilisation",
+        "Licensed to carry":"Autorisé à transporter",
+        "Phone Number":"Numéro de téléphone",
+        "Email Id":"Identifiant de courrier électronique"
+      }
+      , "Error_Records_table": {
+        "action": "Action"
+      }
+}

@@ -1,0 +1,22 @@
+<!-- INNER INSURED PUSH -->
+<div class="back_color_white">
+<mat-list cdkDropList [cdkDropListData]="insured_details_Data" (cdkDropListDropped)="destinationDropped($event)" >
+  <div class="ScrollBarStyle">
+    <div class="border-box-swap">
+      <mat-list-item [ngClass]="{'checked_class': item === activeField}" (click)="emitSelectedField(item)" class="insured-mat-item" *ngFor="let item of insured_details_Data;let j = index" cdkDrag [cdkDragData]="item">
+        <div class="position_relative_12">
+          <img [src]="item.icon">&nbsp;
+          <span class="font_size_14_5">{{ item.aliasName }} </span>
+        </div>
+  <div class="d-flex justify-content-end ">
+    <img src="assets/page_config_icons/three_line.svg" alt="" class="img-fluid three_line ">
+    <div class="remove position_relative" *ngIf="!item.isSystemGenerated">
+
+      <img (click)="removeItem(j,item)" *ngIf="!item.isSystemGenerated" src="assets/page_config_icons/delete_icon_list.svg" alt="" class="img-fluid delete">
+    </div>
+  </div>
+      </mat-list-item>
+    </div>
+  </div>
+</mat-list>
+</div>

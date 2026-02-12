@@ -1,0 +1,67 @@
+<app-dashboard-header></app-dashboard-header>
+<div class="position_relative bk_color">
+  <div class="margin_left_right">
+    <div class="ScrollBarStyle">
+      <div class="row" >
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-9 col-xxl-9  padding_1" *ngIf="isBarChartEnabled()">
+          <app-dashboard-bar [barChartAccessDataFromParent]="barChartAccessData"></app-dashboard-bar>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-3 col-xxl-3  padding_1 " *ngIf="!isAdmin && isCompanyRecentDigital()">
+          <app-recent-digital-papers [companyRecentDigitalPaperAccessDataFromParent]="companyRecentDigitalPaperAccessData"></app-recent-digital-papers>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-3 col-xxl-3  padding_1 " *ngIf="isAdmin && isAuthorityRecentTransaction()">
+          <app-recent-transactions [authorityRecentTransactionAccessDataFromParent]="authorityRecentTransactionAccessData"></app-recent-transactions>
+      </div>
+
+      <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 col-xxl-4  padding_1 " *ngIf="isDoughnutChartEnable()">
+          <app-dashboard-doughnut [doughnutChartAccessDataFromParent]="doughnutChartAccessData"></app-dashboard-doughnut>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5  padding_1 " *ngIf="!isAdmin && isPredictionChartEnable()">
+          <app-dashboard-line [predictionCartAcessDataFromParent]="predictionCartAcessData" ></app-dashboard-line>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-5 col-xxl-5  padding_1 " *ngIf="isAdmin && isHorizontalBarChartEnabled()">
+          <app-dashboard-top-purchase-chart [horizontalBarChartAccessDataFromParent]="horizontalBarChartAccessData" ></app-dashboard-top-purchase-chart>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-3 col-xxl-3  padding_1 " *ngIf="!isAdmin && isCompanyUpcomingExpiryPaper()">
+          <app-upcoming-expiry-digital-papers [companyUpcomingExpiryPaperAccessDataFromParent]="companyUpcomingExpiryPaperAccessData" ></app-upcoming-expiry-digital-papers>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-3 col-xxl-3  padding_1 " *ngIf="isAdmin && isAuthorityRecentDigital()">
+          <app-recent-digital-papers-authority [authorityRecentDigitalPaperAccessDataFromParent]="authorityRecentDigitalPaperAccessData" ></app-recent-digital-papers-authority>
+      </div>
+      </div>
+    </div>
+</div>
+<div class="d-flex justify-content-end ">
+  <div >
+    <div class ='' *ngIf="quickLinksAccessData?.isView">
+      <div class="adminActions " >
+
+          <input type="checkbox" name="adminToggle " class="adminToggle " (click)="rotate()"matTooltip="{{'USER_ROLE_MANAGE_PVL.Quick Links' |  translate}}" />
+          <a class="adminButton "><i><img src="assets/quick.svg"   [ngClass]="{rotating_image:floatCheck}" class="roate_img">
+
+            </i></a>
+          <div class="adminButtons">
+
+            <a matTooltip="{{'USER_ROLE_MANAGE_PVL.Purchase Stock' |  translate}}" class=" adminButton" *ngIf="!isAdmin " routerLink="/purchase-stock"><i><img
+                  src="assets/quickLink/purchase_stock.svg" class=""> </i></a>
+            <a matTooltip="{{'USER_ROLE_MANAGE_PVL.Paper Details' | translate}}" class=" adminButton" *ngIf="!isAdmin" routerLink="/paper-details"><i><img
+                  src="assets/quickLink/paper_details.svg" class=""> </i></a>
+            <a matTooltip="{{'USER_ROLE_MANAGE_PVL.Authority Paper Details' | translate}}" class=" Authority Paper Details" *ngIf=" isAdmin"
+              routerLink="/authority-paper-details"><i><img src="assets/quickLink/authority_paper_details.svg" class="">
+              </i></a>
+            <a matTooltip="{{'USER_ROLE_MANAGE_PVL.Entity Management' | translate}}" class=" Entity Management" *ngIf=" isAdmin"
+              routerLink="/entitymanagement"><i><img src="assets/quickLink/entity_management.svg" class=""> </i></a>
+            <a matTooltip="{{'USER_ROLE_MANAGE_PVL.Reports' | translate}}" class=" adminButton" *ngIf="!isAdmin || isAdmin"
+              routerLink="/report-Data/reports-card"><i><img src="assets/quickLink/reports.svg" class=""> </i></a>
+              <a matTooltip="{{'USER_ROLE_MANAGE_PVL.User Role' | translate}}" class=" adminButton" *ngIf="!isAdmin || isAdmin"
+              routerLink="/usermanagement/user-role"><i><img src="assets/quickLink/user_role.svg" class=""> </i></a>
+            <!-- <a matTooltip="User Management" class=" adminButton"
+            [routerLink]="!isAdmin?[appConst.MENU_CONSTANTS.MENUNAME.USERMANAGEMENT.URL + '/allocation-pool']:[appConst.MENU_CONSTANTS.MENUNAME.USERMANAGEMENT.URL + '/user-role/list']"><i><img src="assets/quickLink/user_management.svg" class=""> </i></a> -->
+            <a matTooltip="{{'USER_ROLE_MANAGE_PVL.User Management' | translate}}" class=" adminButton" *ngIf="!isAdmin || isAdmin"
+            routerLink="/usermanagement/user"><i><img src="assets/quickLink/user_management.svg" class=""> </i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

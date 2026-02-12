@@ -1,0 +1,134 @@
+<div class="overflow_hidden">
+  <div class="popup-header">
+    <div class="row">
+      <div class=" col-10 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6   d-flex justify-content-start ">
+        <span class=" blue_color  font_size_15_5 font_style">{{headerName}}</span>
+      </div>
+      <div class="col-2 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end ">
+        <img src="/assets/purchase_stock/cross_button.svg" alt="" class="img-fluid cursor" (click)="closeDialog()">
+      </div>
+    </div>
+  </div>
+  <div *ngIf="section">
+    <div class="row padding_5">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 padding_bottom_3">
+        <span class="font_style font_size_13_5">Section Name</span>
+      </div>
+      <form [formGroup]="sectionName">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+
+          <mat-form-field class="width_select ">
+
+            <input matInput placeholder="Please Enter Section Name" formControlName="sectionName">
+          </mat-form-field>
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+          <div class="row">
+            <div class=" col-10 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6   d-flex justify-content-start ">
+              <button class="cancel width_select font_style font_size_13_5" (click)="closeDialog()">Cancel</button>
+
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end ">
+
+              <button class="Add_user_type width_select font_style font_size_13_5" type="submit"  (click)="addSectionName()">Add Section
+                Name</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+  <div *ngIf="configSection">
+    <div class="row padding_5">
+
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+        <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let data of insured_details_Data; let i =index" cdkDrag>
+            <div class="example-custom-placeholder" *cdkDragPlaceholder></div>
+            <div class="row">
+              <div class="col-12">
+                <div class="border_line">
+                  <div class="row">
+                    <div class="col-9">
+                      <div class="row">
+                        <div class="col-9 padding_paper_details">
+
+
+                              <input matInput placeholder="label" [value]="data.sectionName" [(ngModel)]="data.sectionName" (change)="inputChanges($event,i)" class="border_zero">
+
+
+                        </div>
+                        <div class="col-3 d-flex justify-content-end ">
+
+                            <img src="assets/page_config_icons/three_line.svg" alt=""
+                              class="img-fluid img_position_relative">&nbsp;&nbsp;&nbsp;
+
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-1 d-flex justify-content-end padding_zero">
+                      <div class="vl"></div>
+                    </div>
+
+                    <div class="col-2 d-flex justify-content-end delete_icon">
+                      <mat-icon class="delete" (click)="deleteSection(data.identity)" >delete</mat-icon> &nbsp;&nbsp;&nbsp;
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <br>
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+        <div class="row">
+          <div class=" col-10 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6   d-flex justify-content-start ">
+            <button class="cancel width_select font_style font_size_13_5" (click)="closeDialog()">Cancel</button>
+
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end ">
+
+            <button class="Add_user_type width_select font_style font_size_13_5" (click)="saveConfigureSection()">Save
+              </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div *ngIf="stages">
+    <div class="row padding_5">
+
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+        <mat-form-field class="width_select ">
+
+          <input matInput  [value]="SatgeValue">
+        </mat-form-field>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+        <div class="row">
+          <div class=" col-10 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6   d-flex justify-content-start ">
+            <button class="cancel width_select font_style font_size_13_5" (click)="closeDialog()">Cancel</button>
+
+          </div>
+          <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end ">
+
+            <button class="Add_user_type width_select font_style font_size_13_5" (click)="addSectionName()">
+              Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

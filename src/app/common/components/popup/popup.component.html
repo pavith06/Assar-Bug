@@ -1,0 +1,13 @@
+<div class="container-popup">
+
+    <div class="popup-message">
+
+        <div>
+            <p> {{data.message}}</p>
+        </div>
+        <div class="btns">
+            <button  type=" button" class="btn black-btn-bg btn-font" (click)="submit(true)">{{data.okButton}}</button>
+            <button type=" button" class="btn grey-btn-bg btn-font" (click)="cancel(false)">{{data.cancelButton}}</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,87 @@
+<div class="bk_color">
+  <div class="margin_left_right mobile_scrollBarStyle">
+    <div class="row manage_profile margin_left_right_1">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 position_relative p-0">
+
+          <span (click)="onBack()"><mat-icon class="ImgfArrowInput cursor-icon">arrow_back</mat-icon></span> &nbsp;
+          <span class="position_absolute move_top">{{'Profile.Manage_Profile' |translate}}</span>
+      </div>
+    </div>
+
+    <div class="row margin_left_right_1">
+      <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-2 col-xxl-2 padding_2 personal_info_left">
+        <div class="row display_ceneter padding_top_bottom_4">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 position_relative padding_info_profile  width_mobile ">
+            <div class="d-flex align-items-center">
+
+                <span><img src="/assets/header/personal_info.svg" alt="" /></span>
+                &nbsp;
+                <span class=" font_size13_5 dark_blue font_style ">{{'Profile.Personal_Information' |translate}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-8 col-lg-9 col-xl-10 col-xxl-10 personal_info_right">
+        <div class="row perfole_edit margin_left_right_1 ">
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-start ">
+            <span class="font_style dark_blue font_size_15_5 ">
+              {{'Profile.Personal_Information' |translate}}
+            </span>
+          </div>
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end  mobilejustify">
+            <span *ngIf="editSave === true" (click)="editSaveChanges()">
+              <span><img src="/assets/header/edit_profile.svg" alt="" class="img-fluid cursor-icon" /></span><span
+                class="edit_save font_size13_5 font_style cursor">{{'Profile.Edit_Profile' |translate}}</span></span>
+            <span class="edit_save font_size13_5 font_style cursor-icon cursor" *ngIf="editSave === false" (click)="saveChanges()">{{'Profile.Save_Changes' |translate}}</span>
+          </div>
+        </div>
+        <div class="row profile_content edit_profilemargin_left_right_1 margin_left_right_3">
+          <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-3 col-xxl-3">
+            <div class="position_relative text_align">
+              <img [src]="preview" alt="" class="round" />
+              <label for="inputField"><img src="/assets/header/edit.svg" alt="" class="profile_edit"  [ngStyle]="{'cursor':editSave?'not-allowed':'pointer'}" /></label>
+              <input type="file" id="inputField" style="display: none" (change)="selectFile($event)"  [disabled]="editSave === true" />
+            </div>
+          </div>
+          <div class="col-12 col-sm-12 col-md-6 col-lg-7 col-xl-9 col-xxl-9 ScrollBarStyle">
+            <div class="row margin_left_right_1">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 col-xxl-4 padding_input">
+                <label class="padding_bottom_2">{{'Profile.User_ID' |translate}}</label>
+                <input type="text" class="input_height" [(ngModel)]="userData.userId" disabled />
+              </div>
+              <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 col-xxl-4 padding_input">
+                <label class="padding_bottom_2">{{'Profile.User_Name' |translate}}</label><input type="text"  id="userName" class="input_height"
+                  disabled  [(ngModel)]="userData.userName" (ngModelChange)="userNameValueChange($event)"
+                  />
+              </div>
+              <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 col-xxl-4 padding_input">
+                <label class="padding_bottom_2">{{'Profile.Email_ID' |translate}}</label><input type="email" class="input_height" disabled [(ngModel)]="userData.emailId" />
+              </div>
+            </div>
+            <div class="row margin_left_right_1">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 col-xxl-4 padding_input">
+                <label class="padding_bottom_2"> {{'Profile.Phone_Number' |translate}}</label><input type="text" class="input_height"
+                  [disabled]="editSave" [class.background_color]="editSave === false" [(ngModel)]="userData.phoneNumber"
+                  id="phoneNumber" (ngModelChange)="phoneNumberValueChange($event)">
+              </div>
+              <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 col-xxl-4 padding_input">
+                <label class="padding_bottom_2"> {{'Profile.Roles' |translate}}</label>
+                <input type="text" class="input_height" disabled [(ngModel)]="roleList" />
+              </div>
+              <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 col-xxl-4 padding_input">
+                <label class="padding_bottom_2"> {{'Profile.Password' |translate}}</label><input type="password" class="input_height" disabled [(ngModel)]="userData.password" />
+              </div>
+            </div>
+            <div class="row margin_left_right_1">
+              <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 col-xxl-4 padding_input"></div>
+              <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 col-xxl-4 padding_input"></div>
+              <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-4 col-xxl-4 padding_input">
+                <span class="edit_save font_size13_5 font_style under_line cursor-icon cursor" (click)="openDialog()">{{'Profile.Change_Password' |translate}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

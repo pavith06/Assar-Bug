@@ -1,0 +1,173 @@
+<div class="bg_color" *ngIf="paperDetailsPageAccessDtoFromParent?.isView" [ngStyle]="{'pointer-events': paperDetailsPageAccessDtoFromParent?.isEdit ? 'auto' : 'none'}" >
+
+  <div class="">
+    <div class="margin_left_right">
+      <div class=" ScrollBarStyle zoom_150">
+        <div class="row padding_top_1_authority">
+          <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3 padding_zero padding_bottom_2"
+            *ngIf="isShowAllCard">
+            <mat-card class="card">
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 card-data">
+                  <div class="row ">
+                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 padding_company_name">
+                      <div class="company" matTooltip="All Companies">{{'AuthorityPaperDetailsCard.All_Companies'|translate}}</div>
+                    </div>
+                    <div
+                      class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end padding_checkbox">
+                      <div> <input type="checkbox" name="" id="" class="checkbox cursor" (change)="onClick($event)"
+                          [(ngModel)]="allchecks"></div>
+                    </div>
+                  </div>
+                  <div class="row padding_stock_aviable_paper">
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 paper_detail_width">
+                      <mat-card class="common stock  padding_body">
+                        <div class="row">
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                            <div class="stock_color_authority_paper_details">{{'AuthorityPaperDetailsCard.Stock_Count'|translate}}</div>
+                          </div>
+                        </div>
+                        <div class="row stock_paper">
+                          <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-7 col-xxl-6">
+                            <div class="stock_color_authority_paper_details_14_5 max_with" [matTooltip]="allPaperDetailsCard?.stockCount | number">
+                              {{allPaperDetailsCard?.stockCount | number}}</div>
+                          </div>
+                          <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-5 col-xxl-6 d-flex justify-content-end">
+                            <div><img src="/assets/authority_paper_details/stock_count.svg" alt="">
+                            </div>
+                          </div>
+                        </div>
+                      </mat-card>
+
+                    </div>
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 paper_detail_width">
+                      <mat-card class="common available padding_body">
+                        <div class="row">
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                            <div class="stock_color_authority_paper_details  ">
+                              {{'AuthorityPaperDetailsCard.Available_Stock'|translate}}</div>
+                          </div>
+                        </div>
+                        <div class="row stock_paper">
+                          <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-7 col-xxl-6">
+                            <div class="stock_color_authority_paper_details_14_5 max_with" [matTooltip]="allPaperDetailsCard?.availableStock | number">
+                              {{allPaperDetailsCard?.availableStock | number}}</div>
+                          </div>
+                          <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-5 col-xxl-6 d-flex justify-content-end">
+                            <div><img src="/assets/header/available_stock.svg" alt="" class="hieght_20">
+                            </div>
+                          </div>
+                        </div>
+                      </mat-card>
+                    </div>
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 paper_detail_width">
+                      <mat-card class="common paper padding_body">
+                        <div class="row">
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                            <div class="stock_color_authority_paper_details">  {{'AuthorityPaperDetailsCard.Papers_Issued'|translate}}</div>
+                          </div>
+                        </div>
+                        <div class="row stock_paper ">
+                          <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-7 col-xxl-6">
+                            <div class="stock_color_authority_paper_details_14_5 max_with" [matTooltip]="allPaperDetailsCard?.paperIssued | number">
+                              {{allPaperDetailsCard?.paperIssued | number}}</div>
+                          </div>
+                          <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-5 col-xxl-6 d-flex justify-content-end">
+                            <div><img src="/assets/paper_icon.svg" alt="">
+                            </div>
+                          </div>
+                        </div>
+                      </mat-card>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-card>
+            <div class="card_gap">
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-3 padding_zero padding_bottom_2"
+            *ngFor="let data of cardPaperDetailsList  index as i;">
+            <mat-card class="card">
+              <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 card-data">
+                  <div class="row ">
+                    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 padding_company_name">
+                      <div class="company" matTooltip={{data?.insuredComapny}}> {{data?.insuredComapny}}</div>
+                    </div>
+                    <div
+                      class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6 d-flex justify-content-end padding_checkbox">
+                      <div> <input type="checkbox" name="" id="" class="checkbox cursor" [(ngModel)]="checks[i]"
+                          (click)="onSelectOrDeselect($event,data.companyId)"></div>
+                    </div>
+                  </div>
+                  <div class="row padding_stock_aviable_paper">
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 paper_detail_width">
+                      <mat-card class="common stock  padding_body">
+                        <div class="row">
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                            <div class="stock_color_authority_paper_details"> {{'AuthorityPaperDetailsCard.Stock_Count'|translate}}</div>
+                          </div>
+                        </div>
+                        <div class="row stock_paper">
+                          <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-7 col-xxl-6">
+                            <div class="stock_color_authority_paper_details max_with" [matTooltip]="data?.stockCount | number">{{data?.stockCount | number}}</div>
+                          </div>
+                          <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-5 col-xxl-6 d-flex justify-content-end">
+                            <div><img src="/assets/authority_paper_details/stock_count.svg" alt="">
+                            </div>
+                          </div>
+                        </div>
+                      </mat-card>
+
+                    </div>
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 paper_detail_width">
+                      <mat-card class="common available padding_body">
+                        <div class="row">
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                            <div class="stock_color_authority_paper_details  ">
+                              {{'AuthorityPaperDetailsCard.Available_Stock'|translate}}</div>
+                          </div>
+                        </div>
+                        <div class="row stock_paper">
+                          <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-7 col-xxl-6">
+                            <div class="stock_color_authority_paper_details max_with" [matTooltip]="data?.availableStock | number">{{data?.availableStock | number}}</div>
+                          </div>
+                          <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-5 col-xxl-6 d-flex justify-content-end">
+                            <div><img src="/assets/available_stock.svg" alt="">
+                            </div>
+                          </div>
+                        </div>
+                      </mat-card>
+                    </div>
+                    <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 paper_detail_width">
+                      <mat-card class="common paper padding_body">
+                        <div class="row">
+                          <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
+                            <div class="stock_color_authority_paper_details">  {{'AuthorityPaperDetailsCard.Papers_Issued'|translate}}</div>
+                          </div>
+                        </div>
+                        <div class="row stock_paper ">
+                          <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-7 col-xxl-6">
+                            <div class="stock_color_authority_paper_details max_with" [matTooltip]="data?.paperIssued | number">{{data?.paperIssued | number}}</div>
+                          </div>
+                          <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-5 col-xxl-6 d-flex justify-content-end">
+                            <div><img src="/assets/paper_icon.svg" alt="">
+                            </div>
+                          </div>
+                        </div>
+                      </mat-card>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-card>
+            <div class="card_gap">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

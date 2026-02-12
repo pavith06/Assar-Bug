@@ -1,0 +1,78 @@
+<!-- PAGE CONFIGURATOR MAIN SECTION START -->
+<div class="bg_color">
+  <section>
+    <!-- TOP OF SAVE BUTTON -->
+    <div class="wrapp-container">
+      <div class="row">
+        <div class="save-btn">
+          <button mat-flat-button class="blue_color"
+            (click)="saveConfiguration()">{{'pageConfig.Save_Changes'|translate}}</button>
+        </div>
+      </div>
+    </div>
+    <div class="paddding_auto">
+      <div class="inner-wrap-container" cdkDropListGroup>
+        <div class="row">
+          <!-- FIELDS SECTION -->
+          <div class="col-md-2 padd0-marg0">
+            <div class="fields">
+              <div class="heading-top">
+                <h6>Fields</h6>
+              </div>
+              <mat-list class="column-cunt" cdkDropList [cdkDropListData]="FiledItem_Data" cdkDropListSortingDisabled
+                [cdkDropListEnterPredicate]="noReturnPredicate" (cdkDropListExited)="onSourceListExited($event)"
+                (cdkDropListEntered)="onSourceListEntered($event)">
+                <mat-grid-list class="grid-class" cols="2" [cols]="2" rowHeight="2:1"
+                  *ngFor="let item of FiledItem_Data" cdkDrag [cdkDragData]="item">
+                  <div class="ogclass">
+                    <mat-list-item class="inner-items">
+                      <img [src]="item.icon">
+                      <p> {{ item.aliasName }}</p>
+                    </mat-list-item>
+                  </div>
+                </mat-grid-list>
+              </mat-list>
+            </div>
+          </div>
+          <!-- STAGE SECTION -->
+          <div class="col-md-7 padd0-marg0">
+            <div class="row">
+              <div class="col-12 border_top">
+                <app-stages #stage (selectedStage)="getSelectedStage($event) " (stageData)="getStageDetails($event)"
+                  [stage]="stageSectionData"></app-stages>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="row">
+                <div class="col-10">
+                  <mat-tab-group [className]="sub_page" animationDuration="0ms" mat-stretch-tabs="false"
+              mat-align-tabs="start" (selectedTabChange)="tabchange($event)">
+              <mat-tab [label]="item" [labelClass]="insured_detail_Class"
+                *ngFor="let item of subSectionList;let i = index" class="position_relative">
+
+                <ng-template mat-tab-label="item">{{item.sectionName}}
+
+                </ng-template>
+              </mat-tab>
+            </mat-tab-group>
+                </div>
+                <div class="col-2 padding_setting">
+                  <span class=""><img src="assets/page_config_icons/plus_icon.svg" alt="" (click)="openSection()"> &nbsp;&nbsp;<img src="assets/page_config_icons/setting.svg" alt="" (click)="openConfigSection()"></span>
+                </div>
+          </div>
+          <div class="col-12">
+            <app-insured-detail #fieldList (addedIndex)="getAddedIndex($event)"
+                  (addedField)="getNewlyAddedFields($event)" (updatedField)="getUpdateFields($event)"
+                  (deletedField)="getDeletedField($event)" [insured_details_input]="inputData"></app-insured-detail>
+          </div>
+          </div>
+          </div>
+          <!-- FIELD CONFIGURATION SECTION -->
+          <div class="col-md-3 padd0-marg0">
+            <app-configuration [selectedFields]="configureFieldList" #configuration></app-configuration>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

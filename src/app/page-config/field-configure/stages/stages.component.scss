@@ -1,0 +1,121 @@
+.main-flex {
+  h6{
+    color:rgba(104, 143, 153, 1);
+    font-weight: 400;
+    font-size: 16.5px;
+    margin: 0;
+  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 12px;
+}
+.material-icons-outlined{
+  margin-right: 20px;
+}
+.container{
+
+  padding: 0px 0px;
+}
+.inner-flex{
+  color: #44749D;
+}
+.main-cols-flx{
+  display: flex;
+  justify-content: space-between;
+}
+.notify-icon{
+
+  font-size: 21px;
+  border-radius: 3px;
+    background: #82B2E7;
+    color: #fff;
+}
+.cliam-icon{
+  font-size: 21px;
+  border-radius: 3px;
+  background: #00C8C8;
+    color: #fff;
+}
+
+.tump-icon{
+  font-size: 21px;
+  border-radius: 3px;
+  background: #ECECEC;
+    color: #fff;
+}
+.card-box-view{
+  margin: 26px 4px;
+  padding: 20px 4px;
+  background: #F6F6F6;
+  background: #FCFCFC;
+border-radius: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.header-box{
+  background: #E3EAF0;
+}
+.checked_class{
+  margin: 26px 3px;
+  padding: 17px 4px;
+  background: #E3EAF0;
+  box-shadow: 0px 0px 3px rgb(0 0 0 / 12%);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.content-txt p{
+  font-weight: 400;
+font-size: 12px;
+color: #333333;
+}
+
+.check-icon{
+  font-size: 21px;
+  border-radius: 3px;
+  background: #FF9B6B;
+    color: #fff;
+}
+:host ::ng-deep .mat-mdc-slide-toggle .mdc-switch.mdc-switch--selected:enabled .mdc-switch__icon {
+  path{
+    display: none;
+  }
+}
+:host ::ng-deep .mat-mdc-slide-toggle .mdc-switch.mdc-switch--unselected:enabled .mdc-switch__icon{
+  path{
+    display: none;
+  }
+}
+:host ::ng-deep  .mat-mdc-slide-toggle.mat-accent {
+  --mdc-switch-selected-focus-state-layer-color: #44749D;
+  --mdc-switch-selected-handle-color: #fff;
+  --mdc-switch-selected-hover-state-layer-color: #44749D;
+  --mdc-switch-selected-pressed-state-layer-color: #44749D;
+  --mdc-switch-selected-focus-handle-color: #fff;
+  --mdc-switch-selected-hover-handle-color: #44749D;
+  --mdc-switch-selected-pressed-handle-color: #44749D;
+  --mdc-switch-selected-focus-track-color: #44749D;
+  --mdc-switch-selected-hover-track-color: #44749D;
+  --mdc-switch-selected-pressed-track-color: #44749D;
+  --mdc-switch-selected-track-color: #44749D;
+}
+:host ::ng-deep  .mat-mdc-slide-toggle.mat-accent :hover {
+  --mdc-switch-selected-focus-state-layer-color: #44749D;
+  --mdc-switch-selected-handle-color: #fff;
+  --mdc-switch-selected-hover-state-layer-color: #44749D;
+  --mdc-switch-selected-pressed-state-layer-color: #44749D;
+  --mdc-switch-selected-focus-handle-color: #44749D;
+  --mdc-switch-selected-hover-handle-color: #fff;
+  --mdc-switch-selected-pressed-handle-color: #44749D;
+  --mdc-switch-selected-focus-track-color: #44749D;
+  --mdc-switch-selected-hover-track-color: #44749D;
+  --mdc-switch-selected-pressed-track-color: #44749D;
+  --mdc-switch-selected-track-color: #44749D;
+}
+:host ::ng-deep  .mat-mdc-slide-toggle .mdc-switch .mdc-switch__handle {
+  height: 13px;
+  width: 12px;
+}
+:host ::ng-deep  .mat-mdc-slide-toggle .mdc-switch .mdc-switch__track{
+  width: 30px;
+}

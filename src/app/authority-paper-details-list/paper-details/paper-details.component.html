@@ -1,0 +1,73 @@
+
+<div class="bg_color paading_top_1_all" *ngIf="authorityPaperDetailsAccessDto?.isEnabled" >
+
+    <div class="margin_left_right_paper_details_header">
+        <div class="containers_heading">
+            <div class="row purchase_main">
+
+
+                <div
+                    class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 col-xxl-4   d-flex justify-content-start mobilepaddingbottom">
+                    <div *ngIf="card" class="margin_top">
+                      <img src="/assets/authority_paper_details/arrow.svg" alt="" class="arrow cursor"
+                      (click)="onBack()">
+                      </div>
+                      <div *ngIf="!card" class="margin_top">
+                        <img src="/assets/authority_paper_details/arrow.svg" alt="" class="arrow cursor"
+                        (click)="backTocard()">
+                        </div>
+                        &nbsp;
+
+                    <app-search-bar [filterObjectFromParent]="filterObjectArray" [clearInputData]="isCleared" (emitFilterValue)="emitFilterValue($event)"
+                        [searchdisable]="searchdisable" (keyup)="search($event)" (searchDataForInput)="searchItem($event)"></app-search-bar>
+
+
+                </div>
+                <div class=" col-12 col-sm-6 col-md-6 col-lg-8 col-xl-8 col-xxl-8 d-flex justify-content-end mobilejustify mobilepaddingbottom">
+                    <div class="d-flex align-items-center gap-3" style="position: relative;">
+
+
+
+                            <img src="/assets/authority_paper_details/list.svg"  alt="" class="card_img cursor h_w"
+                                (click)="cardView()" *ngIf="card">
+
+                            <img src="/assets/authority_paper_details/card.svg"alt="" class="list_img cursor h_w"
+                                (click)="listView()" *ngIf="list">
+                            <img src="/assets/authority_paper_details/download.svg" alt="" class="download cursor h_w"
+                                (click)="open()" *ngIf="isDownloadIcon && isDownloadShowoRnOT()" [ngStyle]="{'cursor':isDownloadDisable?'not-allowed':'pointer'}" >
+
+
+                        <div *ngIf="isListShown && viewPapersPageAccessDto?.isView">
+                            <button class="view_paper cursor" (click)="viewPapers()" >{{'paper_details_table.view_papers'|translate}}</button>
+                        </div>
+                        <!-- <div *ngIf="showDownload" class="downloadpaper">
+                            <app-common-download [columnContentFromParent]="columnContent"
+                            (paperDetails)="passValueParentToChild($event)"
+                            (paperDetailsTransactionList)="transactionList($event)"
+                            (closedownload)="closedownload($event)" ></app-common-download>
+                        </div> -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <router-outlet></router-outlet> -->
+    <div>
+        <div *ngIf="card">
+            <app-authority-paper-details-card [paperDetailsPageAccessDtoFromParent]="paperDetailsCardPageAccessDto" [searchValue]="searchValueForList"></app-authority-paper-details-card>
+        </div>
+        <div *ngIf="list">
+            <app-authority-paper-details-list [paperDetailsPageAccessDtoFromParent]="paperDetailsPageAccessDto" (ViewPaper)="viewpaperlist($event)" 
+             (isDownloadEmit)="getDisableDownloadData($event)" (isShowViewPaperBtn)="viewPaper($event)" [searchValue]="searchValueForList"></app-authority-paper-details-list>
+        </div>
+         <div *ngIf="viewpaper">
+            <app-authority-view-papers-list [viewPapersPageAccessDtoFromParent]="viewPapersPageAccessDto"  [filterFromParent]="getFilter" [searchValueForViewPaper]="searchValueForList"></app-authority-view-papers-list>
+        </div>
+    </div>
+
+</div>
+
+
+

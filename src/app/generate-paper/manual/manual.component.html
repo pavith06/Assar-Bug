@@ -1,0 +1,373 @@
+<div class="container-fluid space-btwn " *ngIf="generatePaperManualAccessData?.isView">
+  <div class="row" style="height: 12px;"></div>
+  <div class="scroolbar">
+    <div class="row" *ngIf="paperDetailsAccessData?.isView">
+      <div class="col-12 padding_left_right_manual">
+        <h3 class="paperDetailsStyle">{{'Paper_Details_view_popup.Paper_Details'|translate}}</h3>
+      </div>
+    </div>
+    <div class="row" *ngIf="paperDetailsAccessData?.isView">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-10 col-xxl-9 padding_left_right_manual">
+        <div class="row paperDetailsDynamicFieldStyle">
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4" *ngFor="let field of paperFieldData">
+
+            <div *ngIf="getStringInput(field)" class="marginTB">
+              <label for="name" class="mr-2"> {{"GENERATE_PAPER_MANUAL."+field.aliasName | translate }}<span *ngIf="field.mandatory"
+                  class="astrich">*</span></label>
+              <input type="text" class="form-control" [disabled]="isEditUser"
+                [readOnly]="!generatePaperManualAccessData?.isEdit" [(ngModel)]="field.value"
+                [maxlength]="field.maxLength" [class.red-border]="field.hasError" (input)="onEnteringInput(field)" autocomplete="off" />
+            </div>
+
+            <div *ngIf="getTextInput(field)" class="marginTB">
+              <label for="name" class="mr-2"> {{"GENERATE_PAPER_MANUAL."+field.aliasName | translate}}<span *ngIf="field.mandatory"
+                  class="astrich">*</span></label>
+              <input type="text" class="form-control" [disabled]="isEditUser" appSpecialCharacter
+                [(ngModel)]="field.value" [maxlength]="field.maxLength"
+                [class.red-border]="field.hasError" (input)="onEnteringInput(field)"  autocomplete="off" />
+            </div>
+
+            <div *ngIf="getNumberInput(field)" class="marginTB">
+              <label for="name" class="mr-2"> {{"GENERATE_PAPER_MANUAL."+field.aliasName | translate}}<span *ngIf="field.mandatory"
+                  class="astrich">*</span></label>
+              <input type="text" class="form-control" [maxlength]="field.maxLength" appNumber disabled
+                [(ngModel)]="field.value" [class.red-border]="field.hasError"
+                [readOnly]="!generatePaperManualAccessData?.isEdit" (input)="onEnteringInput(field)"  autocomplete="off" />
+            </div>
+
+            <div *ngIf="getDateInput(field)" class="marginTB">
+              <label for="fname" class="mr-2">{{"GENERATE_PAPER_MANUAL."+field.aliasName | translate }}<span *ngIf="field.mandatory"
+                  class="astrich">*</span></label>
+
+              <!-- <div class="d-flex position-relative">
+                <input *ngIf="field.fieldType === 'pDate'" class="form-control" matInput readonly
+                  [matDatepicker]="picker" [(ngModel)]="field.value" placeholder="{{'Date.Choose a date' | translate }}"
+                  [class.red-border]="field.hasError" (dateChange)="onDateChangingEvent(field);setMinDate($event)">
+                <input *ngIf="field.fieldType === 'fDate'" class="form-control" matInput readonly
+                  [matDatepicker]="picker" [min]="minDate" [(ngModel)]="field.value" placeholder="{{'Date.Choose a date' | translate }}"
+                  [class.red-border]="field.hasError" (ngModelChange)="setDateValue(field,$event)" (dateChange)="onDateChangingEvent(field)">
+                <mat-datepicker-toggle matSuffix [for]="picker" (click)="clearDateField(field)"
+                  class="calender-toggler_manual"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </div> -->
+
+              <!-- <div class="d-flex position-relative" *ngIf="field.fieldType === 'pDate'">
+  <input class="form-control" matInput
+    [matDatepicker]="pickerEffectiveFrom" [(ngModel)]="field.value"
+    placeholder="{{'Date.Choose a date' | translate}}"
+    [matDatepickerFilter]="dateFilter" [min]="minDate" [max]="maxDate"
+    [class.red-border]="field.hasError"
+    (dateChange)="onDateChanged(field, $event)">
+  <mat-datepicker-toggle matSuffix [for]="pickerEffectiveFrom" class="calender-toggler_manual"></mat-datepicker-toggle>
+  <mat-datepicker #pickerEffectiveFrom></mat-datepicker>
+</div>
+
+<div class="d-flex position-relative" *ngIf="field.fieldType === 'fDate'">
+  <input class="form-control" matInput
+    [matDatepicker]="pickerExpiryDate" [(ngModel)]="field.value"
+    placeholder="{{'Date.Choose a date' | translate}}"
+    [matDatepickerFilter]="dateFilter" [min]="minDate" [max]="maxDate"
+    [class.red-border]="field.hasError"
+    (dateChange)="onDateChanged(field, $event)">
+  <mat-datepicker-toggle matSuffix [for]="pickerExpiryDate" class="calender-toggler_manual"></mat-datepicker-toggle>
+  <mat-datepicker #pickerExpiryDate></mat-datepicker>
+</div> -->
+
+<!-- Effective From -->
+<!-- <div class="d-flex position-relative" *ngIf="field.fieldType === 'pDate'">
+  <input class="form-control" matInput
+    [matDatepicker]="pickerEffectiveFrom" [(ngModel)]="field.value"
+    placeholder="{{'Date.Choose a date' | translate}}"
+    [matDatepickerFilter]="dateFilter"
+    [min]="minDate" [max]="maxDate"
+    [class.red-border]="field.hasError"
+    (dateChange)="onDateChanged(field, $event); 
+                  field.aliasName === 'Effective From' ? onEffectiveFromChange($event.value) : null">
+    
+  <mat-datepicker-toggle matSuffix [for]="pickerEffectiveFrom" class="calender-toggler_manual"></mat-datepicker-toggle>
+  <mat-datepicker #pickerEffectiveFrom></mat-datepicker>
+</div> -->
+
+<!-- Expiry Date -->
+<!-- <div class="d-flex position-relative" *ngIf="field.fieldType === 'fDate'">
+  <input class="form-control" matInput
+    [matDatepicker]="pickerExpiryDate" [(ngModel)]="field.value"
+    placeholder="{{'Date.Choose a date' | translate}}"
+    [matDatepickerFilter]="dateFilter"
+    [min]="expiryDateMin" [max]="expiryDateMax"
+    [class.red-border]="field.hasError"
+    (dateChange)="onDateChanged(field, $event)">
+  <mat-datepicker-toggle matSuffix [for]="pickerExpiryDate" class="calender-toggler_manual"></mat-datepicker-toggle>
+  <mat-datepicker #pickerExpiryDate></mat-datepicker>
+</div> -->
+
+<!-- Effective From -->
+<!-- Effective From -->
+<div class="d-flex position-relative" *ngIf="field.fieldType === 'pDate'">
+  <input class="form-control" matInput
+    [matDatepicker]="pickerEffectiveFrom"
+    [(ngModel)]="field.value"
+    placeholder="{{'Date.Choose a date' | translate}}"
+    [min]="today"
+    [matDatepickerFilter]="dateFilter"
+    [class.red-border]="field.hasError"
+    (dateChange)="onEffectiveFromChange($event.value)">
+
+  <mat-datepicker-toggle matSuffix [for]="pickerEffectiveFrom" class="calender-toggler_manual"></mat-datepicker-toggle>
+  <mat-datepicker #pickerEffectiveFrom></mat-datepicker>
+</div>
+
+
+<div class="d-flex position-relative" *ngIf="field.fieldType === 'fDate'">
+  <input class="form-control" matInput
+    [matDatepicker]="pickerExpiryDate"
+    [(ngModel)]="field.value"
+    placeholder="{{'Date.Choose a date' | translate}}"
+    [min]="expiryDateMin"
+    [max]="expiryDateMax"
+    [matDatepickerFilter]="dateFilter"
+    [class.red-border]="field.hasError"
+    (dateChange)="onDateChanged(field, $event)">
+
+  <mat-datepicker-toggle matSuffix [for]="pickerExpiryDate" class="calender-toggler_manual"></mat-datepicker-toggle>
+  <mat-datepicker #pickerExpiryDate></mat-datepicker>
+</div>
+
+
+
+
+
+            </div>
+
+            <div *ngIf="getCheckBox(field)" class="marginTB">
+              <label for="name" class="mr-2"> {{"GENERATE_PAPER_MANUAL."+field.aliasName | translate}}<span *ngIf="field.mandatory"
+                  class="astrich">*</span></label>
+              <input type="checkbox" class="checkBoxStyle" [disabled]="isEditUser" appSpecialCharacter
+                [(ngModel)]="field.value" [class.red-border]="field.hasError" autocomplete="off" (change)="onChangingFields(field)" />
+            </div>
+
+            <div *ngIf="getMultiSelect(field)" class="marginTB">
+              <div style=" margin-bottom: 2%;" class="font_size">{{"GENERATE_PAPER_MANUAL."+field.aliasName | translate}} <span *ngIf="field.mandatory"
+                      class="astrich">*</span>
+              </div>
+                <mat-select class="form-select form-control" placeholder="Please Select" [(ngModel)]="field.value" multiple>
+                  <mat-option *ngFor="let opt of field.dropDownList" [value]="opt.fieldOptionName">{{opt.fieldOptionName}}</mat-option>
+                </mat-select>
+          </div>
+
+            <div *ngIf="getDropdownInput(field)" class="marginTB">
+              <div style=" margin-bottom: 2%;" class="font_size">{{"GENERATE_PAPER_MANUAL."+field.aliasName | translate}} <span *ngIf="field.mandatory"
+                      class="astrich">*</span>
+              </div>
+              <select class="form-select form-control" [(ngModel)]="field.value" aria-label="Default select example" [class.red-border]="field.hasError"
+              (change)="onChangingFields(field)" (click)="getChildDropDownData(field)">
+                  <!-- <option>---Please Select Value---</option> -->
+                    <option *ngFor="let opt of  field.dropDownList" value={{opt.fieldOptionName}}>
+                    {{opt.fieldOptionName}}
+                  </option>
+              </select>
+          </div>
+
+          <div *ngIf="getRadioButton(field)" class="marginTB">
+            <label for="name" class="mr-2"> {{"GENERATE_PAPER_MANUAL."+field.aliasName | translate}}<span *ngIf="field.mandatory"
+                class="astrich">*</span></label>
+            <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+              [(ngModel)]="field.value">
+              <mat-radio-button class="example-radio-button" *ngFor="let opt of field.dropDownList" [value]="opt">
+                {{opt.fieldOptionName}}
+              </mat-radio-button>
+            </mat-radio-group>
+          </div>
+
+            <!-- <div *ngIf="getDropdownInput(field)" class="marginTB">
+              <div style=" margin-bottom: 2%;" class="font_size">{{field.aliasName}} <span *ngIf="field.mandatory"
+                  class="astrich">*</span>
+              </div>
+              <select class="form-select form-control" [(ngModel)]="field.value" aria-label="Default select example"
+                (click)="getChildDropDownData(field)">
+                 <option>---Please Select Value---</option> -->
+                <!-- <option *ngFor="let opt of usageDropDown" value={{opt}}> {{opt}} </option>
+              </select>
+            </div> -->
+
+            <div *ngIf="getFileUploadInput(field)" class="marginTB">
+              <label for="name" class="mr-2"> {{"GENERATE_PAPER_MANUAL."+field.aliasName | translate }} <span *ngIf="field.mandatory"
+                  class="astrich">*</span></label>
+              <button class="file_btn" (click)="f_input.click()">
+                <img class="img" src="/assets/page_config_icons/fileupload.svg">
+              </button>
+              <input type="text" class="form-control" placeholder="Upload Logo" readonly matInput
+                [(ngModel)]="fileName" />
+              <input type="file" class="form-control" accept="image/*" hidden #f_input [(ngModel)]="field.value"
+                (change)="onChange($event)" autocomplete="off" />
+
+              <!-- (ngModelChange)="onInput()" -->
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 col-xxl-3"></div>
+    </div>
+    <div class="row verticleStyle_manual">
+      <div class="col-12 padding_left_right_manual">
+        <h3 class="verticleDetailsStyle" *ngIf="vehicleDetailsAccessData?.isView">
+          {{'paperDetailsManual.Vehicle_Details'|translate}}
+        </h3>
+      </div>
+    </div>
+    <div class="row" *ngIf="vehicleDetailsAccessData?.isView">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-10 col-xxl-9 padding_left_right_manual">
+        <div class="row verticleDynamicFieldStyle">
+          <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-4 col-xxl-4 " *ngFor="let field of vehicleFieldData">
+
+            <div *ngIf="getStringInput(field)" class="marginTB">
+              <label for="name" class="mr-2"> {{"GENERATE_PAPER_MANUAL."+field.aliasName | translate }}<span *ngIf="field.mandatory"
+                  class="astrich">*</span></label>
+              <input type="text" class="form-control" [disabled]="isEditUser" appSpecialCharacter
+                [readOnly]="!generatePaperManualAccessData?.isEdit" [(ngModel)]="field.value" autocomplete="off"
+                [maxlength]="field.maxLength" [class.red-border]="field.hasError" (input)="onEnteringInput(field)" />
+            </div>
+
+            <div *ngIf="getNumberInput(field)" class="marginTB">
+              <label for="name" class="mr-2"> {{"GENERATE_PAPER_MANUAL."+field.aliasName | translate }}<span *ngIf="field.mandatory"
+                  class="astrich">*</span></label>
+              <input type="text" class="form-control" appNumber [maxlength]="field.maxLength" disabled
+                [(ngModel)]="field.value" [readOnly]="!generatePaperManualAccessData?.isEdit" autocomplete="off"
+                [class.red-border]="field.hasError"  (input)="onEnteringInput(field)" />
+            </div>
+
+            <div *ngIf="getTextInput(field)" class="marginTB">
+              <label for="name" class="mr-2"> {{"GENERATE_PAPER_MANUAL."+field.aliasName | translate}}<span *ngIf="field.mandatory"
+                  class="astrich">*</span></label>
+              <input type="text" class="form-control" [maxlength]="field.maxLength" [disabled]="isEditUser"
+                appSpecialCharacter [(ngModel)]="field.value" [class.red-border]="field.hasError"
+                autocomplete="off" (input)="onEnteringInput(field)" />
+            </div>
+
+            <div *ngIf="getCheckBox(field)" class="marginTB">
+              <label for="name" class="mr-2"> {{"GENERATE_PAPER_MANUAL."+field.aliasName | translate }}<span *ngIf="field.mandatory"
+                  class="astrich">*</span></label>
+              <input type="checkbox" class="checkBoxStyle" [disabled]="isEditUser" appSpecialCharacter
+                [(ngModel)]="field.value" [class.red-border]="field.hasError" autocomplete="off"  (change)="onChangingFields(field)" />
+            </div>
+
+            <div *ngIf="getRadioButton(field)" class="marginTB">
+              <label for="name" class="mr-2"> {{"GENERATE_PAPER_MANUAL."+field.aliasName | translate }}<span *ngIf="field.mandatory"
+                  class="astrich">*</span></label>
+              <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                [(ngModel)]="field.value">
+                <mat-radio-button class="example-radio-button" *ngFor="let opt of field.dropDownList" [value]="opt">
+                  {{opt.fieldOptionName}}
+                </mat-radio-button>
+              </mat-radio-group>
+            </div>
+
+            <div *ngIf="getDateInput(field)" class="marginTB">
+              <label for="fname" class="mr-2">{{"GENERATE_PAPER_MANUAL."+field.aliasName | translate}}<span *ngIf="field.mandatory"
+                  class="astrich">*</span></label>
+
+              <div class="d-flex position-relative">
+                <input class="form-control" matInput readonly [matDatepicker]="picker" [(ngModel)]="field.value"
+                  placeholder="Choose a date" [class.red-border]="field.hasError" (dateChange)="onDateChangingEvent(field)">
+                <mat-datepicker-toggle matSuffix [for]="picker" class="calender-toggler_manual"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </div>
+            </div>
+
+            <!-- <div *ngIf="getDropdownInput(field)" class="marginTB">
+              <div style=" margin-bottom: 2%;" class="font_size">{{field.aliasName}} <span *ngIf="field.mandatory"
+                      class="astrich">*</span>
+              </div>
+              <select class="form-select form-control" [(ngModel)]="field.value" aria-label="Default select example" (click)="getChildDropDownData(field)"> -->
+            <!-- <option>---Please Select Value---</option> -->
+            <!-- <option *ngFor="let opt of usageDropDown" value={{opt}}> {{opt}} </option>
+              </select>
+          </div> -->
+
+            <div *ngIf="getFileUploadInput(field)" class="marginTB ">
+              <label for="name" class="mr-2"> {{"GENERATE_PAPER_MANUAL."+field.aliasName | translate }} <span *ngIf="field.mandatory"
+                  class="astrich">*</span></label>
+              <button class="file_btn" (click)="f_input.click()">
+                <img class="img" src="/assets/page_config_icons/fileupload.svg">
+              </button>
+              <input type="text" class="form-control" placeholder="Upload Logo" readonly matInput
+                [(ngModel)]="fileName" />
+              <input type="file" class="form-control" accept="image/*" hidden #f_input [(ngModel)]="field.value"
+                (change)="onChange($event)" autocomplete="off" />
+
+              <!-- (ngModelChange)="onInput()" -->
+            </div>
+            <!--
+                <div *ngIf="getDropdownInput(field) && field.aliasName === 'Make'" class="marginTB">
+                    <div style=" margin-bottom: 2%;" class="font_size">{{field.aliasName}} <span *ngIf="field.mandatory"
+                            class="astrich">*</span>
+                    </div>
+                    <select class="form-control" [(ngModel)]="field.value" aria-label="Default select example" (click)="getChildDropDownData(field)">
+                        <option>---Please Select Value---</option>
+                        <option *ngFor="let opt of mackDropdownList" value={{opt}}> {{opt}} </option>
+                    </select>
+                </div> -->
+
+                <div *ngIf="getMultiSelect(field)" class="marginTB">
+                  <div style=" margin-bottom: 2%;" class="font_size">{{"GENERATE_PAPER_MANUAL."+field.aliasName | translate}} <span *ngIf="field.mandatory"
+                          class="astrich">*</span>
+                  </div>
+                    <mat-select class="form-select form-control" placeholder="Please Select" [(ngModel)]="field.value" multiple>
+                      <mat-option *ngFor="let opt of field.dropDownList" [value]="opt.fieldOptionName">{{opt.fieldOptionName}}</mat-option>
+                    </mat-select>
+              </div>
+
+            <!-- <div *ngIf="getDropdownInput(field)&& field.aliasName === 'Usage'" class="marginTB">
+              <div style=" margin-bottom: 2%;" class="font_size">{{field.aliasName}} <span *ngIf="field.mandatory"
+                  class="astrich">*</span>
+              </div>
+              <select class="form-select form-control" [(ngModel)]="field.value" aria-label="Default select example"
+                (click)="getChildDropDownData(field)">
+                <option *ngFor="let opt of usageDropDown" value={{opt}}> {{opt}} </option>
+              </select>
+            </div> -->
+
+            <!-- <div *ngIf="getDropdownInput(field) && field.aliasName === 'Make' || field.aliasName === 'Model'" class="marginTB"> -->
+              <div *ngIf="getDropdownInput(field) && (field.aliasName === 'Make' || field.aliasName === 'Model')" class="marginTB">
+
+              <label for="fname" class="mr-2">{{"GENERATE_PAPER_MANUAL."+field.aliasName | translate}}<span *ngIf="field.mandatory" class="astrich">*</span></label>
+                <select class="form-select form-control" [(ngModel)]="field.value" [class.red-border]="field.hasError" (change)="onChangingFields(field)"  (ngModelChange)="getChildDropDowValue(metaDataDto?.sectionList[1].fieldList,field)"
+                 aria-label="Default select example" placeholder="Please Select Value" >
+                 <option [value]="null" [disabled]="true" [selected]>{{'GENERATE_PAPER_MANUAL.please_select_value'| translate}}</option>
+                  <!-- <option>Please Select Value</option> -->
+                  <option *ngFor="let opt of  field.dropDownList" value={{opt}}>
+                    {{opt}}
+                  </option>
+                </select>
+            </div>
+
+            <div *ngIf="getDropdownInput(field) && field.aliasName !== 'Make' && field.aliasName !== 'Model'" class="marginTB">
+              <label for="fname" class="mr-2">{{"GENERATE_PAPER_MANUAL."+field.aliasName | translate }}<span *ngIf="field.mandatory"
+                  class="astrich">*</span></label>
+              <select class="form-select form-control" [(ngModel)]="field.value"
+              [class.red-border]="field.hasError"  (change)="onChangingFields(field)" (ngModelChange)="getChildDropDowValue(metaDataDto?.sectionList[1].fieldList,field)"
+                aria-label="Default select example">
+                <option *ngFor="let opt of  field.dropDownList" value={{opt.fieldOptionName}}>
+                  {{opt.fieldOptionName}}
+                </option>
+              </select>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 col-xxl-3">
+
+      </div>
+    </div>
+  </div>
+
+    <div class="d-flex justify-content-start padding_left_top padding_left_right_manual button_bk_color">
+      <button class="btn cursor-icon black-btn-bg_manual ml btn-sz btn-font generate_paper label"
+        [disabled]="generateButtonDisable ||!generatePaperManualAccessData?.isEdit"
+        (click)="generatePaper()">{{'paperDetailsManual.Generate_Paper'| translate}}</button>
+    </div>
+
+</div>

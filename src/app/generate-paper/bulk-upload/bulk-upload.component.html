@@ -1,0 +1,69 @@
+
+<div class="inside_color" *ngIf="bulkUpload?generatePaperBulkAccessDetails?.isView:bulkRevokeAccessDetails?.isView">
+  <div class="margin_left_right">
+    <div class="row">
+      <div
+        class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex justify-content-end padding_top_samplefile  align-items-center">
+        <span *ngIf="bulkUpload?generatePaperBulkAccessDetails?.isDownload:bulkRevokeAccessDetails?.isDownload" class="d-flex align-items-center"><img src="/assets/bulk_upload/download.svg" alt="" class="img-fluid" />&nbsp;<span class="coursor font_size_16"
+            (click)="sampleExcelDownload()">{{'paperDetailsBulkUpload.Sample_file'|translate}}</span></span>
+
+        &nbsp;&nbsp;&nbsp;<span><img src="/assets/bulk_upload/update.svg" alt="" class="img-fluid" />&nbsp;<span
+            class="font_size_16 coursor" (click)="openDialog()">{{'paperDetailsBulkUpload.Upload_History'|translate}}</span></span>
+
+      </div>
+    </div>
+    <div class="row">
+      <div
+        class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex justify-content-start padding_top_samplefile">
+        <span class="font_size_16 coursor">{{'paperDetailsBulkUpload.Digital_Paper_Type'|translate}}</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="margin_top_Allocate_realocate display">
+        <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-1 col-xxl-1 padding_top_samplefile"
+          *ngFor="let bulkupload of BulkUpload">
+          <input type="radio" name="" id="" class="radio font_size_16 coursor" (click)="BulkUploadNormalFeet(bulkupload.name)"
+            value="{{ bulkupload.name }}" [checked]="bulkupload.check" />
+          &nbsp;<label for="" class="font_size_16">{{ bulkupload.name | translate }}</label>
+        </div>
+      </div>
+    </div>
+    <div class="row upload_your_document">
+      <div
+        class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 d-flex justify-content-start padding_top_samplefile">
+        <span class="font_size_16 coursor">{{'paperDetailsBulkUpload.Upload_your_Document'|translate}}</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 padding_top_samplefile">
+        <div class="dropzone">
+          <input [type]="filename ? 'text' : 'file'" [class.Zero]="filename" class="input-file" #fileDropRef [disabled]="" multiple (change)="onChange($event)"
+            accept="application/pdf,application/vnd.ms-excel,application/pdf,image/*" />
+          <img src="/assets/CloudArrowUp.svg" alt="" class="img-fluid position_relative_8 " *ngIf="filename === null" />
+          <img src="/assets/file/excel.svg" alt="" class="img-fluid position_relative_20"  *ngIf="filename "/>
+          <img [src]="" alt="" />
+          <h3 class="file-text position_relative_20" *ngIf="filename === null">
+            <span class="font_size_16_5">{{'Purchase_stock_popup.Drag_and_Drop_your_file_or'|translate}}</span>
+          </h3>
+          <h3 class="file-text position_relative" *ngIf="filename" [matTooltip]="filename">
+            <span class="toolTip font_size_16_5">{{ filename }}</span> &nbsp;<img src="assets/bulk_upload/delete_bulk.svg"
+              class="img-fluid position_absolute_delete" alt="" (click)="DeleteFile()">
+          </h3>
+          <button *ngIf="fileNameList.length === 0" [disabled]="" class="btn black-btn-bg ml btn-sz btn-font"
+            for="fileDropRef">
+            {{'Purchase_stock_popup.Browse_files'|translate}}
+          </button>
+          <button *ngIf="fileNameList.length > 0" class="btn black-btn-bg ml btn-sz btn-font font_size_14_5" (click)="redirectRevokepage()">
+            {{ 'PaperDetails.'+action | translate }}
+          </button>
+        </div>
+        <br /><br />
+        <!-- <button *ngIf="generateUpload" (click)="redirectpage()" class="btn  black-btn-bg ml btn-sz btn-font generate_paper">Generate Paper</button> -->
+        <!-- <button *ngIf="filename" (click)="redirectRevokepage()"
+          class="btn black-btn-bg ml btn-sz btn-font generate_paper">
+          {{ action }}
+        </button> -->
+      </div>
+    </div>
+  </div>
+</div>

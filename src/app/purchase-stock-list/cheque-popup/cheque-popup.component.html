@@ -1,0 +1,40 @@
+<div class="arabic_style_all_popup">
+  <div class="container">
+    <div class="row cheque_pading">
+      <div class="sm-6 col-md-6 d-flex justify-content-start ">
+        <span class="name_file" [matTooltip]="name">{{name}}</span>
+      </div>
+      <div class="sm-6 col-md-6 d-flex justify-content-end end">
+        <img src="/assets/purchase_stock/cross_button.svg" alt="" (click)="closeDialog()" class="cursor">
+      </div>
+    </div>
+    <div class="row cheque_pading">
+      <div class="col-md-12" *ngIf='fileType.includes("image")'>
+        <img [src]="'data:image/png;base64,' +img" alt="no image" class="img_cheque_height">
+      </div>
+      <div class="col-md-12" *ngIf='fileType.includes("application")'>
+        <!-- <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl('data:application/pdf;base64,'+img)" width="880px"
+          height="260px"></iframe> -->
+          <div >
+            <div class="pdf-container">
+              <pdf-viewer class="img_cheque_height"
+                [src]="('data:application/pdf;base64,' + img)"
+                [rotation]="0"
+                [original-size]="false"
+                [show-all]="true"
+                [fit-to-page]="false"
+                [zoom]="1"
+                [zoom-scale]="'page-width'"
+                [stick-to-page]="false"
+                [render-text]="true"
+                [external-link-target]="'blank'"
+                [autoresize]="true"
+                [show-borders]="false"
+                style="overflow-x: hidden;"
+              ></pdf-viewer>
+              </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>

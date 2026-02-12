@@ -1,0 +1,176 @@
+<div class="wrapper">
+  <div class="margin_left_right">
+  <div class="row">
+  <div class="left-container col-5  col-sm-5 col-md-4 position-relative p-0 mobile_padding_left_container">
+        <ul class="d-flex align-items-center gap-3 p-2" >
+          <li class="displaynone">
+            <img class="" src="/assets/icons/logo.svg" style="height: 40px;">
+          </li>
+          <li  class="">
+            <!-- <img class="" src="/assets/icons/title1.svg" class="imgheight10"> -->
+            <h3 style="color:white;margin-bottom: 0px" class="digital_paper_size white_space_nowrwp">{{'GENERATE_PAPER_MANUAL.Digital Paper' | translate}}</h3>
+          </li>
+          <!-- <li *ngIf="currentCompanyName === 'AXA insurance'">
+            <img class="companylogo" src="/assets/company_logo/AXA_Logo.png">
+          </li>
+          <li *ngIf="currentCompanyName === 'SNIC'">
+            <img class="companylogo" src="/assets/company_logo/SNIC_Logo.png">
+          </li> -->
+          <li><div class="vl"></div></li>
+          <li *ngIf="imgUrl !== '' ">
+            <!-- <img class="companylogo" [src]="getLogo()"> -->
+            <img class="" [src]="getLogo()" (error)="handleImageError()" class="height_width">
+          </li>
+        </ul>
+  </div>
+  <div class="center-container col-3 col-sm-3 col-md-4 p-0">
+
+    <ul class="center-header-list d-flex justify-content-center mobilejustifystart pt-1">
+      <li *ngIf="getMenuHeader('Dashboard')" [ngClass]="{borderimg:currentRoute.includes('/dashboard')}">
+        <span class="menu-container hover-text" [routerLink]="[appConst.MENU_CONSTANTS.MENUNAME.DASHBOARD.URL]"
+          routerLinkActive="router-link-active" [ngClass]="{active:currentRoute.includes('/dashboard')}">
+          <img src="/assets/icons/list1.svg" class="img-fluid" >
+          <span class="tooltip-text" id="bottom">{{'USER_ROLE_MANAGE_PVL.Dashboard' | translate}}</span>
+        </span>
+      </li>
+      <li *ngIf="isAdmin && getMenuHeader('Authority Paper Details')"[ngClass]="{borderimg:currentRoute.includes('/authority-paper-details')}">
+        <span class="menu-container hover-text" routerLink="/authority-paper-details"
+          [ngClass]="{active:currentRoute.includes('/authority-paper-details')}">
+          <img src="/assets/icons/authority_details.svg" class="img-fluid"  >
+          <span class="tooltip-text" id="bottom">{{'USER_ROLE_MANAGE_PVL.Authority Paper Details' | translate}}</span>
+        </span>
+      </li>
+      <li *ngIf="getMenuHeader('Page Configurator')" [ngClass]="{borderimg:currentRoute.includes('/page-config')}">
+        <span class="menu-container hover-text" [routerLink]="[appConst.MENU_CONSTANTS.MENUNAME.PAGECONFIGURATOR.URL]"
+          routerLinkActive="router-link-active" [ngClass]="{active:currentRoute.includes('/page-config')}">
+          <img src="/assets/icons/page-configure-icon.svg" class="img-fluid" >
+          <span class="tooltip-text" id="bottom">{{'USER_ROLE_MANAGE_PVL.Page Configurator' | translate}}</span>
+        </span>
+      </li>
+      <li *ngIf="!isAdmin && getMenuHeader('Purchase Stock')" [ngClass]="{borderimg:currentRoute.includes('/purchase-stock')}">
+        <span class="menu-container hover-text" routerLink="/purchase-stock"
+          [ngClass]="{active:currentRoute.includes('/purchase-stock')}">
+          <img src="/assets/icons/purchase-stock.svg" class="img-fluid"  >
+          <span class="tooltip-text" id="bottom">{{"USER_ROLE_MANAGE_PVL.Purchase Stock" |  translate}}</span>
+        </span>
+      </li>
+      <li *ngIf="!isAdmin && getMenuHeader('Paper Details')" [ngClass]="{borderimg:currentRoute.includes('/paper-details') || currentRoute.includes('/generate-paper')}">
+        <span class="menu-container hover-text" routerLink="/paper-details"
+          [ngClass]="{ 'active': currentRoute.includes('/paper-details') || currentRoute.includes('/generate-paper') }">
+          <img src="/assets/icons/paper-details.svg" class="img-fluid"  >
+          <span class="tooltip-text" id="bottom">{{'USER_ROLE_MANAGE_PVL.Paper Details' | translate}}</span>
+        </span>
+      </li>
+
+      <li *ngIf="isAdmin && getMenuHeader('Entity Management')"[ngClass]="{borderimg:currentRoute.includes('/entitymanagement')}">
+        <span class="menu-container hover-text" [routerLink]="[appConst.MENU_CONSTANTS.MENUNAME.ENTITYMANAGEMENT.URL]"
+          routerLinkActive="router-link-active" [ngClass]="{active:currentRoute.includes('/entitymanagement')}">
+          <img src="/assets/icons/entity-management.svg" class="img-fluid" >
+          <span class="tooltip-text" id="bottomPayable">{{'USER_ROLE_MANAGE_PVL.Entity Management' | translate}}</span>
+        </span>
+      </li>
+      <li *ngIf="getMenuHeader('Reports')" [ngClass]="{borderimg:currentRoute.includes('/report-Data')}">
+        <span class="menu-container hover-text" [routerLink]="[appConst.MENU_CONSTANTS.MENUNAME.REPORTS.URL]"
+          routerLinkActive="router-link-active" [ngClass]="{active:currentRoute.includes('/report-Data')}">
+          <img src="/assets/icons/list4.svg" class="img-fluid"  >
+          <span class="tooltip-text" id="bottom">{{'USER_ROLE_MANAGE_PVL.Reports' | translate}}</span>
+        </span>
+      </li>
+      <li *ngIf="getMenuHeader('User Management')" [ngClass]="{borderimg:currentRoute.includes('/usermanagement')}">
+        <span class="menu-container hover-text"
+          [routerLink]="!isAdmin?[appConst.MENU_CONSTANTS.MENUNAME.USERMANAGEMENT.URL]:[appConst.MENU_CONSTANTS.MENUNAME.USERMANAGEMENT.URL + '/user-role/list']"
+          routerLinkActive="router-link-active" [ngClass]="{active:currentRoute.includes('/usermanagement')}">
+          <img src="/assets/icons/list5.svg" class="img-fluid" >
+          <span class="tooltip-text" id="bottom">{{'USER_ROLE_MANAGE_PVL.User Management' | translate}}</span>
+        </span>
+      </li>
+
+             <!-- *ngIf="getMenuHeader(appConst.MENU_CONSTANTS.MENUNAME.EXPORTIMPORT.NAME)" -->
+        
+
+            <li *ngIf="userName==='adam'"[ngClass]="{borderimg:currentRoute.includes('/export-import-card')}">
+              <span class="menu-container hover-text"
+              [routerLink]="[appConst.MENU_CONSTANTS.MENUNAME.EXPORTIMPORT.URL]" routerLinkActive="router-link-active" [ngClass]="{active:currentRoute.includes('/export-import')}">
+                <img src="/assets/icons/import-and-export.svg" class="img-fluid" >
+                <span class="tooltip-text" id="bottom">{{'USER_ROLE_MANAGE_PVL.Export and Import' | translate}}</span>
+              </span>
+            </li>
+
+
+
+      <!-- <li>
+        <span class="menu-container hover-text" [routerLink]="['page-config']" routerLinkActive="router-link-active" [ngClass]="{active:currentRoute.includes('/page-config')}">
+          <img src="/assets/icons/list5.svg">
+          <span class="tooltip-text-user-management" id="bottom">Page Configure</span>
+        </span>
+      </li> -->
+    </ul>
+  </div>
+  <div class="right-container col-4 col-sm-4 col-md-4 mobilejustify p-0">
+    <ul class="right-header-list">
+      <li class="nav-item dropdown" >
+        <a class="nav-link dropdown-toggle notification padding_logout" id="notificationLink" role="button" data-bs-toggle='dropdown' aria-haspopup="true" aria-expanded="false">
+          <img src="/assets/icons/r5.svg" class="img-fluid bill" (click)="onLoadingNotification()">
+          <span class="notification-cnt">{{notificationCount}}</span>
+        </a>
+        <div class="dropdown-menu notification-card postionabsolutenotification" aria-labelledby="notificationLink">
+          <div class="card-header">
+            <h5>{{'Notification_Template.Notifications' | translate}}</h5>
+            <span class="close-btn">
+              <mat-icon class="close-icon">close</mat-icon>
+            </span>
+          </div>
+          <div class="card-content">
+            <ul class="notification-list ScrollBarStyle">
+
+              <li *ngFor="let notification of purchaseHistoryDetailsList;let i = index " (click)="notificationMsg(notification)" >
+                <div class="profile-container">
+                  <img class="profile-image img-fluid" [src]="notification.imageUrl" (error)="notification.imageUrl = 'assets/no-logo.svg'" >
+                  <div class="d-flex justify-content-center flex-column ps-2 " >
+
+                    <div  class="position_bottom_3 fontsize14_4">{{notification.notificationMsg}}</div>
+                <div class="date-time-container"><small class="date-time" style="padding-right: 5px;">
+                  <img style="height: 15px;padding-right: 3px;" src="assets/Date.svg" alt="">{{notification.createdDate
+                    | date: 'dd/MM/yyyy'}} </small> <small class="date-time"><img
+                      style="height: 12px;padding-right: 3px;" src="assets/Time.svg" alt="">{{notification.createdDate
+                    | date: 'h:mm a'}} </small> </div>
+              </div>
+                  </div>
+              </li>
+            </ul>
+            <ul class="notification-list ScrollBarStyle" *ngIf="noNotification">
+              <li>
+                <span class="noNotification-content no-notification">{{'Notification_Template.No Notification' | translate}}</span>
+              </li>
+            </ul>
+          </div>
+          <div class="card-footer" *ngIf="notificationCount!==0">
+             <span class="list_more" (click)="notification_fullview(); popup_fullscreen()">{{"Notification_Template.View All" | translate}}</span>
+          </div>
+        </div>
+      </li>
+      <!-- <li>
+        <span class="right-menu-container">
+          <img src=" /assets/icons/r1.svg">
+        </span>
+      </li> -->
+      &nbsp; &nbsp;
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle " id="navbarDropdownMenuLink" role="button" data-bs-toggle='dropdown' aria-haspopup="true" aria-expanded="false">
+          <img [src]="profileImage" (error)="handleImageErrorUserLogo()" style="height: 35px;width: 35px;border-radius: 50%;" class="img-fluid">
+        </a>
+        <div class="position_reative_fixed">
+
+        <div class="dropdown-menu postionabsolutetop" aria-labelledby="navbarDropdownMenuLink" style=" padding: 7% 0% 7% 0%;border-radius: 0px;transform: translate3d(0px, 45.6px, 0px px);">
+          <div class="login_and_logout"></div>
+          <a class="dropdown-item"  routerLink='/profile'><img src="/assets/paper_details/person_profile.svg" alt="" class="img-fluid profile_logout">&nbsp; <span class="mylogout">{{'Profile.My Profile' | translate}}</span></a>
+          <!-- {{currentCompanyName}} -->
+          <a class="dropdown-item" (click)="logout()"><img src="/assets/paper_details/logout_icon.svg" alt="" class="img-fluid profile_logout">&nbsp; <span class="mylogout">{{'Profile.Log Out' | translate}}</span></a>
+        </div>
+      </div>
+      </li>
+    </ul>
+  </div>
+  </div>
+  </div>
+</div>

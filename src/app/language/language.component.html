@@ -1,0 +1,25 @@
+<div class="language-ddl" appClickOutside  (clickOutside1)="closePopUp()">
+
+  <!-- <select class="form-control select_language check"  #selectedLang >
+      <option *ngFor="let language of translate.getLangs()" style="background-color: white;color: black;"  [(ngModel)]= "lang" [selected] = 'language===lang' >
+     <span class="cursor">{{ language }}</span>
+    </option>
+  </select>
+  <img class="language_synbol" src="/assets/ion_language-outline.svg">
+  -->
+  <div>
+    <div class="position-relative width-mobile">
+      <div style="z-index: 1000;">
+        <div class="list-header-cbt cursor" (click)="opendrown()"><img class="language_synbol"
+            src="/assets/ion_language-outline.svg"> <span class="mob_lang">{{lang}}</span> <img src="/assets/header/arrow.svg" alt=""
+            class="downarrow-cbt"></div>
+        <div class="list-cbt" *ngIf="openclose">
+          <div *ngFor="let language of translate.getLangs()" class="language-feild" [class.language-English]="language===lang"
+            (click)="clsoedropdown();changeLang(language)" >
+            {{ language }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

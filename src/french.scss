@@ -1,0 +1,172 @@
+.french{
+//   .stock_color_cbt{
+// white-space: pre-wrap !important;
+// }
+.allocation_poup_wrap{
+  width: 65% !important;
+}
+  .bar_chart_height{
+    height: 38.5vh !important;
+  }
+  .purchase_sytock_view_heading{
+    white-space: pre-wrap !important;
+  }
+  .white_shape_nowhrap_view_paper{
+    white-space:pre-wrap !important;
+  }
+  .underline_bulk{
+    width: 47% !important;
+  }
+  .dashboard_white_space_header{
+    white-space: pre-wrap !important;
+  }
+  .dashboard_padding_10{
+    padding: 3% !important;
+  }
+  .padding_info_profile
+  {
+    padding: 7% !important;
+  }
+  .stock_color_authority_paper_details {
+
+    font-size: 13px !important;
+
+    white-space:pre-wrap !important;
+
+}
+  .white_space_recent_transaction{
+    white-space: pre-wrap !important;
+  }
+  .date-max-chart-cbt
+  {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 16% !important;
+  }
+  .no-data_cbt{
+    position: absolute;
+    left: 20% !important;
+    top: 45%;
+    font-size: 15px;
+    color: gray;
+  }
+  .no-data-found_cbt
+  {
+    position: absolute;
+    top: 33%;
+    left: 42% !important; 
+  }
+  @media only screen and (min-width: 1400px)
+  {
+.success_record_laptop {
+    white-space: pre-wrap !important;
+
+}
+  }
+  @media only screen and (min-width: 1400px)  {
+    .no_wrap_xxl{
+      white-space: pre-wrap !important;
+    }
+    .no_wrap_upcoming_expiry{
+      white-space:pre-wrap !important;
+    }
+    .width_total_issued{
+      width: 33.3% !important;
+  }
+  }
+  .ScrollBarStyle_recent_digital_paper {
+
+    overflow-y: auto;
+      height: 30vh !important;
+  }
+
+  .ScrollBarStyle_upcoming_expiry{
+
+      overflow-y: auto;
+      height: 27.5vh !important;
+
+  }
+  @media only screen and (max-width: 1400px) and (min-width: 1200px)  {
+    .no-data_cbt{
+      position: absolute;
+      left: 14% !important;
+      top: 45%;
+      font-size: 15px;
+      color: gray;
+    }
+.allocation-pool_height
+{
+  height: 90% !important;
+}
+    .max_with_manage_user_role {
+
+      cursor: pointer;
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 12ch !important;
+
+  }
+    .ScrollBarStyle_recent_digital_paper {
+
+      overflow-y: auto;
+        height: 37.5vh !important;
+    }
+    .ScrollBarStyle_upcoming_expiry{
+
+      overflow-y: auto;
+      height: 33.8vh !important;
+
+  }
+  .french-scroll-bar-cbt
+  {
+    height: 45vh !important;
+    overflow-y: scroll !important;
+    overflow-x: hidden !important;
+    &::-webkit-scrollbar {
+      width: 3px!important;
+    height: 3px!important;
+    overflow-y: scroll;
+    background: #f7f7f7;
+    box-shadow: inset 0 0 4px #707070;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #8a8b8b;
+    border-radius:10px;
+    }
+
+  }
+  }
+  @media only screen and (max-width: 600px)  {
+    .no-data_cbt{
+      position: absolute;
+      left: 15% !important;
+      top: 45%;
+      font-size: 15px;
+      color: gray;
+    }
+    .ScrollBarStyle_recent_digital_paper {
+
+      overflow-y: auto;
+        height: auto !important;
+    }
+  }
+  .login-name {
+    font-weight: 300;
+    display: inline-block;
+    padding-bottom: 2px;
+    position: relative;
+    text-transform: uppercase !important;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 50% !important;
+      height: 1px;
+      bottom: 0;
+      left: 0%;
+      border-bottom: 2px solid white;
+    }
+  }
+}

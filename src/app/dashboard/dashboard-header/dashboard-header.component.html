@@ -1,0 +1,174 @@
+<div class="back_color">
+  <div class="row margin_left_right">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12 padding_top_bottom">
+      <div class="row">
+        <div
+          class="col-12 col-sm-12 col-md-4 col-lg-2 col-xl-2 col-xxl-2 d-flex justify-content-start align_item_center">
+          <span class="font_style font_size_18 white_color">{{'Dashboard.Dashboard'|translate}}</span>
+        </div>
+        <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-8 col-xxl-8 padding_0_3">
+          <div class="row">
+            <div class="col-4 col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4  padding_bottom_1 padding_left_total_stock">
+              <div class="total_stock">
+                <!-- <div class="row padding_4">
+                  <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 ">
+                    <img src="/assets/header/total_stock.svg" alt="">
+                  </div>
+                  <div class="col-7 col-sm-7 col-md-7 col-lg-6 col-xl-6 col-xxl-7  padding_top_left">
+                    <span *ngIf="!isAdmin" class="font_style font_size_18 white_color  nowhap">
+                      {{'Dashboard.Total_Stock_Allocated'|translate}} </span>
+                    <span *ngIf="isAdmin" class="font_style font_size_18 white_color  nowhap">
+                      {{'Dashboard.Total_Stock_Requested'|translate}}</span>
+                  </div>
+                  <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-xxl-4 margin_left ">
+                    <span *ngIf="!isAdmin" class=" font_style font_size_30  white_color max_with" [matTooltip]="stockCount?.stockCount |
+                    number">{{stockCount?.stockCount |
+                      number}}</span>
+                    <span *ngIf="isAdmin" class=" font_style font_size_30  white_color max_with" [matTooltip]="(pendingStockCount +
+                    allocatedStockCount) | number">{{(pendingStockCount +
+                      allocatedStockCount) | number}}</span>
+                  </div>
+                </div> -->
+
+                <div class="d-flex  align-items-center p_4">
+                  <img  *ngIf="!isAdmin" src="/assets/header/total_stock.svg" alt="" [matTooltip]="'Dashboard.Total_Stock_Allocated' | translate"><span *ngIf="!isAdmin">&nbsp;</span>
+                  <img *ngIf="isAdmin" src="/assets/header/total_requested.svg" alt="" [matTooltip]="'Dashboard.Total_Stock_Requested' | translate"><span *ngIf="isAdmin">&nbsp;</span>
+                  <span *ngIf="!isAdmin" class="font_style font_size_18 white_color  nowhap displaynone">
+                    {{'Dashboard.Total_Stock_Allocated'|translate}} </span><span *ngIf="!isAdmin" class="displaynone">&nbsp;</span>
+                  <span *ngIf="isAdmin" class="font_style font_size_18 white_color  nowhap displaynone">
+                    {{'Dashboard.Total_Stock_Requested'|translate}}</span><span *ngIf="isAdmin" class="displaynone">&nbsp;</span>
+                  <span *ngIf="!isAdmin" class=" font_style font_size_30  white_color max_with " [matTooltip]="stockCount?.stockCount |
+                  number">{{stockCount?.stockCount |
+                    number}}</span><span *ngIf="!isAdmin" >&nbsp;</span>
+                  <span *ngIf="isAdmin" class=" font_style font_size_30  white_color max_with" [matTooltip]="(pendingStockCount +
+                  allocatedStockCount) | number">{{(pendingStockCount +
+                    allocatedStockCount) | number}}</span><span *ngIf="isAdmin">&nbsp;</span>
+              </div>
+
+                <!-- <div class="row">
+                  <div class="col-2 col-sm-2 col-md-1 col-lg-2 col-xl-2 col-xxl-2 ">
+                  </div>
+                  <div class="col-7 col-sm-7 col-md-9 col-lg-8 col-xl-7 col-xxl-8   padding_zero">
+                    <span *ngIf="!isAdmin" class=" font_style font_size_30  white_color ">{{stockCount?.stockCount |
+                      number}}</span>
+                    <span *ngIf="isAdmin" class=" font_style font_size_30  white_color ">{{(pendingStockCount +
+                      allocatedStockCount) | number}}</span>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+            <div class="col-4 col-sm-12 col-md-12 col-lg-6 col-xl-4 col-xxl-3  padding_bottom_1 width_available_stock" >
+              <div class="avialble_stock">
+                <div class="d-flex  align-items-center p4_5">
+                  <img *ngIf="!isAdmin" src="/assets/header/available_stock.svg" alt="" [matTooltip]="'Dashboard.Available_Stock'|translate"><span *ngIf="!isAdmin">&nbsp;</span>
+                  <img *ngIf="isAdmin" src="/assets/header/stock_allocated.svg" alt="" [matTooltip]="'Dashboard.Stock_Allocated'|translate"><span *ngIf="isAdmin">&nbsp;</span>
+                  <span *ngIf="!isAdmin"
+                    class="font_style font_size_18 white_color nowhap displaynone">{{'Dashboard.Available_Stock'|translate}}
+                  </span><span *ngIf="!isAdmin" class="displaynone">&nbsp;</span>
+                  <span *ngIf="isAdmin" class="font_style font_size_18 white_color nowhap displaynone">
+                    {{'Dashboard.Stock_Allocated'|translate}} </span><span *ngIf="isAdmin" class="displaynone">&nbsp;</span>
+                  <span *ngIf="!isAdmin" class=" font_style font_size_30  white_color max_with_avialble_stock" [matTooltip]="(stockCount?.stockCount -
+                  stockCount?.usedCount) | number">{{(stockCount?.stockCount -
+                    stockCount?.usedCount) | number}}</span><span *ngIf="!isAdmin">&nbsp;</span>
+                  <span *ngIf="isAdmin" class=" font_style font_size_30  white_color max_with_avialble_stock" [matTooltip]="allocatedStockCount |
+                  number">{{ allocatedStockCount |
+                    number}}</span><span *ngIf="isAdmin">&nbsp;</span>
+              </div>
+                <!-- <div class="row">
+
+                  <div class="col-7 col-sm-7 col-md-9 col-lg-8 col-xl-7 col-xxl-8   padding_zero   ">
+
+                  </div>
+                </div> -->
+              </div>
+            </div>
+
+            <div class="col-4 col-sm-12 col-md-12 col-lg-6 col-xl-4 col-xxl-4   padding_bottom_1 width_total_issued ">
+              <div class="total_issued">
+                <div class="d-flex  align-items-center p_4_1">
+                 <img  *ngIf="!isAdmin" src="/assets/header/total_issued.svg" alt=""  [matTooltip]="'Dashboard.Total_Stock_Issued'|translate" ><span *ngIf="!isAdmin">&nbsp;</span>
+                  <img *ngIf="isAdmin" src="/assets/header/pending_assocate.svg" alt="" [matTooltip]="'Dashboard.Pending_to_Allocate'|translate"><span *ngIf="isAdmin">&nbsp;</span>
+                      <span *ngIf="!isAdmin" class="font_style font_size_18 white_color nowhap displaynone">
+                        {{'Dashboard.Total_Stock_Issued'|translate}} </span><span *ngIf="!isAdmin" class="displaynone">&nbsp;</span>
+                      <span *ngIf="isAdmin" class="font_style font_size_18 white_color nowhap displaynone">
+                        {{'Dashboard.Pending_to_Allocate'|translate}}</span><span *ngIf="isAdmin"class="displaynone" >&nbsp;</span>
+                      <span *ngIf="!isAdmin" class=" font_style font_size_30  white_color max_with "[matTooltip]="stockCount?.usedCount |number">{{stockCount?.usedCount |
+                        number}}</span><span *ngIf="!isAdmin">&nbsp;</span>
+                      <span *ngIf="isAdmin" class=" font_style font_size_30  white_color max_with" [matTooltip]="pendingStockCount |
+                      number">{{pendingStockCount |
+                        number}}</span><span *ngIf="isAdmin">&nbsp;</span>
+                  </div>
+                <!-- <div class="row">
+
+                  <div class="col-7 col-sm-7 col-md-9 col-lg-8 col-xl-7 col-xxl-8     padding_zero">
+
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-2 col-xxl-2 align_item_center d-flex justify-content-end padding_0_3">
+          <button mat-button [matMenuTriggerFor]="vertebrates" class="year white_color font_size_13_5 font_style" (click)="onOpeningMenu()">
+            <span class="font_size_14_5">{{SelectedDate}}</span><span><img src="/assets/header/arrow.svg" alt="" class="img-fluid
+                            "></span> </button>
+          <mat-menu #vertebrates="matMenu">
+            <button mat-menu-item (click)="select('Current Year')" class="font_size_mobile">{{'Dashboard.Current Year'|translate}}</button>
+            <button mat-menu-item (click)="select('Current Date')" class="font_size_mobile">{{'Dashboard.Current Date'|translate}}</button>
+            <button mat-menu-item (click)="select('Current Month')" class="font_size_mobile">{{'Dashboard.Current Month'|translate}}</button>
+            <button mat-menu-item [matMenuTriggerFor]="fish" class="font_size_mobile">{{'Dashboard.Custom'|translate}}</button>
+          </mat-menu>
+          <mat-menu #fish="matMenu">
+            <div class="padding_5">
+              <div class=" d-flex gap-3 padding_bottom_3">
+                <div class=" d-flex align-items-center text-cbt">
+                  <span>{{'Dashboard.From'|translate}}</span>
+                </div>
+                <div class="paading_left_zero">
+                  <div class="d-flex position-relative justify-content-around ">
+                    <input matInput [matDatepicker]="picker" class=" DateStyle " [readonly]="true"  [placeholder]="'Dashboard.From' | translate"
+                      [formControl]="fromDate" [max]="maxDate" (dateChange)="setMinDate($event)" (click)="$event.stopPropagation()">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"
+                      class="calender-toggler_dashboard "></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </div>
+                </div>
+              </div>
+              <div class="d-flex gap-3 padding_bottom_3">
+                <div class=" d-flex align-items-center text-cbt">
+                  <span>{{'Dashboard.To'|translate}}</span>
+                </div>
+                <div class=" paading_left_zero">
+                  <div class="d-flex position-relative justify-content-around ">
+                    <input matInput [matDatepicker]="picker1" class=" DateStyle " [readonly]="true" [placeholder]="'Dashboard.To' | translate"
+                      [formControl]="toDate" [min]="minDate" (dateChange)="setMaxDate($event)" (click)="$event.stopPropagation()">
+                    <mat-datepicker-toggle matIconSuffix [for]="picker1"
+                      class="calender-toggler_dashboard "></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                  </div>
+                </div>
+              </div>
+              <div class=" d-flex justify-content-end gap-3 padding_bottom_3 apply_cancel">
+
+
+
+
+                      <button
+                        class=" button_width dashboard_padding_10 dark_blue font_style white_color dashboard_white_space_header border_radius_3"
+                        (click)="select('Apply Filter')">{{'Dashboard.Apply_Filter'|translate}}</button>
+
+
+                      <button m class=" button_width dashboard_padding_10 font_style cancel border_radius_3">
+                        {{'Dashboard.Cancel'|translate}}</button>
+
+
+
+              </div>
+            </div>
+          </mat-menu>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

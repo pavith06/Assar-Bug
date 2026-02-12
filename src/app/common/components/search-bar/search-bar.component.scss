@@ -1,0 +1,371 @@
+.search_filter {
+  position: absolute;
+  top: 1vh;
+  right: 1%;
+  cursor: pointer;
+
+}
+.padding-right_cbt
+{
+  padding-right: 2.5rem !important;
+}
+.form-control:disabled {
+  background-color: rgba(255, 255, 255, 1);
+  opacity: 1;
+  // width: 37vw;
+}
+.search-style{
+  display: inherit;
+  width: 37vw;
+  border-radius: 2px;
+  // padding-left: 7%;
+
+}
+.arrow_icon
+{
+  position: absolute;
+  right: 1%;
+  top: 85%;
+  bottom: 0px;
+}
+.filter{
+  position: absolute;
+  top: 1vh;
+  left: 1vh;
+  cursor: pointer;
+}
+
+.errorMsgSty{
+  border-bottom: 0.5px solid red !important;
+}
+.french-scroll-bar-cbt
+{
+  height: auto;
+  overflow: none;
+}
+.wrapper{
+  display: inline-block;
+  margin-top: .5%;
+  width: 37vw;
+
+  background-color: #fff;
+  box-shadow: 0 0px 8px 0 rgba(0,0,0,0.2);
+  padding: 10px 20px;
+  z-index: 1000;
+position: absolute;
+  overflow: hidden;
+
+}
+.remove_border{
+  border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;
+    border-bottom: 1px solid;
+}
+::ng-deep .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: #fff;
+}
+#cdk-overlay-1
+{
+  bottom: 0% !important;
+}
+
+.col-9 input[type=text] {
+  box-sizing: border-box;
+  border: .5px solid grey;
+  border-width:0px 0px 1px 0px;
+  width: 100%;
+}
+.col-9 input[type=text]:focus {
+  outline:none;
+  border-image: linear-gradient(to right, grey 0%, grey 100%) 1;
+  border-width:0px 0px 1px 0px;
+}
+
+.margin{
+  margin: 15px 0px;
+}
+
+.date-focus{
+  border: none;
+  border-radius: 0px;
+  box-sizing: border-box;
+  // border-bottom: .5px solid grey;
+
+}
+.date-focus:focus {
+  border: none;
+  box-shadow: none;
+  outline:none;
+  // border-bottom: .5px solid grey;
+  border-image: linear-gradient(to right, grey 0%, grey 100%) 1;
+  border-width:0px 0px 1px 0px;
+}
+
+.DateStyle{
+
+  font-size: 14.5px;
+  padding-left: 0px;
+}
+
+// .calender-toggler{
+// 	position: absolute;
+// 	left: 35%;
+// }
+.datepickerStyle_search{
+right: -6%;
+    top: -15%;
+}
+
+.date-field{
+  border-bottom: .5px solid grey;
+  border-width:0px 0px 1px 0px;
+}
+
+::ng-deep .mat-datepicker-popup{
+  // top: 264px !important;
+  // bottom: 123px !important;
+}
+
+.MultipleSelectInputStyle {
+  border: 1px solid;
+  margin-left: 5%;
+  margin-bottom: 3%;
+  width: 86%;
+  padding-top: 11px;
+}
+
+.field_dropdown {
+	box-sizing: content-box;
+	display: block;
+	margin: 0;
+	width: 100%;
+	margin-left: -13px;
+	margin-top: 1px;
+}
+
+.exp_header{
+	padding:0px 16px !important;
+}
+
+.exp_title, .exp_descrip {
+  margin-right: -2px !important;
+}
+.exp_descrip {
+    flex-grow: 0;
+}
+
+.MultiSelectInput{
+	border: none;
+	outline: none;
+  border-bottom: .5px solid grey;
+  border-width:0px 0px 1px 0px;
+  width: 100%;
+  margin-left: 0px;
+}
+
+.mat-mdc-radio-button ~ .mat-mdc-radio-button {
+  margin-left: 16px;
+}
+
+select{
+  box-sizing: border-box;
+  border: none;
+  border: .5px solid grey;
+  border-width:0px 0px 1px 0px;
+  border-radius: 0px;
+  box-sizing: border-box;
+}
+
+select:focus {
+  border: none;
+  box-shadow: none;
+  outline:none;
+  border: .5px solid grey;
+  border-width:0px 0px 1px 0px;
+}
+
+.button{
+
+  border-radius: 2px;
+  min-width: 80px;
+  height: 40px;
+}
+
+::ng-deep .mdc-radio__outer-circle {
+  border-color: #688f99 !important;
+}
+
+::ng-deep .mdc-radio__inner-circle {
+  border-color: #688f99 !important;
+}
+.search_text{
+  padding-left:  1%;
+}
+.search_text_padding{
+  padding-left: 6% !important;
+}
+
+
+@media only screen and (max-width: 993px) and (min-width: 767px)  {
+  .search-style{
+    width: 44vw;
+    padding-left: 9%;
+  }
+  .search{
+    left: 41vw;
+  }
+
+}
+
+@media only screen and (max-width: 768px) and (min-width: 425px)  {
+  .wrapper{
+    width: 44vw;
+  }
+
+}
+
+@media only screen and (max-width: 992px) and (min-width: 768px)  {
+  .wrapper{
+    width: 44vw;
+  }
+}
+@media only screen and (max-width: 768px) and (min-width: 425px)  {
+  .wrapper{
+    width: 92vw;
+  }
+}
+.style{
+  font-size: 12.5px !important;
+}
+@media only screen and (max-width:  600px)   {
+  .radio-mobile{
+    font-size: 12px !important;
+  }
+  .wrapper{
+    width: 90vw;
+    height: 55vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      width: 0px !important;
+      overflow-y: scroll;
+      background: grey;
+      box-shadow: inset 0 0 4px #707070;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #dfeaf3;
+      border-radius: 10px;
+    }
+
+  }
+  .buttonsize
+  {
+    font-size: 12.5px !important;
+  }
+  .style{
+    font-size: 11.5px !important;
+  }
+  .search-style{
+    padding-left: 12%;
+    width:75vw;
+  }
+  .datepickerStyle_search{
+    left: 68% ;
+    top: -15%;
+}
+.scrollbarfilter
+{
+  height: 45vh;
+  overflow-y: scroll;
+}
+.search_text_padding {
+  padding-left: 12%!important;
+}
+}
+
+::ng-deep .mat-datepicker-popup {
+  // top: 264px !important;
+
+}
+
+.style{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mt3{
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+}
+@media only screen and (max-width: 1400px) and (min-width: 1200px)  {
+  .datepickerStyle_search {
+    left: 78% ;
+    top: -15%;
+}
+// .french-scroll-bar-cbt
+// {
+//   height: 70vh;
+//   overflow-y: scroll !important;
+//   overflow-x: hidden !important;
+//   &::-webkit-scrollbar {
+//     width: 3px!important;
+//   height: 3px!important;
+//   overflow-y: scroll;
+//   background: #f7f7f7;
+//   box-shadow: inset 0 0 4px #707070;
+//   }
+//   &::-webkit-scrollbar-thumb {
+//     background: #8a8b8b;
+//   border-radius:10px;
+//   }
+
+// }
+.search_text_padding{
+  padding-left: 7% !important;
+}
+}
+::placeholder {
+  color: #cfcdcd;
+  opacity: 1; /* Firefox */
+}
+
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #cfcdcd;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: #cfcdcd;
+}
+
+.mat-mdc-standard-chip {
+  --mdc-chip-elevated-container-color: rgba(231, 237, 243, 1) !important;
+  --mdc-chip-elevated-disabled-container-color: #e0e0e0;
+  --mdc-chip-label-text-color: #212121;
+  --mdc-chip-disabled-label-text-color: #212121;
+  --mdc-chip-with-icon-icon-color: #212121;
+  --mdc-chip-with-icon-disabled-icon-color: #212121;
+  --mdc-chip-with-trailing-icon-disabled-trailing-icon-color: #212121;
+  --mdc-chip-with-trailing-icon-trailing-icon-color:rgba(104, 143, 153, 1) !important;
+  --mdc-chip-with-icon-selected-icon-color: #212121;
+}
+.search-style:focus
+{
+  outline: none !important;
+  box-shadow: none !important;
+
+  border: 1px solid #ced4da !important;
+
+}
+.close-icon{
+  cursor: pointer;
+  color: #688F99;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  height: 20px;
+  width: 20px;
+}
