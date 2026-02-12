@@ -159,7 +159,10 @@
                 <div *ngIf="cheque ||cash">
                   <div class="row ">
                     <div class=" col col-md-12" class=" payment_upload_cheque position_relative_15">
-                     {{'Purchase_stock_popup.Upload_Cheque' | translate}}
+                      <span *ngIf="cheque">
+                     {{'Purchase_stock_popup.Upload_Cheque' | translate}} </span>
+                     <span *ngIf="cash">
+                      {{'Purchase_stock_popup.Upload_Cash' | translate }} </span>
                     </div>
                   </div>
                   <div class="row Browse_file">
