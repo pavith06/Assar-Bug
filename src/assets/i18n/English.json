@@ -42,7 +42,9 @@
     "Upload_Cheque": "Upload Cheque",
     "Drag_and_Drop_your_file_or": "Drag and Drop your file or",
     "Browse_files": "Browse files",
-    "Proceed_to_Pay": "Proceed to Pay"
+    "Proceed_to_Pay": "Proceed to Pay",
+
+    "Upload_Cash":"Upload Receipt"
   },
   "Purchase_stock_view_popup": {
     "Purchase_Details": "Purchase Details",
@@ -370,7 +372,9 @@
     "message3": "New Password should contain 8-20 digits & 1 number, 1 capital letter & 1 special character",
     "Confirm_Password": "Confirm Password",
     "Confirm_Password_does_not_match": "Confirm Password does not match",
-    "Change_Password": "Change Password"
+    "Change_Password": "Change Password",
+
+    "Enter_confirm_password":"Enter confirm Password"
 
   },
   "PasswordChanged": {
