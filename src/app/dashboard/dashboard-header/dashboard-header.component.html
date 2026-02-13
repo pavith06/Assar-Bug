@@ -9,7 +9,7 @@
         <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-8 col-xxl-8 padding_0_3">
           <div class="row">
             <div class="col-4 col-sm-12 col-md-12 col-lg-12 col-xl-4 col-xxl-4  padding_bottom_1 padding_left_total_stock">
-              <div class="total_stock">
+              <div class="total_stock" *ngIf="!isAdmin" (click)="goToPurchaseStock()">
                 <!-- <div class="row padding_4">
                   <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1 col-xxl-1 ">
                     <img src="/assets/header/total_stock.svg" alt="">
@@ -58,7 +58,7 @@
               </div>
             </div>
             <div class="col-4 col-sm-12 col-md-12 col-lg-6 col-xl-4 col-xxl-3  padding_bottom_1 width_available_stock" >
-              <div class="avialble_stock">
+              <div class="avialble_stock" *ngIf="!isAdmin" (click)="goToPurchaseStock()">
                 <div class="d-flex  align-items-center p4_5">
                   <img *ngIf="!isAdmin" src="/assets/header/available_stock.svg" alt="" [matTooltip]="'Dashboard.Available_Stock'|translate"><span *ngIf="!isAdmin">&nbsp;</span>
                   <img *ngIf="isAdmin" src="/assets/header/stock_allocated.svg" alt="" [matTooltip]="'Dashboard.Stock_Allocated'|translate"><span *ngIf="isAdmin">&nbsp;</span>
@@ -84,7 +84,7 @@
             </div>
 
             <div class="col-4 col-sm-12 col-md-12 col-lg-6 col-xl-4 col-xxl-4   padding_bottom_1 width_total_issued ">
-              <div class="total_issued">
+              <div class="total_issued"  *ngIf="!isAdmin" (click)="goToPaperDetails()']">
                 <div class="d-flex  align-items-center p_4_1">
                  <img  *ngIf="!isAdmin" src="/assets/header/total_issued.svg" alt=""  [matTooltip]="'Dashboard.Total_Stock_Issued'|translate" ><span *ngIf="!isAdmin">&nbsp;</span>
                   <img *ngIf="isAdmin" src="/assets/header/pending_assocate.svg" alt="" [matTooltip]="'Dashboard.Pending_to_Allocate'|translate"><span *ngIf="isAdmin">&nbsp;</span>
