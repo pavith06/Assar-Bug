@@ -410,6 +410,7 @@ export class SearchBarComponent implements OnInit, OnChanges {
   openFilter() {
     this.showFilter = !this.showFilter;
     // this.clearAll();
+    this.closeIconEnable = true;
   }
 
   checkedRadio(name: string, item: FilterObject) {
