@@ -11,6 +11,7 @@ import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/materia
 import { MomentDateAdapter } from '@angular/material-moment-adapter';
 import { Date_Select } from 'src/app/common/enum/enum';
 import { RouteDashboardService } from 'src/app/service/routedashboard.service';
+import { Router } from '@angular/router';
 
 export const MY_FORMATS = {
   parse: {
@@ -43,7 +44,9 @@ export class DashboardHeaderComponent implements OnInit{
   minDate= new Date();
   maxDate=null;
 
-  constructor(private dashBoardService:DashboardService, private adminService:AdminService, private translate:TranslateService, private authGuardService:RouteDashboardService){
+  constructor(private dashBoardService:DashboardService, private adminService:AdminService, private translate:TranslateService,
+  private router:Router,
+  private authGuardService:RouteDashboardService){
 
   }
   SelectedDate='';
@@ -160,5 +163,13 @@ export class DashboardHeaderComponent implements OnInit{
     this.toDate=new FormControl();
     this.minDate=null;
     this.maxDate=null;
+  }
+
+  goToPurchaseStock() {
+    this.router.navigate(['/purchase-stock']);
+  }
+ 
+  goToPaperDetails() {
+    this.router.navigate(['/paper-details']);
   }
 }
